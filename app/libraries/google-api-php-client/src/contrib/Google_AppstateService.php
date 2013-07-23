@@ -35,11 +35,11 @@
      * @opt_param string currentDataVersion The version of the data to be cleared. Version strings are returned by the server.
      * @return Google_WriteResult
      */
-    public function clear($stateKey, $optParams = array()) {
+    public function clear($stateKey, $optParams = array()){
       $params = array('stateKey' => $stateKey);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('clear', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('clear', array($params) );
+      if ($this->useObjects()){
         return new Google_WriteResult($data);
       } else {
         return $data;
@@ -54,10 +54,10 @@
      * @param int $stateKey The key for the data to be retrieved.
      * @param array $optParams Optional parameters.
      */
-    public function delete($stateKey, $optParams = array()) {
+    public function delete($stateKey, $optParams = array()){
       $params = array('stateKey' => $stateKey);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('delete', array($params));
+      $data = $this->__call('delete', array($params) );
       return $data;
     }
     /**
@@ -67,11 +67,11 @@
      * @param array $optParams Optional parameters.
      * @return Google_GetResponse
      */
-    public function get($stateKey, $optParams = array()) {
+    public function get($stateKey, $optParams = array()){
       $params = array('stateKey' => $stateKey);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('get', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('get', array($params) );
+      if ($this->useObjects()){
         return new Google_GetResponse($data);
       } else {
         return $data;
@@ -85,11 +85,11 @@
      * @opt_param bool includeData Whether to include the full data in addition to the version number
      * @return Google_ListResponse
      */
-    public function listStates($optParams = array()) {
+    public function listStates($optParams = array()){
       $params = array();
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_ListResponse($data);
       } else {
         return $data;
@@ -107,11 +107,11 @@
      * @opt_param string currentStateVersion The version of the app state your application is attempting to update. If this does not match the current version, this method will return a conflict error. If there is no data stored on the server for this key, the update will succeed irrespective of the value of this parameter.
      * @return Google_WriteResult
      */
-    public function update($stateKey, Google_UpdateRequest $postBody, $optParams = array()) {
+    public function update($stateKey, Google_UpdateRequest $postBody, $optParams = array()){
       $params = array('stateKey' => $stateKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('update', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('update', array($params) );
+      if ($this->useObjects()){
         return new Google_WriteResult($data);
       } else {
         return $data;
@@ -140,13 +140,13 @@ class Google_AppstateService extends Google_Service {
    *
    * @param Google_Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Google_Client $client){
     $this->servicePath = 'appstate/v1/';
     $this->version = 'v1';
     $this->serviceName = 'appstate';
 
     $client->addService($this->serviceName, $this->version);
-    $this->states = new Google_StatesServiceResource($this, $this->serviceName, 'states', json_decode('{"methods": {"clear": {"id": "appstate.states.clear", "path": "states/{stateKey}/clear", "httpMethod": "POST", "parameters": {"currentDataVersion": {"type": "string", "location": "query"}, "stateKey": {"type": "integer", "required": true, "format": "int32", "minimum": "0", "maximum": "3", "location": "path"}}, "response": {"$ref": "WriteResult"}, "scopes": ["https://www.googleapis.com/auth/appstate"]}, "delete": {"id": "appstate.states.delete", "path": "states/{stateKey}", "httpMethod": "DELETE", "parameters": {"stateKey": {"type": "integer", "required": true, "format": "int32", "minimum": "0", "maximum": "3", "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/appstate"]}, "get": {"id": "appstate.states.get", "path": "states/{stateKey}", "httpMethod": "GET", "parameters": {"stateKey": {"type": "integer", "required": true, "format": "int32", "minimum": "0", "maximum": "3", "location": "path"}}, "response": {"$ref": "GetResponse"}, "scopes": ["https://www.googleapis.com/auth/appstate"]}, "list": {"id": "appstate.states.list", "path": "states", "httpMethod": "GET", "parameters": {"includeData": {"type": "boolean", "default": "false", "location": "query"}}, "response": {"$ref": "ListResponse"}, "scopes": ["https://www.googleapis.com/auth/appstate"]}, "update": {"id": "appstate.states.update", "path": "states/{stateKey}", "httpMethod": "PUT", "parameters": {"currentStateVersion": {"type": "string", "location": "query"}, "stateKey": {"type": "integer", "required": true, "format": "int32", "minimum": "0", "maximum": "3", "location": "path"}}, "request": {"$ref": "UpdateRequest"}, "response": {"$ref": "WriteResult"}, "scopes": ["https://www.googleapis.com/auth/appstate"]}}}', true));
+    $this->states = new Google_StatesServiceResource($this, $this->serviceName, 'states', json_decode('{"methods": {"clear": {"id": "appstate.states.clear", "path": "states/{stateKey}/clear", "httpMethod": "POST", "parameters": {"currentDataVersion": {"type": "string", "location": "query"}, "stateKey": {"type": "integer", "required": true, "format": "int32", "minimum": "0", "maximum": "3", "location": "path"}}, "response": {"$ref": "WriteResult"}, "scopes": ["https://www.googleapis.com/auth/appstate"]}, "delete": {"id": "appstate.states.delete", "path": "states/{stateKey}", "httpMethod": "DELETE", "parameters": {"stateKey": {"type": "integer", "required": true, "format": "int32", "minimum": "0", "maximum": "3", "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/appstate"]}, "get": {"id": "appstate.states.get", "path": "states/{stateKey}", "httpMethod": "GET", "parameters": {"stateKey": {"type": "integer", "required": true, "format": "int32", "minimum": "0", "maximum": "3", "location": "path"}}, "response": {"$ref": "GetResponse"}, "scopes": ["https://www.googleapis.com/auth/appstate"]}, "list": {"id": "appstate.states.list", "path": "states", "httpMethod": "GET", "parameters": {"includeData": {"type": "boolean", "default": "false", "location": "query"}}, "response": {"$ref": "ListResponse"}, "scopes": ["https://www.googleapis.com/auth/appstate"]}, "update": {"id": "appstate.states.update", "path": "states/{stateKey}", "httpMethod": "PUT", "parameters": {"currentStateVersion": {"type": "string", "location": "query"}, "stateKey": {"type": "integer", "required": true, "format": "int32", "minimum": "0", "maximum": "3", "location": "path"}}, "request": {"$ref": "UpdateRequest"}, "response": {"$ref": "WriteResult"}, "scopes": ["https://www.googleapis.com/auth/appstate"]}}}', true) );
 
   }
 }
@@ -158,28 +158,28 @@ class Google_GetResponse extends Google_Model {
   public $data;
   public $kind;
   public $stateKey;
-  public function setCurrentStateVersion( $currentStateVersion) {
+  public function setCurrentStateVersion( $currentStateVersion){
     $this->currentStateVersion = $currentStateVersion;
   }
-  public function getCurrentStateVersion() {
+  public function getCurrentStateVersion(){
     return $this->currentStateVersion;
   }
-  public function setData( $data) {
+  public function setData( $data){
     $this->data = $data;
   }
-  public function getData() {
+  public function getData(){
     return $this->data;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setStateKey( $stateKey) {
+  public function setStateKey( $stateKey){
     $this->stateKey = $stateKey;
   }
-  public function getStateKey() {
+  public function getStateKey(){
     return $this->stateKey;
   }
 }
@@ -190,23 +190,23 @@ class Google_ListResponse extends Google_Model {
   public $items;
   public $kind;
   public $maximumKeyCount;
-  public function setItems(/* array(Google_GetResponse) */ $items) {
+  public function setItems(/* array(Google_GetResponse) */ $items){
     $this->assertIsArray($items, 'Google_GetResponse', __METHOD__);
     $this->items = $items;
   }
-  public function getItems() {
+  public function getItems(){
     return $this->items;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setMaximumKeyCount( $maximumKeyCount) {
+  public function setMaximumKeyCount( $maximumKeyCount){
     $this->maximumKeyCount = $maximumKeyCount;
   }
-  public function getMaximumKeyCount() {
+  public function getMaximumKeyCount(){
     return $this->maximumKeyCount;
   }
 }
@@ -214,16 +214,16 @@ class Google_ListResponse extends Google_Model {
 class Google_UpdateRequest extends Google_Model {
   public $data;
   public $kind;
-  public function setData( $data) {
+  public function setData( $data){
     $this->data = $data;
   }
-  public function getData() {
+  public function getData(){
     return $this->data;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
 }
@@ -232,22 +232,22 @@ class Google_WriteResult extends Google_Model {
   public $currentStateVersion;
   public $kind;
   public $stateKey;
-  public function setCurrentStateVersion( $currentStateVersion) {
+  public function setCurrentStateVersion( $currentStateVersion){
     $this->currentStateVersion = $currentStateVersion;
   }
-  public function getCurrentStateVersion() {
+  public function getCurrentStateVersion(){
     return $this->currentStateVersion;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setStateKey( $stateKey) {
+  public function setStateKey( $stateKey){
     $this->stateKey = $stateKey;
   }
-  public function getStateKey() {
+  public function getStateKey(){
     return $this->stateKey;
   }
 }

@@ -24,23 +24,23 @@ class BaseTest extends PHPUnit_Framework_TestCase {
    * @var Google_Client
    */
   public static $client;
-  public function __construct() {
+  public function __construct(){
     parent::__construct();
-    if (!BaseTest::$client) {
+    if (!BaseTest::$client){
       global $apiConfig;
       $apiConfig['ioFileCache_directory'] = '/tmp/google-api-php-client/tests';
       $apiConfig['cacheClass'] = 'Google_FileCache';
 
       BaseTest::$client = new Google_Client();
-      if (!BaseTest::$client->getAccessToken()) {
-        if (isset($apiConfig['oauth_test_token'])) {
+      if (!BaseTest::$client->getAccessToken()){
+        if (isset($apiConfig['oauth_test_token'])){
           BaseTest::$client->setAccessToken($apiConfig['oauth_test_token']);
         }
       }
     }
   }
 
-  public function __destruct() {
+  public function __destruct(){
     global $apiConfig;
     $apiConfig['oauth_test_token'] = self::$client->getAccessToken();
   }

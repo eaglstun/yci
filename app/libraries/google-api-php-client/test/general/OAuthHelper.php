@@ -16,7 +16,7 @@
  */
 require_once '../../src/Google_Client.php';
 
-defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));
+defined('STDIN') or define('STDIN', fopen('php://stdin', 'r') );
 
 $client = new Google_Client();
 // Visit https://code.google.com/apis/console to
@@ -33,13 +33,13 @@ $client->setScopes(array(
   'https://www.googleapis.com/auth/siteverification',
   'https://www.googleapis.com/auth/urlshortener',
   'https://www.googleapis.com/auth/adsense.readonly',
-));
+) );
 
 $authUrl = $client->createAuthUrl();
 
 print "Please visit:\n$authUrl\n\n";
 print "Please enter the auth code:\n";
-$authCode = trim(fgets(STDIN));
+$authCode = trim(fgets(STDIN) );
 
 $_GET['code'] = $authCode;
 $accessToken = $client->authenticate();

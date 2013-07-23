@@ -21,7 +21,7 @@
 require_once 'UrlShortenerTests.php';
 
 class AllUrlShortenerTests extends PHPUnit_Framework_TestSuite {
-  public static function suite() {
+  public static function suite(){
     $suite = new PHPUnit_Framework_TestSuite();
     $suite->setName('Google UrlShortener API tests');
     $suite->addTestSuite('UrlShortenerTests');

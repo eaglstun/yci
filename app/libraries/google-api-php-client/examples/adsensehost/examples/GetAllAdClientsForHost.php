@@ -27,7 +27,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Silvano Luciani <silvano.luciani@gmail.com>
  */
 class GetAllAdClientsForHost extends BaseExample {
-  public function render() {
+  public function render(){
     $optParams['maxResults'] = MAX_PAGE_SIZE;
     $listClass = 'clients';
     printListHeader($listClass);
@@ -37,8 +37,8 @@ class GetAllAdClientsForHost extends BaseExample {
       // Retrieve ad client list, and display it.
       $result = $this->adSenseHostService->adclients->listAdclients($optParams);
       $adClients = $result['items'];
-      if (isset($adClients)) {
-        foreach ($adClients as $adClient) {
+      if (isset($adClients)){
+        foreach ($adClients as $adClient){
           $content = array();
           $mainFormat = 'Ad client for product "%s" with ID "%s" was found.';
           $content[] = sprintf(

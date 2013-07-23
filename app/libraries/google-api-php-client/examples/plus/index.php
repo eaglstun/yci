@@ -29,21 +29,21 @@ $client->setApplicationName("Google+ PHP Starter Application");
 // $client->setDeveloperKey('insert_your_developer_key');
 $plus = new Google_PlusService($client);
 
-if (isset($_REQUEST['logout'])) {
+if (isset($_REQUEST['logout'])){
   unset($_SESSION['access_token']);
 }
 
-if (isset($_GET['code'])) {
+if (isset($_GET['code'])){
   $client->authenticate($_GET['code']);
   $_SESSION['access_token'] = $client->getAccessToken();
   header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
 }
 
-if (isset($_SESSION['access_token'])) {
+if (isset($_SESSION['access_token'])){
   $client->setAccessToken($_SESSION['access_token']);
 }
 
-if ($client->getAccessToken()) {
+if ($client->getAccessToken()){
   $me = $plus->people->get('me');
 
   // These fields are currently filtered through the PHP sanitize filters.
@@ -56,7 +56,7 @@ if ($client->getAccessToken()) {
   $optParams = array('maxResults' => 100);
   $activities = $plus->activities->listActivities('me', 'public', $optParams);
   $activityMarkup = '';
-  foreach($activities['items'] as $activity) {
+  foreach($activities['items'] as $activity){
     // These fields are currently filtered through the PHP sanitize filters.
     // See http://www.php.net/manual/en/filter.filters.sanitize.php
     $url = filter_var($activity['url'], FILTER_VALIDATE_URL);
@@ -90,7 +90,7 @@ if ($client->getAccessToken()) {
 <?php endif ?>
 
 <?php
-  if(isset($authUrl)) {
+  if(isset($authUrl)){
     print "<a class='login' href='$authUrl'>Connect Me!</a>";
   } else {
    print "<a class='logout' href='?logout'>Logout</a>";

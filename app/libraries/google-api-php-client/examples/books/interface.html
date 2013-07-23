@@ -21,7 +21,7 @@
   <script type="text/javascript" src="http://www.google.com/jsapi">
   </script>
   <script type="text/javascript">
-    function load_viewport(identifier, viewport_div_id) {
+    function load_viewport(identifier, viewport_div_id){
       var viewport_div = document.getElementById(viewport_div_id);
       var rightpane_div = viewport_div.parentNode;
       rightpane_div.style.display = 'table-cell';
@@ -31,10 +31,10 @@
       viewer.load(identifier, handle_not_found);
     }
 
-    function on_load() {
+    function on_load(){
     }
 
-    function handle_not_found() {
+    function handle_not_found(){
       var viewport_div = document.getElementById(viewport_div_id);
       viewport_div.parentNode.style.display = 'none';
     }

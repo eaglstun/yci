@@ -33,7 +33,7 @@ require_once __DIR__ . "/../BaseExample.php";
  */
 
 class GenerateReportWithPaging extends BaseExample {
-  public function render() {
+  public function render(){
     $startDate = $this->getSixMonthsBeforeNow();
     $endDate = $this->getNow();
     $optParams = array(
@@ -56,18 +56,18 @@ class GenerateReportWithPaging extends BaseExample {
       $report = $this->adSenseService->reports
           ->generate($startDate, $endDate, $optParams);
 
-      if ($report['totalMatchedRows'] > AD_ROW_LIMIT) {
+      if ($report['totalMatchedRows'] > AD_ROW_LIMIT){
         printPaginationError();
         break;
       } else {
-        if ($startIndex == 0) {
+        if ($startIndex == 0){
           printReportTableHeader($report['headers']);
-          if ($report['totalMatchedRows'] == 0) {
-            printNoResultForTable(count($report['headers']));
+          if ($report['totalMatchedRows'] == 0){
+            printNoResultForTable(count($report['headers']) );
             break;
           }
         }
-        if (isset($report['rows'])) {
+        if (isset($report['rows'])){
           printReportTableRows($report['rows']);
           $startIndex += count($report['rows']);
         }

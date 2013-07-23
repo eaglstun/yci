@@ -24,7 +24,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Silvano Luciani <silvano.luciani@gmail.com>
  */
 class GenerateGeoChart extends BaseExample {
-  public function render() {
+  public function render(){
     $startDate = $this->getSixMonthsBeforeNow();
     $endDate = $this->getNow();
     $optParams = array(
@@ -37,7 +37,7 @@ class GenerateGeoChart extends BaseExample {
         ->generate($startDate, $endDate, $optParams);
     $data = $report['rows'];
     // We need to convert the metrics to numeric values for the chart.
-    foreach ($data as &$row) {
+    foreach ($data as &$row){
       $row[1] = (int)$row[1];
     }
     $data = json_encode($data);
@@ -46,7 +46,7 @@ class GenerateGeoChart extends BaseExample {
       array('number', 'Page views'),
     );
     $type = 'GeoChart';
-    $options = json_encode(array());
+    $options = json_encode(array() );
     print generateChartHtml($data, $columns, $type, $options);
   }
 }

@@ -25,24 +25,24 @@ class Google_BatchRequest {
   /** @var array service requests to be executed. */
   private $requests = array();
 
-  public function __construct($boundary = false) {
+  public function __construct($boundary = false){
     $boundary = (false == $boundary) ? mt_rand() : $boundary;
     $this->boundary = str_replace('"', '', $boundary);
   }
 
-  public function add(Google_HttpRequest $request, $key = false) {
-    if (false == $key) {
+  public function add(Google_HttpRequest $request, $key = false){
+    if (false == $key){
       $key = mt_rand();
     }
 
     $this->requests[$key] = $request;
   }
 
-  public function execute() {
+  public function execute(){
     $body = '';
 
     /** @var Google_HttpRequest $req */
-    foreach($this->requests as $key => $req) {
+    foreach($this->requests as $key => $req){
       $body .= "--{$this->boundary}\n";
       $body .= $req->toBatchString($key) . "\n";
     }
@@ -54,7 +54,7 @@ class Google_BatchRequest {
     $url = $apiConfig['basePath'] . '/batch';
     $httpRequest = new Google_HttpRequest($url, 'POST');
     $httpRequest->setRequestHeaders(array(
-        'Content-Type' => 'multipart/mixed; boundary=' . $this->boundary));
+        'Content-Type' => 'multipart/mixed; boundary=' . $this->boundary) );
 
     $httpRequest->setPostBody($body);
     $response = Google_Client::$io->makeRequest($httpRequest);
@@ -63,30 +63,30 @@ class Google_BatchRequest {
     return $response;
   }
 
-  public function parseResponse(Google_HttpRequest $response) {
+  public function parseResponse(Google_HttpRequest $response){
     $contentType = $response->getResponseHeader('content-type');
     $contentType = explode(';', $contentType);
     $boundary = false;
-    foreach($contentType as $part) {
-      $part = (explode('=', $part, 2));
-      if (isset($part[0]) && 'boundary' == trim($part[0])) {
+    foreach($contentType as $part){
+      $part = (explode('=', $part, 2) );
+      if (isset($part[0]) && 'boundary' == trim($part[0])){
         $boundary = $part[1];
       }
     }
 
     $body = $response->getResponseBody();
-    if ($body) {
+    if ($body){
       $body = str_replace("--$boundary--", "--$boundary", $body);
       $parts = explode("--$boundary", $body);
       $responses = array();
 
-      foreach($parts as $part) {
+      foreach($parts as $part){
         $part = trim($part);
-        if (!empty($part)) {
+        if (!empty($part)){
           list($metaHeaders, $part) = explode("\r\n\r\n", $part, 2);
           $metaHeaders = Google_CurlIO::parseResponseHeaders($metaHeaders);
 
-          $status = substr($part, 0, strpos($part, "\n"));
+          $status = substr($part, 0, strpos($part, "\n") );
           $status = explode(" ", $status);
           $status = $status[1];
 

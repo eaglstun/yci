@@ -19,12 +19,12 @@ require_once '../src/contrib/Google_PagespeedonlineService.php';
 
 class PageSpeedTest extends BaseTest {
   public $service;
-  public function __construct() {
+  public function __construct(){
     parent::__construct();
     $this->service = new Google_PagespeedonlineService(BaseTest::$client);
   }
 
-  public function testPageSpeed() {
+  public function testPageSpeed(){
     $psapi = $this->service->pagespeedapi;
     $result = $psapi->runpagespeed('http://code.google.com');
     $this->assertArrayHasKey('kind', $result);

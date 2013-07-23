@@ -32,7 +32,7 @@ class GetCreative extends BaseExample {
    * @see BaseExample::getInputParameters()
    * @return array
    */
-  protected function getInputParameters() {
+  protected function getInputParameters(){
     return array(array('name' => 'account_id',
                        'display' => 'Account id',
                        'required' => true),
@@ -41,14 +41,14 @@ class GetCreative extends BaseExample {
                        'required' => true),
                  array('name' => 'buyer_creative_id',
                        'display' => 'Buyer creative id',
-                       'required' => true));
+                       'required' => true) );
   }
 
   /**
    * (non-PHPdoc)
    * @see BaseExample::run()
    */
-  public function run() {
+  public function run(){
     $values = $this->formValues;
 
     try {
@@ -56,8 +56,8 @@ class GetCreative extends BaseExample {
           $values['buyer_creative_id'], $values['ad_group_id']);
       print '<h2>Found creative</h2>';
       $this->printResult($creative);
-    } catch (Google_Exception $ex) {
-      if ($ex->getCode() == 404 || $ex->getCode() == 403) {
+    } catch (Google_Exception $ex){
+      if ($ex->getCode() == 404 || $ex->getCode() == 403){
         print '<h1>Creative not found or can\'t access creative</h1>';
       } else {
         throw $ex;
@@ -70,7 +70,7 @@ class GetCreative extends BaseExample {
    * @see BaseExample::getName()
    * @return string
    */
-  public function getName() {
+  public function getName(){
     return 'Get Creative';
   }
 }

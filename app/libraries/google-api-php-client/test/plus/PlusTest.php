@@ -18,7 +18,7 @@
 require_once '../src/contrib/Google_PlusService.php';
 
 class AllPlusTests extends PHPUnit_Framework_TestSuite {
-  public static function suite() {
+  public static function suite(){
     $suite = new PHPUnit_Framework_TestSuite();
     $suite->setName('Google Plus API tests');
     $suite->addTestSuite('PlusTest');
@@ -29,12 +29,12 @@ class AllPlusTests extends PHPUnit_Framework_TestSuite {
 class PlusTest extends BaseTest {
   /** @var Google_PlusService */
   public $plus;
-  public function __construct() {
+  public function __construct(){
     parent::__construct();
     $this->plus = new Google_PlusService(BaseTest::$client);
   }
 
-  public function testGetPerson() {
+  public function testGetPerson(){
     $person = $this->plus->people->get("118051310819094153327");
     $this->assertArrayHasKey('kind', $person);
     $this->assertArrayHasKey('displayName', $person);
@@ -44,7 +44,7 @@ class PlusTest extends BaseTest {
     $this->assertArrayHasKey('organizations', $person);
   }
 
-  public function testListActivities() {
+  public function testListActivities(){
     $activities = $this->plus->activities
         ->listActivities("118051310819094153327", "public");
     

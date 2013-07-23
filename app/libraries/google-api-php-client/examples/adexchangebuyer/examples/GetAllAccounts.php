@@ -30,11 +30,11 @@ class GetAllAccounts extends BaseExample {
    * (non-PHPdoc)
    * @see BaseExample::run()
    */
-  public function run() {
+  public function run(){
     $result = $this->service->accounts->listAccounts();
 
     print '<h2>Listing of user associated accounts</h2>';
-    foreach ($result['items'] as $account) {
+    foreach ($result['items'] as $account){
       $this->printResult($account);
     }
   }
@@ -44,7 +44,7 @@ class GetAllAccounts extends BaseExample {
    * @see BaseExample::getName()
    * @return string
    */
-  public function getName() {
+  public function getName(){
     return 'Get All Accounts';
   }
 }

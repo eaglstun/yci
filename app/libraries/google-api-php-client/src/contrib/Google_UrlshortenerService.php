@@ -33,11 +33,11 @@
      * @opt_param string projection Additional information to return.
      * @return Google_Url
      */
-    public function get($shortUrl, $optParams = array()) {
+    public function get($shortUrl, $optParams = array()){
       $params = array('shortUrl' => $shortUrl);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('get', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('get', array($params) );
+      if ($this->useObjects()){
         return new Google_Url($data);
       } else {
         return $data;
@@ -50,11 +50,11 @@
      * @param array $optParams Optional parameters.
      * @return Google_Url
      */
-    public function insert(Google_Url $postBody, $optParams = array()) {
+    public function insert(Google_Url $postBody, $optParams = array()){
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('insert', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('insert', array($params) );
+      if ($this->useObjects()){
         return new Google_Url($data);
       } else {
         return $data;
@@ -69,11 +69,11 @@
      * @opt_param string start-token Token for requesting successive pages of results.
      * @return Google_UrlHistory
      */
-    public function listUrl($optParams = array()) {
+    public function listUrl($optParams = array()){
       $params = array();
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_UrlHistory($data);
       } else {
         return $data;
@@ -102,13 +102,13 @@ class Google_UrlshortenerService extends Google_Service {
    *
    * @param Google_Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Google_Client $client){
     $this->servicePath = 'urlshortener/v1/';
     $this->version = 'v1';
     $this->serviceName = 'urlshortener';
 
     $client->addService($this->serviceName, $this->version);
-    $this->url = new Google_UrlServiceResource($this, $this->serviceName, 'url', json_decode('{"methods": {"get": {"id": "urlshortener.url.get", "path": "url", "httpMethod": "GET", "parameters": {"projection": {"type": "string", "enum": ["ANALYTICS_CLICKS", "ANALYTICS_TOP_STRINGS", "FULL"], "location": "query"}, "shortUrl": {"type": "string", "required": true, "location": "query"}}, "response": {"$ref": "Url"}}, "insert": {"id": "urlshortener.url.insert", "path": "url", "httpMethod": "POST", "request": {"$ref": "Url"}, "response": {"$ref": "Url"}, "scopes": ["https://www.googleapis.com/auth/urlshortener"]}, "list": {"id": "urlshortener.url.list", "path": "url/history", "httpMethod": "GET", "parameters": {"projection": {"type": "string", "enum": ["ANALYTICS_CLICKS", "FULL"], "location": "query"}, "start-token": {"type": "string", "location": "query"}}, "response": {"$ref": "UrlHistory"}, "scopes": ["https://www.googleapis.com/auth/urlshortener"]}}}', true));
+    $this->url = new Google_UrlServiceResource($this, $this->serviceName, 'url', json_decode('{"methods": {"get": {"id": "urlshortener.url.get", "path": "url", "httpMethod": "GET", "parameters": {"projection": {"type": "string", "enum": ["ANALYTICS_CLICKS", "ANALYTICS_TOP_STRINGS", "FULL"], "location": "query"}, "shortUrl": {"type": "string", "required": true, "location": "query"}}, "response": {"$ref": "Url"}}, "insert": {"id": "urlshortener.url.insert", "path": "url", "httpMethod": "POST", "request": {"$ref": "Url"}, "response": {"$ref": "Url"}, "scopes": ["https://www.googleapis.com/auth/urlshortener"]}, "list": {"id": "urlshortener.url.list", "path": "url/history", "httpMethod": "GET", "parameters": {"projection": {"type": "string", "enum": ["ANALYTICS_CLICKS", "FULL"], "location": "query"}, "start-token": {"type": "string", "location": "query"}}, "response": {"$ref": "UrlHistory"}, "scopes": ["https://www.googleapis.com/auth/urlshortener"]}}}', true) );
 
   }
 }
@@ -130,44 +130,44 @@ class Google_AnalyticsSnapshot extends Google_Model {
   protected $__referrersDataType = 'array';
   public $referrers;
   public $shortUrlClicks;
-  public function setBrowsers(/* array(Google_StringCount) */ $browsers) {
+  public function setBrowsers(/* array(Google_StringCount) */ $browsers){
     $this->assertIsArray($browsers, 'Google_StringCount', __METHOD__);
     $this->browsers = $browsers;
   }
-  public function getBrowsers() {
+  public function getBrowsers(){
     return $this->browsers;
   }
-  public function setCountries(/* array(Google_StringCount) */ $countries) {
+  public function setCountries(/* array(Google_StringCount) */ $countries){
     $this->assertIsArray($countries, 'Google_StringCount', __METHOD__);
     $this->countries = $countries;
   }
-  public function getCountries() {
+  public function getCountries(){
     return $this->countries;
   }
-  public function setLongUrlClicks( $longUrlClicks) {
+  public function setLongUrlClicks( $longUrlClicks){
     $this->longUrlClicks = $longUrlClicks;
   }
-  public function getLongUrlClicks() {
+  public function getLongUrlClicks(){
     return $this->longUrlClicks;
   }
-  public function setPlatforms(/* array(Google_StringCount) */ $platforms) {
+  public function setPlatforms(/* array(Google_StringCount) */ $platforms){
     $this->assertIsArray($platforms, 'Google_StringCount', __METHOD__);
     $this->platforms = $platforms;
   }
-  public function getPlatforms() {
+  public function getPlatforms(){
     return $this->platforms;
   }
-  public function setReferrers(/* array(Google_StringCount) */ $referrers) {
+  public function setReferrers(/* array(Google_StringCount) */ $referrers){
     $this->assertIsArray($referrers, 'Google_StringCount', __METHOD__);
     $this->referrers = $referrers;
   }
-  public function getReferrers() {
+  public function getReferrers(){
     return $this->referrers;
   }
-  public function setShortUrlClicks( $shortUrlClicks) {
+  public function setShortUrlClicks( $shortUrlClicks){
     $this->shortUrlClicks = $shortUrlClicks;
   }
-  public function getShortUrlClicks() {
+  public function getShortUrlClicks(){
     return $this->shortUrlClicks;
   }
 }
@@ -188,34 +188,34 @@ class Google_AnalyticsSummary extends Google_Model {
   protected $__weekType = 'Google_AnalyticsSnapshot';
   protected $__weekDataType = '';
   public $week;
-  public function setAllTime(Google_AnalyticsSnapshot $allTime) {
+  public function setAllTime(Google_AnalyticsSnapshot $allTime){
     $this->allTime = $allTime;
   }
-  public function getAllTime() {
+  public function getAllTime(){
     return $this->allTime;
   }
-  public function setDay(Google_AnalyticsSnapshot $day) {
+  public function setDay(Google_AnalyticsSnapshot $day){
     $this->day = $day;
   }
-  public function getDay() {
+  public function getDay(){
     return $this->day;
   }
-  public function setMonth(Google_AnalyticsSnapshot $month) {
+  public function setMonth(Google_AnalyticsSnapshot $month){
     $this->month = $month;
   }
-  public function getMonth() {
+  public function getMonth(){
     return $this->month;
   }
-  public function setTwoHours(Google_AnalyticsSnapshot $twoHours) {
+  public function setTwoHours(Google_AnalyticsSnapshot $twoHours){
     $this->twoHours = $twoHours;
   }
-  public function getTwoHours() {
+  public function getTwoHours(){
     return $this->twoHours;
   }
-  public function setWeek(Google_AnalyticsSnapshot $week) {
+  public function setWeek(Google_AnalyticsSnapshot $week){
     $this->week = $week;
   }
-  public function getWeek() {
+  public function getWeek(){
     return $this->week;
   }
 }
@@ -223,16 +223,16 @@ class Google_AnalyticsSummary extends Google_Model {
 class Google_StringCount extends Google_Model {
   public $count;
   public $id;
-  public function setCount( $count) {
+  public function setCount( $count){
     $this->count = $count;
   }
-  public function getCount() {
+  public function getCount(){
     return $this->count;
   }
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
 }
@@ -246,40 +246,40 @@ class Google_Url extends Google_Model {
   public $kind;
   public $longUrl;
   public $status;
-  public function setAnalytics(Google_AnalyticsSummary $analytics) {
+  public function setAnalytics(Google_AnalyticsSummary $analytics){
     $this->analytics = $analytics;
   }
-  public function getAnalytics() {
+  public function getAnalytics(){
     return $this->analytics;
   }
-  public function setCreated( $created) {
+  public function setCreated( $created){
     $this->created = $created;
   }
-  public function getCreated() {
+  public function getCreated(){
     return $this->created;
   }
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setLongUrl( $longUrl) {
+  public function setLongUrl( $longUrl){
     $this->longUrl = $longUrl;
   }
-  public function getLongUrl() {
+  public function getLongUrl(){
     return $this->longUrl;
   }
-  public function setStatus( $status) {
+  public function setStatus( $status){
     $this->status = $status;
   }
-  public function getStatus() {
+  public function getStatus(){
     return $this->status;
   }
 }
@@ -292,35 +292,35 @@ class Google_UrlHistory extends Google_Model {
   public $kind;
   public $nextPageToken;
   public $totalItems;
-  public function setItems(/* array(Google_Url) */ $items) {
+  public function setItems(/* array(Google_Url) */ $items){
     $this->assertIsArray($items, 'Google_Url', __METHOD__);
     $this->items = $items;
   }
-  public function getItems() {
+  public function getItems(){
     return $this->items;
   }
-  public function setItemsPerPage( $itemsPerPage) {
+  public function setItemsPerPage( $itemsPerPage){
     $this->itemsPerPage = $itemsPerPage;
   }
-  public function getItemsPerPage() {
+  public function getItemsPerPage(){
     return $this->itemsPerPage;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setNextPageToken( $nextPageToken) {
+  public function setNextPageToken( $nextPageToken){
     $this->nextPageToken = $nextPageToken;
   }
-  public function getNextPageToken() {
+  public function getNextPageToken(){
     return $this->nextPageToken;
   }
-  public function setTotalItems( $totalItems) {
+  public function setTotalItems( $totalItems){
     $this->totalItems = $totalItems;
   }
-  public function getTotalItems() {
+  public function getTotalItems(){
     return $this->totalItems;
   }
 }

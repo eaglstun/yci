@@ -41,7 +41,7 @@ abstract class BaseExample {
    * @internal param Google_AdexchangebuyerService $adExchangeBuyerService
    *     an authenticated instance of Google_AdExchangebuyerService.
    */
-  public function __construct(Google_AdexchangebuyerService $service) {
+  public function __construct(Google_AdexchangebuyerService $service){
     $this->service = $service;
   }
 
@@ -54,9 +54,9 @@ abstract class BaseExample {
    * Executes the example, checks if the examples requires parameters and
    * request them before invoking run.
    */
-  public function execute() {
-    if (count($this->getInputParameters())) {
-      if ($this->isSubmitComplete()) {
+  public function execute(){
+    if (count($this->getInputParameters())){
+      if ($this->isSubmitComplete()){
         $this->formValues = $this->getFormValues();
         $this->run();
       } else {
@@ -78,25 +78,25 @@ abstract class BaseExample {
    * To be overridden by examples that require parameters.
    * @return array
    */
-  protected function getInputParameters() {
+  protected function getInputParameters(){
     return array();
   }
 
   /**
    * Renders an input form to capture the example parameters.
    */
-  protected function renderInputForm() {
+  protected function renderInputForm(){
     $parameters = $this->getInputParameters();
-    if (count($parameters)) {
-      printf('<h2>Enter %s parameters</h2>', $this->getName());
+    if (count($parameters)){
+      printf('<h2>Enter %s parameters</h2>', $this->getName() );
       print '<form method="POST"><fieldset>';
-      foreach ($parameters as $parameter) {
+      foreach ($parameters as $parameter){
         $name = $parameter['name'];
         $display = $parameter['display'];
         $currentValue = isset($_POST[$name]) ? $_POST[$name] : '';
         printf('%s: <input name="%s" value="%s">', $display, $name,
             $currentValue);
-        if ($parameter['required']) {
+        if ($parameter['required']){
           print '*';
         }
         print '</br>';
@@ -112,13 +112,13 @@ abstract class BaseExample {
    * set.
    * @return bool
    */
-  protected function isSubmitComplete() {
-    if (!isset($_POST['submit'])) {
+  protected function isSubmitComplete(){
+    if (!isset($_POST['submit'])){
       return false;
     }
-    foreach ($this->getInputParameters() as $parameter) {
+    foreach ($this->getInputParameters() as $parameter){
       if ($parameter['required'] &&
-          empty($_POST[$parameter['name']])) {
+          empty($_POST[$parameter['name']])){
         return false;
       }
     }
@@ -129,10 +129,10 @@ abstract class BaseExample {
    * Retrieves the submitted form values.
    * @return array
    */
-  protected function getFormValues() {
+  protected function getFormValues(){
     $input = array();
-    foreach ($this->getInputParameters() as $parameter) {
-      if (isset($_POST[$parameter['name']])) {
+    foreach ($this->getInputParameters() as $parameter){
+      if (isset($_POST[$parameter['name']])){
         $input[$parameter['name']] = $_POST[$parameter['name']];
       }
     }
@@ -143,7 +143,7 @@ abstract class BaseExample {
    * Prints out the given result object.
    * @param Array $result
    */
-  protected function printResult($result) {
+  protected function printResult($result){
     printf('<pre>');
     print_r($result);
     printf('</pre>');

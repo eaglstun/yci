@@ -27,20 +27,20 @@ $client = new Google_Client();
 // $client->setApplicationName("Tasks_Example_App");
 $tasksService = new Google_TasksService($client);
 
-if (isset($_REQUEST['logout'])) {
+if (isset($_REQUEST['logout'])){
   unset($_SESSION['access_token']);
 }
 
-if (isset($_SESSION['access_token'])) {
+if (isset($_SESSION['access_token'])){
   $client->setAccessToken($_SESSION['access_token']);
 } else {
-  $client->setAccessToken($client->authenticate($_GET['code']));
+  $client->setAccessToken($client->authenticate($_GET['code']) );
   $_SESSION['access_token'] = $client->getAccessToken();
 }
 
-if (isset($_GET['code'])) {
+if (isset($_GET['code'])){
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL) );
 }
 ?>
 <!doctype html>
@@ -56,7 +56,7 @@ if (isset($_GET['code'])) {
   <div id='main'>
 <?php
   $lists = $tasksService->tasklists->listTasklists();
-  foreach ($lists['items'] as $list) {
+  foreach ($lists['items'] as $list){
     print "<h3>{$list['title']}</h3>";
     $tasks = $tasksService->tasks->listTasks($list['id']);
   }

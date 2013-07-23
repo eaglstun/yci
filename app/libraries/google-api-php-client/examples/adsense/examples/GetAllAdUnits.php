@@ -27,7 +27,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Silvano Luciani <silvano.luciani@gmail.com>
  */
 class GetAllAdUnits extends BaseExample {
-  public function render() {
+  public function render(){
     $adClientId = AD_CLIENT_ID;
     $optParams['maxResults'] = AD_MAX_PAGE_SIZE;
     $listClass = 'list';
@@ -38,9 +38,9 @@ class GetAllAdUnits extends BaseExample {
       // Retrieve ad unit list, and display it.
       $result = $this->adSenseService->adunits
           ->listAdunits($adClientId, $optParams);
-      if (isset($result['items'])) {
+      if (isset($result['items'])){
         $adUnits = $result['items'];
-        foreach ($adUnits as $adUnit) {
+        foreach ($adUnits as $adUnit){
           $format =
               'Ad unit with code "%s", name "%s" and status "%s" was found.';
           $content = sprintf(

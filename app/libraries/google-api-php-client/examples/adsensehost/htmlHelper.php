@@ -25,7 +25,7 @@
  * Opens the HTML.
  * @param string $title the title of the page
  */
-function printHtmlHeader($title) {
+function printHtmlHeader($title){
   $htmlTitle = filter_var($title, FILTER_SANITIZE_SPECIAL_CHARS);
   print '<!DOCTYPE html>' . "\n";
   print '<html>' . "\n";
@@ -37,7 +37,7 @@ function printHtmlHeader($title) {
 /**
  * Closes the HTML.
  */
-function printHtmlFooter() {
+function printHtmlFooter(){
   print '</body>' . "\n";
   print '</html>' . "\n";
 }
@@ -46,11 +46,11 @@ function printHtmlFooter() {
  * Opens the table that contains the report data and writes the headers.
  * @param array $headers the headers of the table
  */
-function printReportTableHeader($headers) {
+function printReportTableHeader($headers){
   print '<table id="report">' . "\n";
   print '<thead>' . "\n";
   print '<tr>' . "\n";
-  foreach ($headers as $header) {
+  foreach ($headers as $header){
     print '<th scope="col">' . $header['name'] . '</th>' . "\n";
   }
   print '</tr>' . "\n";
@@ -62,10 +62,10 @@ function printReportTableHeader($headers) {
  * Prints table rows for the data contained in $rows
  * @param array $rows the content of the rows in the table
  */
-function printReportTableRows($rows) {
-  foreach ($rows as $row) {
+function printReportTableRows($rows){
+  foreach ($rows as $row){
     print '<tr class="highlight">' . "\n";
-    foreach ($row as $column) {
+    foreach ($row as $column){
       print '<td>' . $column . '</td>' . "\n";
     }
     print '</tr>' . "\n";
@@ -76,7 +76,7 @@ function printReportTableRows($rows) {
  * No result row for a table
  * @param string $columnsTotal number of columns in the table
  */
-function printNoResultForTable($columnsTotal) {
+function printNoResultForTable($columnsTotal){
   print
       '<tr><td colspan="' . $columnsTotal . '">No result was found</td></tr>';
 }
@@ -84,7 +84,7 @@ function printNoResultForTable($columnsTotal) {
 /**
  * Closes the table that contains the report data.
  */
-function printReportTableFooter() {
+function printReportTableFooter(){
   print '</tbody>' . "\n";
   print '<tfoot></tfoot>' . "\n";
   print '</table>' . "\n";
@@ -94,14 +94,14 @@ function printReportTableFooter() {
  * Opens a list.
  * @param string $list_class CSS class for the list
  */
-function printListHeader($list_class) {
+function printListHeader($list_class){
   print '<ol class="' . $list_class . '">' . "\n";
 }
 
 /**
  * No results line for a list
  */
-function printNoResultForList() {
+function printNoResultForList(){
   print '<li>No results found</li>' . "\n";
 }
 
@@ -109,7 +109,7 @@ function printNoResultForList() {
  * Prints an element of a list
  * @param string $content the content of the element
  */
-function printListElement($content) {
+function printListElement($content){
   print '<li class="highlight">' . $content . '</li>' . "\n";
 }
 
@@ -117,10 +117,10 @@ function printListElement($content) {
  * The lines of the clients have a nested list.
  * @param array $content an array containing the contents
  */
-function printListElementForClients(array $content) {
+function printListElementForClients(array $content){
   print '<li class="highlight">' . $content[0] . "\n";
   print '<ul>' . "\n";
-  for ($i = 1; $i < count($content); $i++) {
+  for ($i = 1; $i < count($content); $i++){
     print '<li>' . $content[$i] . '</li>' . "\n";
   }
   print '</ul>' . "\n";
@@ -130,7 +130,7 @@ function printListElementForClients(array $content) {
 /**
  * Closes the list.
  */
-function printListFooter() {
+function printListFooter(){
   print '</ol>' . "\n";
 }
 
@@ -138,9 +138,9 @@ function printListFooter() {
  * Prints the index with links to the examples.
  * @param array $actions supported actions
  */
-function printIndex($actions) {
+function printIndex($actions){
   print '<ul class="nav">' . "\n";
-  foreach ($actions as $action) {
+  foreach ($actions as $action){
     print '<li><a class="highlight" href=?action=' . $action . '>'
         . actionNameToWords($action) . '</a></li>' . "\n";
   }
@@ -152,6 +152,6 @@ function printIndex($actions) {
  * @param string $actionName the name of the action
  * @return string the transformed string
  */
-function actionNameToWords($actionName) {
+function actionNameToWords($actionName){
   return preg_replace('/([[:lower:]])([[:upper:]])/', '$1 $2', $actionName);
 }

@@ -11,7 +11,7 @@ $htmlBody = <<<END
 </form>
 END;
 
-if ($_GET['q'] && $_GET['maxResults']) {
+if ($_GET['q'] && $_GET['maxResults']){
   // Call set_include_path() as needed to point to your client library.
 require_once 'google-api-php-client/src/Google_Client.php';
 require_once 'google-api-php-client/src/contrib/Google_YouTubeService.php';
@@ -30,14 +30,14 @@ require_once 'google-api-php-client/src/contrib/Google_YouTubeService.php';
     $searchResponse = $youtube->search->listSearch('id,snippet', array(
       'q' => $_GET['q'],
       'maxResults' => $_GET['maxResults'],
-    ));
+    ) );
 
     $videos = '';
     $channels = '';
     $playlists = '';
 
-    foreach ($searchResponse['items'] as $searchResult) {
-      switch ($searchResult['id']['kind']) {
+    foreach ($searchResponse['items'] as $searchResult){
+      switch ($searchResult['id']['kind']){
         case 'youtube#video':
           $videos .= sprintf('<li>%s (%s)</li>', $searchResult['snippet']['title'],
             $searchResult['id']['videoId']);
@@ -61,12 +61,12 @@ require_once 'google-api-php-client/src/contrib/Google_YouTubeService.php';
     <h3>Playlists</h3>
     <ul>$playlists</ul>
 END;
-  } catch (Google_ServiceException $e) {
+  } catch (Google_ServiceException $e){
     $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>',
-      htmlspecialchars($e->getMessage()));
-  } catch (Google_Exception $e) {
+      htmlspecialchars($e->getMessage()) );
+  } catch (Google_Exception $e){
     $htmlBody .= sprintf('<p>An client error occurred: <code>%s</code></p>',
-      htmlspecialchars($e->getMessage()));
+      htmlspecialchars($e->getMessage()) );
   }
 }
 ?>

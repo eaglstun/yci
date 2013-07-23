@@ -31,7 +31,7 @@ define('URL_CHANNEL_ID', 'INSERT_URL_CHANNEL_ID_HERE');
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class DeleteUrlChannelOnHost extends BaseExample {
-  public function render() {
+  public function render(){
     $adClientId = HOST_AD_CLIENT_ID;
     $urlChannelId = URL_CHANNEL_ID;
 

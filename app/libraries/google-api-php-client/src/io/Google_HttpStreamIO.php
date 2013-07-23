@@ -46,7 +46,7 @@ class Google_HttpStreamIO extends Google_IO {
    * @return Google_HttpRequest The resulting HTTP response including the
    * responseHttpCode, responseHeaders and responseBody.
    */
-  public function authenticatedRequest(Google_HttpRequest $request) {
+  public function authenticatedRequest(Google_HttpRequest $request){
     $request = Google_Client::$auth->sign($request);
     return $this->makeRequest($request);
   }
@@ -59,32 +59,32 @@ class Google_HttpStreamIO extends Google_IO {
    * response headers and response body filled in
    * @throws Google_IOException on curl or IO error
    */
-  public function makeRequest(Google_HttpRequest $request) {
+  public function makeRequest(Google_HttpRequest $request){
     // First, check to see if we have a valid cached version.
     $cached = $this->getCachedRequest($request);
-    if ($cached !== false) {
-      if (!$this->checkMustRevaliadateCachedRequest($cached, $request)) {
+    if ($cached !== false){
+      if( !$this->checkMustRevaliadateCachedRequest($cached, $request)){
         return $cached;
       }
     }
 
-    $default_options = stream_context_get_options(stream_context_get_default());
+    $default_options = stream_context_get_options(stream_context_get_default() );
 
     $requestHttpContext = array_key_exists('http', $default_options) ?
         $default_options['http'] : array();
     if (array_key_exists($request->getRequestMethod(),
-          self::$ENTITY_HTTP_METHODS)) {
+          self::$ENTITY_HTTP_METHODS)){
       $request = $this->processEntityRequest($request);
     }
 
-    if ($request->getPostBody()) {
+    if ($request->getPostBody()){
       $requestHttpContext["content"] = $request->getPostBody();
     }
 
     $requestHeaders = $request->getRequestHeaders();
-    if ($requestHeaders && is_array($requestHeaders)) {
+    if ($requestHeaders && is_array($requestHeaders)){
       $headers = "";
-      foreach($requestHeaders as $k => $v) {
+      foreach($requestHeaders as $k => $v){
         $headers .= "$k: $v\n";
       }
       $requestHttpContext["header"] = $headers;
@@ -96,14 +96,14 @@ class Google_HttpStreamIO extends Google_IO {
     $requestSslContext = array_key_exists('ssl', $default_options) ?
         $default_options['ssl'] : array();
 
-    if (!array_key_exists("cafile", $requestSslContext)) {
+    if (!array_key_exists("cafile", $requestSslContext)){
       $requestSslContext["cafile"] = dirname(__FILE__) . '/cacerts.pem';
     }
 
     $options = array("http" => array_merge(self::$DEFAULT_HTTP_CONTEXT,
                                                  $requestHttpContext),
                      "ssl" => array_merge(self::$DEFAULT_SSL_CONTEXT,
-                                          $requestSslContext));
+                                          $requestSslContext) );
 
     $context = stream_context_create($options);
 
@@ -111,14 +111,14 @@ class Google_HttpStreamIO extends Google_IO {
                                        false,
                                        $context);
 
-    if (false === $response_data) {
+    if (false === $response_data){
       throw new Google_IOException("HTTP Error: Unable to connect");
     }
 
     $respHttpCode = $this->getHttpResponseCode($http_response_header);
     $responseHeaders = $this->getHttpResponseHeaders($http_response_header);
 
-    if ($respHttpCode == 304 && $cached) {
+    if ($respHttpCode == 304 && $cached){
       // If the server responded NOT_MODIFIED, return the cached request.
       $this->updateCachedRequest($cached, $responseHeaders);
       return $cached;
@@ -137,15 +137,15 @@ class Google_HttpStreamIO extends Google_IO {
    * Set options that update the transport implementation's behavior.
    * @param $options
    */
-  public function setOptions($options) {
+  public function setOptions($options){
   }
 
-  private function getHttpResponseCode($response_headers) {
+  private function getHttpResponseCode($response_headers){
     $header_count = count($response_headers);
 
-    for ($i = 0; $i < $header_count; $i++) {
+    for ($i = 0; $i < $header_count; $i++){
       $header = $response_headers[$i];
-      if (strncasecmp("HTTP", $header, strlen("HTTP")) == 0) {
+      if (strncasecmp("HTTP", $header, strlen("HTTP")) == 0){
         $response = explode(' ', $header);
         return $response[1];
       }
@@ -153,14 +153,14 @@ class Google_HttpStreamIO extends Google_IO {
     return 'UNKNOWN';
   }
 
-  private function getHttpResponseHeaders($response_headers) {
+  private function getHttpResponseHeaders($response_headers){
     $header_count = count($response_headers);
     $headers = array();
 
-    for ($i = 0; $i < $header_count; $i++) {
+    for ($i = 0; $i < $header_count; $i++){
       $header = $response_headers[$i];
       $header_parts = explode(':', $header);
-      if (count($header_parts) == 2) {
+      if (count($header_parts) == 2){
         $headers[$header_parts[0]] = $header_parts[1];
       }
     }

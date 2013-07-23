@@ -52,19 +52,19 @@ class Google_MediaFileUpload {
    * @param bool $chunkSize File will be uploaded in chunks of this many bytes.
    * only used if resumable=True
    */
-  public function __construct($mimeType, $data, $resumable=false, $chunkSize=false) {
+  public function __construct($mimeType, $data, $resumable=false, $chunkSize=false){
     $this->mimeType = $mimeType;
     $this->data = $data;
     $this->size = strlen($this->data);
     $this->resumable = $resumable;
-    if(!$chunkSize) {
+    if(!$chunkSize){
       $chunkSize = 256 * 1024;
     }
     $this->chunkSize = $chunkSize;
     $this->progress = 0;
   }
 
-  public function setFileSize($size) {
+  public function setFileSize($size){
     $this->size = $size;
   }
 
@@ -74,11 +74,11 @@ class Google_MediaFileUpload {
    * @param $params
    * @return array|bool
    */
-  public static function process($meta, &$params) {
+  public static function process($meta, &$params){
     $payload = array();
     $meta = is_string($meta) ? json_decode($meta, true) : $meta;
     $uploadType = self::getUploadType($meta, $payload, $params);
-    if (!$uploadType) {
+    if( !$uploadType){
       // Process as a normal API request.
       return false;
     }
@@ -95,11 +95,11 @@ class Google_MediaFileUpload {
         : false;
     unset($params['mimeType']);
 
-    if (!$mimeType) {
+    if( !$mimeType){
       $mimeType = $payload['content-type'];
     }
 
-    if (isset($params['file'])) {
+    if (isset($params['file'])){
       // This is a standard file upload with curl.
       $file = $params['file']['value'];
       unset($params['file']);
@@ -111,17 +111,17 @@ class Google_MediaFileUpload {
         : false;
     unset($params['data']);
 
-    if (self::UPLOAD_RESUMABLE_TYPE == $uploadType) {
+    if (self::UPLOAD_RESUMABLE_TYPE == $uploadType){
       $payload['content-type'] = $mimeType;
       $payload['postBody'] = is_string($meta) ? $meta : json_encode($meta);
 
-    } elseif (self::UPLOAD_MEDIA_TYPE == $uploadType) {
+    } elseif (self::UPLOAD_MEDIA_TYPE == $uploadType){
       // This is a simple media upload.
       $payload['content-type'] = $mimeType;
       $payload['postBody'] = $data;
     }
 
-    elseif (self::UPLOAD_MULTIPART_TYPE == $uploadType) {
+    elseif (self::UPLOAD_MULTIPART_TYPE == $uploadType){
       // This is a multipart/related upload.
       $boundary = isset($params['boundary']['value']) ? $params['boundary']['value'] : mt_rand();
       $boundary = str_replace('"', '', $boundary);
@@ -147,15 +147,15 @@ class Google_MediaFileUpload {
    * @return array Includes the processed file name.
    * @visible For testing.
    */
-  public static function processFileUpload($file, $mime) {
-    if (!$file) return array();
-    if (substr($file, 0, 1) != '@') {
+  public static function processFileUpload($file, $mime){
+    if( !$file) return array();
+    if (substr($file, 0, 1) != '@'){
       $file = '@' . $file;
     }
 
     // This is a standard file upload with curl.
-    $params = array('postBody' => array('file' => $file));
-    if ($mime) {
+    $params = array('postBody' => array('file' => $file) );
+    if ($mime){
       $params['content-type'] = $mime;
     }
 
@@ -173,35 +173,35 @@ class Google_MediaFileUpload {
    * @param $params
    * @return bool|string
    */
-  public static function getUploadType($meta, &$payload, &$params) {
+  public static function getUploadType($meta, &$payload, &$params){
     if (isset($params['mediaUpload'])
-        && get_class($params['mediaUpload']['value']) == 'Google_MediaFileUpload') {
+        && get_class($params['mediaUpload']['value']) == 'Google_MediaFileUpload'){
       $upload = $params['mediaUpload']['value'];
       unset($params['mediaUpload']);
       $payload['content-type'] = $upload->mimeType;
-      if (isset($upload->resumable) && $upload->resumable) {
+      if (isset($upload->resumable) && $upload->resumable){
         return self::UPLOAD_RESUMABLE_TYPE;
       }
     }
 
     // Allow the developer to override the upload type.
-    if (isset($params['uploadType'])) {
+    if (isset($params['uploadType'])){
       return $params['uploadType']['value'];
     }
 
     $data = isset($params['data']['value'])
         ? $params['data']['value'] : false;
 
-    if (false == $data && false == isset($params['file'])) {
+    if (false == $data && false == isset($params['file'])){
       // No upload data available.
       return false;
     }
 
-    if (isset($params['file'])) {
+    if (isset($params['file'])){
       return self::UPLOAD_MEDIA_TYPE;
     }
 
-    if (false == $meta) {
+    if (false == $meta){
       return self::UPLOAD_MEDIA_TYPE;
     }
 
@@ -209,12 +209,12 @@ class Google_MediaFileUpload {
   }
 
 
-  public function nextChunk(Google_HttpRequest $req, $chunk=false) {
-    if (false == $this->resumeUri) {
+  public function nextChunk(Google_HttpRequest $req, $chunk=false){
+    if (false == $this->resumeUri){
       $this->resumeUri = $this->getResumeUri($req);
     }
 
-    if (false == $chunk) {
+    if (false == $chunk){
       $chunk = substr($this->data, $this->progress, $this->chunkSize);
     }
 
@@ -229,8 +229,8 @@ class Google_MediaFileUpload {
     $httpRequest = new Google_HttpRequest($this->resumeUri, 'PUT', $headers, $chunk);
     $response = Google_Client::$io->authenticatedRequest($httpRequest);
     $code = $response->getResponseHttpCode();
-    if (308 == $code) {
-      $range = explode('-', $response->getResponseHeader('range'));
+    if (308 == $code){
+      $range = explode('-', $response->getResponseHeader('range') );
       $this->progress = $range[1] + 1;
       return false;
     } else {
@@ -238,23 +238,23 @@ class Google_MediaFileUpload {
     }
   }
 
-  private function getResumeUri(Google_HttpRequest $httpRequest) {
+  private function getResumeUri(Google_HttpRequest $httpRequest){
     $result = null;
     $body = $httpRequest->getPostBody();
-    if ($body) {
+    if ($body){
       $httpRequest->setRequestHeaders(array(
         'content-type' => 'application/json; charset=UTF-8',
         'content-length' => Google_Utils::getStrLen($body),
         'x-upload-content-type' => $this->mimeType,
         'x-upload-content-length' => $this->size,
         'expect' => '',
-      ));
+      ) );
     }
 
     $response = Google_Client::$io->makeRequest($httpRequest);
     $location = $response->getResponseHeader('location');
     $code = $response->getResponseHttpCode();
-    if (200 == $code && true == $location) {
+    if (200 == $code && true == $location){
       return $location;
     }
     throw new Google_Exception("Failed to start the resumable upload");

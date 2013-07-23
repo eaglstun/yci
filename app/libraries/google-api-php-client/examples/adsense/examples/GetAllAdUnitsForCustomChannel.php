@@ -27,7 +27,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Silvano Luciani <silvano.luciani@gmail.com>
  */
 class GetAllAdUnitsForCustomChannel extends BaseExample {
-  public function render() {
+  public function render(){
     $adClientId = AD_CLIENT_ID;
     $accountId = ACCOUNT_ID;
     $customChannelId = CUSTOM_CHANNEL_ID;
@@ -42,8 +42,8 @@ class GetAllAdUnitsForCustomChannel extends BaseExample {
           ->listAccountsCustomchannelsAdunits(
               $accountId, $adClientId, $customChannelId);
       $adUnits = $result['items'];
-      if (isset($adUnits)) {
-        foreach ($adUnits as $adUnit) {
+      if (isset($adUnits)){
+        foreach ($adUnits as $adUnit){
           $format =
               'Ad unit with code "%s", name "%s" and status "%s" was found.';
           $content = sprintf(

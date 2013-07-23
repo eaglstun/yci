@@ -32,7 +32,7 @@ define('PUBLISHER_AD_UNIT_ID', 'INSERT_AD_UNIT_ID_HERE');
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class DeleteAdUnitOnPublisher extends BaseExample {
-  public function render() {
+  public function render(){
     $accountId = PUBLISHER_ACCOUNT_ID;
     $adClientId = PUBLISHER_AD_CLIENT_ID;
     $adUnitId = PUBLISHER_AD_UNIT_ID;

@@ -30,27 +30,27 @@ $client->setApplicationName("Google Prediction API PHP Starter Application");
 // $client->setClientSecret('insert_your_oauth2_client_secret');
 // $client->setRedirectUri('insert_your_oauth2_redirect_uri');
 // $client->setDeveloperKey('insert_your_developer_key');
-$client->setScopes(array('https://www.googleapis.com/auth/prediction'));
+$client->setScopes(array('https://www.googleapis.com/auth/prediction') );
 
 $predictionService = new Google_PredictionService($client);
 $trainedmodels = $predictionService->trainedmodels;
 
-if (isset($_REQUEST['logout'])) {
+if (isset($_REQUEST['logout'])){
   unset($_SESSION['access_token']);
 }
 
-if (isset($_GET['code'])) {
+if (isset($_GET['code'])){
   $client->authenticate();
   $_SESSION['access_token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL) );
 }
 
-if (isset($_SESSION['access_token'])) {
+if (isset($_SESSION['access_token'])){
   $client->setAccessToken($_SESSION['access_token']);
 }
 
-if ($client->getAccessToken()) {
+if ($client->getAccessToken()){
   $status = "Logged In";
 } else {
   $status = "Logged Out";
@@ -71,7 +71,7 @@ if ($client->getAccessToken()) {
 <!--<div>Status: <?php print $status?></div>-->
 
 <?php
-  if(isset($authUrl)) {
+  if(isset($authUrl)){
     print "<a class='login' href='$authUrl'>Login</a>";
     $result = "";
     print("</div>");
@@ -81,7 +81,7 @@ if ($client->getAccessToken()) {
     $id = "languages";
     $predictionText = "Je suis fatigue";
     $predictionData = new Google_InputInput();
-    $predictionData->setCsvInstance(array($predictionText));
+    $predictionData->setCsvInstance(array($predictionText) );
     $input = new Google_Input();
     $input->setInput($predictionData);
     $result = $predictionService->trainedmodels->predict($id, $input);

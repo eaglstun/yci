@@ -31,7 +31,7 @@ class Google_REST {
    * @throws Google_ServiceException on server side error (ie: not authenticated,
    *  invalid or malformed post body, invalid url)
    */
-  static public function execute(Google_HttpRequest $req) {
+  static public function execute(Google_HttpRequest $req){
     $httpRequest = Google_Client::$io->makeRequest($req);
     $decodedResponse = self::decodeHttpResponse($httpRequest);
     $ret = isset($decodedResponse['data'])
@@ -47,18 +47,18 @@ class Google_REST {
    * @param Google_HttpRequest $response The http response to be decoded.
    * @return mixed|null
    */
-  public static function decodeHttpResponse($response) {
+  public static function decodeHttpResponse($response){
     $code = $response->getResponseHttpCode();
     $body = $response->getResponseBody();
     $decoded = null;
     
-    if ((intVal($code)) >= 300) {
+    if ((intVal($code)) >= 300){
       $decoded = json_decode($body, true);
       $err = 'Error calling ' . $response->getRequestMethod() . ' ' . $response->getUrl();
-      if ($decoded != null && isset($decoded['error']['message'])  && isset($decoded['error']['code'])) {
+      if ($decoded != null && isset($decoded['error']['message'])  && isset($decoded['error']['code'])){
         // if we're getting a json encoded error definition, use that instead of the raw response
         // body for improved readability
-        $err .= ": ({$decoded['error']['code']}) {$decoded['error']['message']}";
+        $err .= ": ({$decoded['error']['code']}){$decoded['error']['message']}";
       } else {
         $err .= ": ($code) $body";
       }
@@ -67,9 +67,9 @@ class Google_REST {
     }
     
     // Only attempt to decode the response, if the response code wasn't (204) 'no content'
-    if ($code != '204') {
+    if ($code != '204'){
       $decoded = json_decode($body, true);
-      if ($decoded === null || $decoded === "") {
+      if ($decoded === null || $decoded === ""){
         throw new Google_ServiceException("Invalid json in service response: $body");
       }
     }
@@ -85,24 +85,24 @@ class Google_REST {
    * @param array $params
    * @return string $requestUrl
    */
-  static function createRequestUri($servicePath, $restPath, $params) {
+  static function createRequestUri($servicePath, $restPath, $params){
     $requestUrl = $servicePath . $restPath;
     $uriTemplateVars = array();
     $queryVars = array();
-    foreach ($params as $paramName => $paramSpec) {
+    foreach ($params as $paramName => $paramSpec){
       // Discovery v1.0 puts the canonical location under the 'location' field.
-      if (! isset($paramSpec['location'])) {
+      if (! isset($paramSpec['location'])){
         $paramSpec['location'] = $paramSpec['restParameterType'];
       }
 
-      if ($paramSpec['type'] == 'boolean') {
+      if ($paramSpec['type'] == 'boolean'){
         $paramSpec['value'] = ($paramSpec['value']) ? 'true' : 'false';
       }
-      if ($paramSpec['location'] == 'path') {
+      if ($paramSpec['location'] == 'path'){
         $uriTemplateVars[$paramName] = $paramSpec['value'];
       } else {
-        if (isset($paramSpec['repeated']) && is_array($paramSpec['value'])) {
-          foreach ($paramSpec['value'] as $value) {
+        if (isset($paramSpec['repeated']) && is_array($paramSpec['value'])){
+          foreach ($paramSpec['value'] as $value){
             $queryVars[] = $paramName . '=' . rawurlencode($value);
           }
         } else {
@@ -111,7 +111,7 @@ class Google_REST {
       }
     }
 
-    if (count($uriTemplateVars)) {
+    if (count($uriTemplateVars)){
       $uriTemplateParser = new URI_Template_Parser($requestUrl);
       $requestUrl = $uriTemplateParser->expand($uriTemplateVars);
     }
@@ -119,7 +119,7 @@ class Google_REST {
     // the @'s & confuses our servers.
     $requestUrl = str_replace('%40', '@', $requestUrl);
 
-    if (count($queryVars)) {
+    if (count($queryVars)){
       $requestUrl .= '?' . implode($queryVars, '&');
     }
 

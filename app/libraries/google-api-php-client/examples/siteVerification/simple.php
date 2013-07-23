@@ -14,22 +14,22 @@ $client->setApplicationName("Google Site Verification PHP Sample");
 // $client->setDeveloperKey('insert_your_developer_key');
 $service = new Google_SiteVerificationService($client);
 
-if (isset($_GET['logout'])) {
+if (isset($_GET['logout'])){
   unset($_SESSION['token']);
 }
 
-if (isset($_GET['code'])) {
+if (isset($_GET['code'])){
   $client->authenticate();
   $_SESSION['token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL) );
 }
 
-if (isset($_SESSION['token'])) {
+if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->getAccessToken()) {
+if ($client->getAccessToken()){
   $resources = $service->webResource->listWebResource();
   print '<pre>' . print_r($resources, true) . '</pre>';
 

@@ -50,7 +50,7 @@ class Google_AssertionCredentials {
       $privateKey,
       $privateKeyPassword = 'notasecret',
       $assertionType = 'http://oauth.net/grant_type/jwt/1.0/bearer',
-      $sub = false) {
+      $sub = false){
     $this->serviceAccountName = $serviceAccountName;
     $this->scopes = is_string($scopes) ? $scopes : implode(' ', $scopes);
     $this->privateKey = $privateKey;
@@ -60,7 +60,7 @@ class Google_AssertionCredentials {
     $this->prn = $sub;
   }
 
-  public function generateAssertion() {
+  public function generateAssertion(){
     $now = time();
 
     $jwtParams = array(
@@ -71,9 +71,9 @@ class Google_AssertionCredentials {
           'iss' => $this->serviceAccountName,
     );
 
-    if ($this->sub !== false) {
+    if ($this->sub !== false){
       $jwtParams['sub'] = $this->sub;
-    } else if ($this->prn !== false) {
+    } else if ($this->prn !== false){
       $jwtParams['prn'] = $this->prn;
     }
 
@@ -85,7 +85,7 @@ class Google_AssertionCredentials {
    * @param array $payload
    * @return string The signed JWT.
    */
-  private function makeSignedJwt($payload) {
+  private function makeSignedJwt($payload){
     $header = array('typ' => 'JWT', 'alg' => 'RS256');
 
     $segments = array(

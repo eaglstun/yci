@@ -26,6 +26,6 @@ $results = $service->products->listProducts($source, array(
   "country" => "US",
   "q" => $query,
   "rankBy" => $ranking,
-));
+) );
 
 print "<h1>Shopping Results</h1><pre>" . print_r($results, true) . "</pre>";

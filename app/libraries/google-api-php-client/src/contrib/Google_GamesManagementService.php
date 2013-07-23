@@ -32,11 +32,11 @@
      * @param array $optParams Optional parameters.
      * @return Google_AchievementResetResponse
      */
-    public function reset($achievementId, $optParams = array()) {
+    public function reset($achievementId, $optParams = array()){
       $params = array('achievementId' => $achievementId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('reset', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('reset', array($params) );
+      if ($this->useObjects()){
         return new Google_AchievementResetResponse($data);
       } else {
         return $data;
@@ -49,11 +49,11 @@
      * @param array $optParams Optional parameters.
      * @return Google_AchievementResetAllResponse
      */
-    public function resetAll($optParams = array()) {
+    public function resetAll($optParams = array()){
       $params = array();
       $params = array_merge($params, $optParams);
-      $data = $this->__call('resetAll', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('resetAll', array($params) );
+      if ($this->useObjects()){
         return new Google_AchievementResetAllResponse($data);
       } else {
         return $data;
@@ -82,11 +82,11 @@
      * @opt_param string pageToken The token returned by the previous request.
      * @return Google_HiddenPlayerList
      */
-    public function listHidden($applicationId, $optParams = array()) {
+    public function listHidden($applicationId, $optParams = array()){
       $params = array('applicationId' => $applicationId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('listHidden', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('listHidden', array($params) );
+      if ($this->useObjects()){
         return new Google_HiddenPlayerList($data);
       } else {
         return $data;
@@ -112,10 +112,10 @@
      * @param string $playerId A player ID. A value of me may be used in place of the authenticated player's ID.
      * @param array $optParams Optional parameters.
      */
-    public function hide($applicationId, $playerId, $optParams = array()) {
+    public function hide($applicationId, $playerId, $optParams = array()){
       $params = array('applicationId' => $applicationId, 'playerId' => $playerId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('hide', array($params));
+      $data = $this->__call('hide', array($params) );
       return $data;
     }
     /**
@@ -126,10 +126,10 @@
      * @param string $playerId A player ID. A value of me may be used in place of the authenticated player's ID.
      * @param array $optParams Optional parameters.
      */
-    public function unhide($applicationId, $playerId, $optParams = array()) {
+    public function unhide($applicationId, $playerId, $optParams = array()){
       $params = array('applicationId' => $applicationId, 'playerId' => $playerId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('unhide', array($params));
+      $data = $this->__call('unhide', array($params) );
       return $data;
     }
   }
@@ -150,10 +150,10 @@
      *
      * @param array $optParams Optional parameters.
      */
-    public function reset($optParams = array()) {
+    public function reset($optParams = array()){
       $params = array();
       $params = array_merge($params, $optParams);
-      $data = $this->__call('reset', array($params));
+      $data = $this->__call('reset', array($params) );
       return $data;
     }
   }
@@ -176,11 +176,11 @@
      * @param array $optParams Optional parameters.
      * @return Google_PlayerScoreResetResponse
      */
-    public function reset($leaderboardId, $optParams = array()) {
+    public function reset($leaderboardId, $optParams = array()){
       $params = array('leaderboardId' => $leaderboardId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('reset', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('reset', array($params) );
+      if ($this->useObjects()){
         return new Google_PlayerScoreResetResponse($data);
       } else {
         return $data;
@@ -213,17 +213,17 @@ class Google_GamesManagementService extends Google_Service {
    *
    * @param Google_Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Google_Client $client){
     $this->servicePath = 'games/v1management/';
     $this->version = 'v1management';
     $this->serviceName = 'gamesManagement';
 
     $client->addService($this->serviceName, $this->version);
-    $this->achievements = new Google_AchievementsServiceResource($this, $this->serviceName, 'achievements', json_decode('{"methods": {"reset": {"id": "gamesManagement.achievements.reset", "path": "achievements/{achievementId}/reset", "httpMethod": "POST", "parameters": {"achievementId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AchievementResetResponse"}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}, "resetAll": {"id": "gamesManagement.achievements.resetAll", "path": "achievements/reset", "httpMethod": "POST", "response": {"$ref": "AchievementResetAllResponse"}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}}}', true));
-    $this->applications = new Google_ApplicationsServiceResource($this, $this->serviceName, 'applications', json_decode('{"methods": {"listHidden": {"id": "gamesManagement.applications.listHidden", "path": "applications/{applicationId}/players/hidden", "httpMethod": "GET", "parameters": {"applicationId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "int32", "minimum": "1", "maximum": "15", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "HiddenPlayerList"}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}}}', true));
-    $this->players = new Google_PlayersServiceResource($this, $this->serviceName, 'players', json_decode('{"methods": {"hide": {"id": "gamesManagement.players.hide", "path": "applications/{applicationId}/players/hidden/{playerId}", "httpMethod": "POST", "parameters": {"applicationId": {"type": "string", "required": true, "location": "path"}, "playerId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}, "unhide": {"id": "gamesManagement.players.unhide", "path": "applications/{applicationId}/players/hidden/{playerId}", "httpMethod": "DELETE", "parameters": {"applicationId": {"type": "string", "required": true, "location": "path"}, "playerId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}}}', true));
-    $this->rooms = new Google_RoomsServiceResource($this, $this->serviceName, 'rooms', json_decode('{"methods": {"reset": {"id": "gamesManagement.rooms.reset", "path": "rooms/reset", "httpMethod": "POST", "scopes": ["https://www.googleapis.com/auth/plus.login"]}}}', true));
-    $this->scores = new Google_ScoresServiceResource($this, $this->serviceName, 'scores', json_decode('{"methods": {"reset": {"id": "gamesManagement.scores.reset", "path": "leaderboards/{leaderboardId}/scores/reset", "httpMethod": "POST", "parameters": {"leaderboardId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "PlayerScoreResetResponse"}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}}}', true));
+    $this->achievements = new Google_AchievementsServiceResource($this, $this->serviceName, 'achievements', json_decode('{"methods": {"reset": {"id": "gamesManagement.achievements.reset", "path": "achievements/{achievementId}/reset", "httpMethod": "POST", "parameters": {"achievementId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AchievementResetResponse"}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}, "resetAll": {"id": "gamesManagement.achievements.resetAll", "path": "achievements/reset", "httpMethod": "POST", "response": {"$ref": "AchievementResetAllResponse"}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}}}', true) );
+    $this->applications = new Google_ApplicationsServiceResource($this, $this->serviceName, 'applications', json_decode('{"methods": {"listHidden": {"id": "gamesManagement.applications.listHidden", "path": "applications/{applicationId}/players/hidden", "httpMethod": "GET", "parameters": {"applicationId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "int32", "minimum": "1", "maximum": "15", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "HiddenPlayerList"}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}}}', true) );
+    $this->players = new Google_PlayersServiceResource($this, $this->serviceName, 'players', json_decode('{"methods": {"hide": {"id": "gamesManagement.players.hide", "path": "applications/{applicationId}/players/hidden/{playerId}", "httpMethod": "POST", "parameters": {"applicationId": {"type": "string", "required": true, "location": "path"}, "playerId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}, "unhide": {"id": "gamesManagement.players.unhide", "path": "applications/{applicationId}/players/hidden/{playerId}", "httpMethod": "DELETE", "parameters": {"applicationId": {"type": "string", "required": true, "location": "path"}, "playerId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}}}', true) );
+    $this->rooms = new Google_RoomsServiceResource($this, $this->serviceName, 'rooms', json_decode('{"methods": {"reset": {"id": "gamesManagement.rooms.reset", "path": "rooms/reset", "httpMethod": "POST", "scopes": ["https://www.googleapis.com/auth/plus.login"]}}}', true) );
+    $this->scores = new Google_ScoresServiceResource($this, $this->serviceName, 'scores', json_decode('{"methods": {"reset": {"id": "gamesManagement.scores.reset", "path": "leaderboards/{leaderboardId}/scores/reset", "httpMethod": "POST", "parameters": {"leaderboardId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "PlayerScoreResetResponse"}, "scopes": ["https://www.googleapis.com/auth/plus.login"]}}}', true) );
 
   }
 }
@@ -235,17 +235,17 @@ class Google_AchievementResetAllResponse extends Google_Model {
   protected $__resultsType = 'Google_AchievementResetResponse';
   protected $__resultsDataType = 'array';
   public $results;
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setResults(/* array(Google_AchievementResetResponse) */ $results) {
+  public function setResults(/* array(Google_AchievementResetResponse) */ $results){
     $this->assertIsArray($results, 'Google_AchievementResetResponse', __METHOD__);
     $this->results = $results;
   }
-  public function getResults() {
+  public function getResults(){
     return $this->results;
   }
 }
@@ -255,28 +255,28 @@ class Google_AchievementResetResponse extends Google_Model {
   public $definitionId;
   public $kind;
   public $updateOccurred;
-  public function setCurrentState( $currentState) {
+  public function setCurrentState( $currentState){
     $this->currentState = $currentState;
   }
-  public function getCurrentState() {
+  public function getCurrentState(){
     return $this->currentState;
   }
-  public function setDefinitionId( $definitionId) {
+  public function setDefinitionId( $definitionId){
     $this->definitionId = $definitionId;
   }
-  public function getDefinitionId() {
+  public function getDefinitionId(){
     return $this->definitionId;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setUpdateOccurred( $updateOccurred) {
+  public function setUpdateOccurred( $updateOccurred){
     $this->updateOccurred = $updateOccurred;
   }
-  public function getUpdateOccurred() {
+  public function getUpdateOccurred(){
     return $this->updateOccurred;
   }
 }
@@ -287,22 +287,22 @@ class Google_HiddenPlayer extends Google_Model {
   protected $__playerType = 'Google_Player';
   protected $__playerDataType = '';
   public $player;
-  public function setHiddenTimeMillis( $hiddenTimeMillis) {
+  public function setHiddenTimeMillis( $hiddenTimeMillis){
     $this->hiddenTimeMillis = $hiddenTimeMillis;
   }
-  public function getHiddenTimeMillis() {
+  public function getHiddenTimeMillis(){
     return $this->hiddenTimeMillis;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setPlayer(Google_Player $player) {
+  public function setPlayer(Google_Player $player){
     $this->player = $player;
   }
-  public function getPlayer() {
+  public function getPlayer(){
     return $this->player;
   }
 }
@@ -313,23 +313,23 @@ class Google_HiddenPlayerList extends Google_Model {
   public $items;
   public $kind;
   public $nextPageToken;
-  public function setItems(/* array(Google_HiddenPlayer) */ $items) {
+  public function setItems(/* array(Google_HiddenPlayer) */ $items){
     $this->assertIsArray($items, 'Google_HiddenPlayer', __METHOD__);
     $this->items = $items;
   }
-  public function getItems() {
+  public function getItems(){
     return $this->items;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setNextPageToken( $nextPageToken) {
+  public function setNextPageToken( $nextPageToken){
     $this->nextPageToken = $nextPageToken;
   }
-  public function getNextPageToken() {
+  public function getNextPageToken(){
     return $this->nextPageToken;
   }
 }
@@ -339,28 +339,28 @@ class Google_Player extends Google_Model {
   public $displayName;
   public $kind;
   public $playerId;
-  public function setAvatarImageUrl( $avatarImageUrl) {
+  public function setAvatarImageUrl( $avatarImageUrl){
     $this->avatarImageUrl = $avatarImageUrl;
   }
-  public function getAvatarImageUrl() {
+  public function getAvatarImageUrl(){
     return $this->avatarImageUrl;
   }
-  public function setDisplayName( $displayName) {
+  public function setDisplayName( $displayName){
     $this->displayName = $displayName;
   }
-  public function getDisplayName() {
+  public function getDisplayName(){
     return $this->displayName;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setPlayerId( $playerId) {
+  public function setPlayerId( $playerId){
     $this->playerId = $playerId;
   }
-  public function getPlayerId() {
+  public function getPlayerId(){
     return $this->playerId;
   }
 }
@@ -368,17 +368,17 @@ class Google_Player extends Google_Model {
 class Google_PlayerScoreResetResponse extends Google_Model {
   public $kind;
   public $resetScoreTimeSpans;
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setResetScoreTimeSpans(/* array(Google_string) */ $resetScoreTimeSpans) {
+  public function setResetScoreTimeSpans(/* array(Google_string) */ $resetScoreTimeSpans){
     $this->assertIsArray($resetScoreTimeSpans, 'Google_string', __METHOD__);
     $this->resetScoreTimeSpans = $resetScoreTimeSpans;
   }
-  public function getResetScoreTimeSpans() {
+  public function getResetScoreTimeSpans(){
     return $this->resetScoreTimeSpans;
   }
 }

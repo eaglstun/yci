@@ -27,7 +27,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class GenerateReportForHost extends BaseExample {
-  public function render() {
+  public function render(){
     $startDate = $this->getSixMonthsBeforeNow();
     $endDate = $this->getNow();
     $optParams = array(
@@ -38,17 +38,17 @@ class GenerateReportForHost extends BaseExample {
       'dimension' => 'DATE',
       'sort' => '+DATE',
       'filter' => array(
-        'AD_CLIENT_ID==' . HOST_AD_CLIENT_ID));
+        'AD_CLIENT_ID==' . HOST_AD_CLIENT_ID) );
     // Retrieve report.
     $report = $this->adSenseHostService->reports
         ->generate($startDate, $endDate, $optParams);
 
-    if (isset($report['rows'])) {
+    if (isset($report['rows'])){
       printReportTableHeader($report['headers']);
       printReportTableRows($report['rows']);
       printReportTableFooter();
     } else {
-      printNoResultForTable(count($report['headers']));
+      printNoResultForTable(count($report['headers']) );
     }
   }
 }

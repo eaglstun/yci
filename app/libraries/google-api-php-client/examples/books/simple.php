@@ -25,6 +25,6 @@ $service = new Google_BooksService($client);
 $optParams = array('filter' => 'free-ebooks');
 $results = $service->volumes->listVolumes('Henry David Thoreau', $optParams);
 
-foreach ($results['items'] as $item) {
+foreach ($results['items'] as $item){
   print($item['volumeInfo']['title'] . '<br>');
 }

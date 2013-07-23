@@ -26,7 +26,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class GetAccountDataForExistingPublisher extends BaseExample {
-  public function render() {
+  public function render(){
     $adClientId = PUBLISHER_AD_CLIENT_ID;
     $listClass = 'list';
     printListHeader($listClass);
@@ -34,10 +34,10 @@ class GetAccountDataForExistingPublisher extends BaseExample {
     do {
       // Retrieve account list, and display it.
       $result = $this->adSenseHostService->accounts->listAccounts(
-          array($adClientId));
+          array($adClientId) );
       $accounts = $result['items'];
-      if (isset($accounts)) {
-        foreach ($accounts as $account) {
+      if (isset($accounts)){
+        foreach ($accounts as $account){
           $frmt = 'Account with ID "%s", name "%s" and status "%s" was found.';
           $content = sprintf($frmt, $account['id'], $account['name'],
               $account['status']);

@@ -32,11 +32,11 @@
      * @opt_param string sort Enables sorting of the list
      * @return Google_WebfontList
      */
-    public function listWebfonts($optParams = array()) {
+    public function listWebfonts($optParams = array()){
       $params = array();
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_WebfontList($data);
       } else {
         return $data;
@@ -65,13 +65,13 @@ class Google_WebfontsService extends Google_Service {
    *
    * @param Google_Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Google_Client $client){
     $this->servicePath = 'webfonts/v1/';
     $this->version = 'v1';
     $this->serviceName = 'webfonts';
 
     $client->addService($this->serviceName, $this->version);
-    $this->webfonts = new Google_WebfontsServiceResource($this, $this->serviceName, 'webfonts', json_decode('{"methods": {"list": {"id": "webfonts.webfonts.list", "path": "webfonts", "httpMethod": "GET", "parameters": {"sort": {"type": "string", "enum": ["alpha", "date", "popularity", "style", "trending"], "location": "query"}}, "response": {"$ref": "WebfontList"}}}}', true));
+    $this->webfonts = new Google_WebfontsServiceResource($this, $this->serviceName, 'webfonts', json_decode('{"methods": {"list": {"id": "webfonts.webfonts.list", "path": "webfonts", "httpMethod": "GET", "parameters": {"sort": {"type": "string", "enum": ["alpha", "date", "popularity", "style", "trending"], "location": "query"}}, "response": {"$ref": "WebfontList"}}}}', true) );
 
   }
 }
@@ -86,48 +86,48 @@ class Google_Webfont extends Google_Model {
   public $subsets;
   public $variants;
   public $version;
-  public function setFamily( $family) {
+  public function setFamily( $family){
     $this->family = $family;
   }
-  public function getFamily() {
+  public function getFamily(){
     return $this->family;
   }
-  public function setFiles( $files) {
+  public function setFiles( $files){
     $this->files = $files;
   }
-  public function getFiles() {
+  public function getFiles(){
     return $this->files;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setLastModified( $lastModified) {
+  public function setLastModified( $lastModified){
     $this->lastModified = $lastModified;
   }
-  public function getLastModified() {
+  public function getLastModified(){
     return $this->lastModified;
   }
-  public function setSubsets(/* array(Google_string) */ $subsets) {
+  public function setSubsets(/* array(Google_string) */ $subsets){
     $this->assertIsArray($subsets, 'Google_string', __METHOD__);
     $this->subsets = $subsets;
   }
-  public function getSubsets() {
+  public function getSubsets(){
     return $this->subsets;
   }
-  public function setVariants(/* array(Google_string) */ $variants) {
+  public function setVariants(/* array(Google_string) */ $variants){
     $this->assertIsArray($variants, 'Google_string', __METHOD__);
     $this->variants = $variants;
   }
-  public function getVariants() {
+  public function getVariants(){
     return $this->variants;
   }
-  public function setVersion( $version) {
+  public function setVersion( $version){
     $this->version = $version;
   }
-  public function getVersion() {
+  public function getVersion(){
     return $this->version;
   }
 }
@@ -137,17 +137,17 @@ class Google_WebfontList extends Google_Model {
   protected $__itemsDataType = 'array';
   public $items;
   public $kind;
-  public function setItems(/* array(Google_Webfont) */ $items) {
+  public function setItems(/* array(Google_Webfont) */ $items){
     $this->assertIsArray($items, 'Google_Webfont', __METHOD__);
     $this->items = $items;
   }
-  public function getItems() {
+  public function getItems(){
     return $this->items;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
 }

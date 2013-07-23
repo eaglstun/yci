@@ -27,7 +27,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Silvano Luciani <silvano.luciani@gmail.com>
  */
 class GetAccountTree extends BaseExample {
-  public function render() {
+  public function render(){
     $accountId = ACCOUNT_ID;
     $optParams = array('tree' => true);
     // Retrieve account with sub accounts.
@@ -53,10 +53,10 @@ class GetAccountTree extends BaseExample {
    * @param array $data The data structure that represent the tree
    * @param string $parent The parent for the current node
    */
-  private function buildTree($account, &$data, $parent) {
+  private function buildTree($account, &$data, $parent){
     $data[] = array($account['name'], null, 1);
-    if ($account['subAccounts']) {
-      foreach($account['subAccounts'] as $subAccount) {
+    if ($account['subAccounts']){
+      foreach($account['subAccounts'] as $subAccount){
         $this->buildTree($subAccount, $data, $account['name']);
       }
     }

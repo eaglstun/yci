@@ -28,12 +28,12 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class AddAdUnitToPublisher extends BaseExample {
-  public function render() {
+  public function render(){
     $accountId = PUBLISHER_ACCOUNT_ID;
     $adClientId = PUBLISHER_AD_CLIENT_ID;
 
     $adUnit = new Google_AdUnit();
-    $adUnit->setName(sprintf('Ad Unit #%s', $this->getUniqueName()));
+    $adUnit->setName(sprintf('Ad Unit #%s', $this->getUniqueName()) );
 
     $contentAdsSettings = new Google_AdUnitContentAdsSettings();
     $backupOption = new Google_AdUnitContentAdsSettingsBackupOption();

@@ -73,7 +73,7 @@ $client->setClientSecret(CLIENT_SECRET);
 $client->setRedirectUri(REDIRECT_URL);
 $client->setApplicationName(APP_NAME);
 $client->setScopes(
-    array(ANALYTICS_SCOPE));
+    array(ANALYTICS_SCOPE) );
 
 // Magic. Returns objects from the Analytics Service
 // instead of associative arrays.
@@ -89,19 +89,19 @@ $authHelper = new AuthHelper($client, $storage, THIS_PAGE);
 
 // Main controller logic.
 
-if ($_GET['action'] == 'revoke') {
+if ($_GET['action'] == 'revoke'){
   $authHelper->revokeToken();
 
-} else if ($_GET['action'] == 'auth' || $_GET['code']) {
+} else if ($_GET['action'] == 'auth' || $_GET['code']){
   $authHelper->authenticate();
 
 } else {
   $authHelper->setTokenFromStorage();
 
-  if ($authHelper->isAuthorized()) {
+  if ($authHelper->isAuthorized()){
     $analytics = new Google_AnalyticsService($client);
 
-    if ($_GET['demo'] == 'hello') {
+    if ($_GET['demo'] == 'hello'){
 
       // Hello Analytics API Demo.
       require_once 'helloAnalyticsApi.php';
@@ -110,7 +110,7 @@ if ($_GET['action'] == 'revoke') {
       $htmlOutput = $demo->getHtmlOutput();
       $demoError = $demo->getError();
 
-    } else if ($_GET['demo'] == 'mgmt') {
+    } else if ($_GET['demo'] == 'mgmt'){
 
       // Management API Reference Demo.
       require_once 'managementApiReference.php';
@@ -119,7 +119,7 @@ if ($_GET['action'] == 'revoke') {
       $htmlOutput = $demo->getHtmlOutput();
       $demoError = $demo->getError();
 
-    } else if ($_GET['demo'] == 'reporting') {
+    } else if ($_GET['demo'] == 'reporting'){
 
       // Core Reporting API Reference Demo.
       require_once 'CoreReportingApiReference.php';
@@ -136,7 +136,7 @@ if ($_GET['action'] == 'revoke') {
   // a require through Google_AnalyticsService is made. Here we
   // make sure whatever the valid token in $service is also
   // persisted into storage.
-  $storage->set($client->getAccessToken());
+  $storage->set($client->getAccessToken() );
 }
 
 // Consolidate errors and make sure they are safe to write.
@@ -166,7 +166,7 @@ $errors = htmlspecialchars($errors, ENT_NOQUOTES);
 
 <?php
   // Print out authorization URL.
-  if ($authHelper->isAuthorized()) {
+  if ($authHelper->isAuthorized()){
     print "<p><a href='$revokeUrl'>Revoke access</a></p>";
   } else {
     print "<p><a href='$authUrl'>Grant access to Google Analytics data</a></p>";
@@ -198,9 +198,9 @@ $errors = htmlspecialchars($errors, ENT_NOQUOTES);
     <hr>
 <?php
   // Print out errors or results.
-  if ($errors) {
+  if ($errors){
     print "<div>There was an error: <br> $errors</div>";
-  } else if ($authHelper->isAuthorized()) {
+  } else if ($authHelper->isAuthorized()){
     print "<div>$htmlOutput</div>";
   } 
 ?>

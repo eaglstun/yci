@@ -34,7 +34,7 @@ $client->setApplicationName("Google Prediction Sample");
 // Set your cached access token. Remember to replace $_SESSION with a
 // real database or memcached.
 session_start();
-if (isset($_SESSION['token'])) {
+if (isset($_SESSION['token'])){
  $client->setAccessToken($_SESSION['token']);
 }
 
@@ -54,7 +54,7 @@ $service = new Google_PredictionService($client);
 // Prediction logic:
 $id = 'sample.languageid';
 $predictionData = new Google_InputInput();
-$predictionData->setCsvInstance(array('Je suis fatigue'));
+$predictionData->setCsvInstance(array('Je suis fatigue') );
 
 $input = new Google_Input();
 $input->setInput($predictionData);
@@ -64,6 +64,6 @@ print '<h2>Prediction Result:</h2><pre>' . print_r($result, true) . '</pre>';
 
 // We're not done yet. Remember to update the cached access token.
 // Remember to replace $_SESSION with a real database or memcached.
-if ($client->getAccessToken()) {
+if ($client->getAccessToken()){
   $_SESSION['token'] = $client->getAccessToken();
 }

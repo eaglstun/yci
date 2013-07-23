@@ -34,29 +34,29 @@ $service = new Google_BooksService($client);
  * @param array
  * @return void
  */
-function echoBookList($results) {
+function echoBookList($results){
   print <<<HTML
   <table><tr><td id="resultcell">
   <div id="searchResults">
     <table class="volumeList"><tbody>
 HTML;
-  foreach ($results['items'] as $result) {
+  foreach ($results['items'] as $result){
     $volumeInfo = $result['volumeInfo'];
     $title = $volumeInfo['title'];
-    if (isset($volumeInfo['imageLinks']['smallThumbnail'])) {
+    if (isset($volumeInfo['imageLinks']['smallThumbnail'])){
       $thumbnail = $volumeInfo['imageLinks']['smallThumbnail'];
     } else {
       $thumbnail = null;
     }
 
-    if (isset($volumeInfo['authors'])) {
+    if (isset($volumeInfo['authors'])){
       $creators = implode(", ", $volumeInfo['authors']);
       if ($creators) $creators = "by " . $creators;
     }
 
     $preview = $volumeInfo['previewLink'];
     $previewLink = '';
-    if ($result['accessInfo']['embeddable'] == true) {
+    if ($result['accessInfo']['embeddable'] == true){
       $previewLink = ""
           . "<a href=\"javascript:load_viewport('${preview}','viewport');\">"
           . "<img class='previewbutton' src='http://code.google.com/apis/books/images/gbs_preview_button1.png' />"
@@ -87,26 +87,26 @@ HTML;
  * The main controller logic of the Books volume browser demonstration app.
  */
 $queryType = isset($_GET['queryType']) ? $_GET['queryType'] : null;
-if ($queryType != null) {
+if ($queryType != null){
   $volumes = $service->volumes;
   $optParams = array();
 
   /* display a list of volumes */
-  if (isset($_GET['searchTerm'])) {
+  if (isset($_GET['searchTerm'])){
     $searchTerm = $_GET['searchTerm'];
   }
-  if (isset($_GET['startIndex'])) {
+  if (isset($_GET['startIndex'])){
     $optParams['startIndex'] = $_GET['startIndex'];
   }
-  if (isset($_GET['maxResults'])) {
+  if (isset($_GET['maxResults'])){
     $optParams['maxResults'] = $_GET['maxResults'];
   }
 
   /* check for one of the restricted feeds, or list from 'all' videos */
-  if ($queryType == 'full_view') {
+  if ($queryType == 'full_view'){
     $optParams['filter'] = 'full';
   }
-  else if ($queryType == 'partial_view') {
+  else if ($queryType == 'partial_view'){
     $optParams['filter'] = 'partial';
   }
 

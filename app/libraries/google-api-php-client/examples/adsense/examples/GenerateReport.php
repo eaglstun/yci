@@ -27,7 +27,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Silvano Luciani <silvano.luciani@gmail.com>
  */
 class GenerateReport extends BaseExample {
-  public function render() {
+  public function render(){
     $startDate = $this->getSixMonthsBeforeNow();
     $endDate = $this->getNow();
     $optParams = array(
@@ -45,12 +45,12 @@ class GenerateReport extends BaseExample {
     $report = $this->adSenseService->reports
         ->generate($startDate, $endDate, $optParams);
 
-    if (isset($report['rows'])) {
+    if (isset($report['rows'])){
       printReportTableHeader($report['headers']);
       printReportTableRows($report['rows']);
       printReportTableFooter();
     } else {
-      printNoResultForTable(count($report['headers']));
+      printNoResultForTable(count($report['headers']) );
     }
   }
 }

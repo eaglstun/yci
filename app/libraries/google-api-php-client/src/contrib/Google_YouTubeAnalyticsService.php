@@ -42,11 +42,11 @@
      * @opt_param int start-index An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter (one-based, inclusive).
      * @return Google_ResultTable
      */
-    public function query($ids, $start_date, $end_date, $metrics, $optParams = array()) {
+    public function query($ids, $start_date, $end_date, $metrics, $optParams = array()){
       $params = array('ids' => $ids, 'start-date' => $start_date, 'end-date' => $end_date, 'metrics' => $metrics);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('query', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('query', array($params) );
+      if ($this->useObjects()){
         return new Google_ResultTable($data);
       } else {
         return $data;
@@ -75,13 +75,13 @@ class Google_YouTubeAnalyticsService extends Google_Service {
    *
    * @param Google_Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Google_Client $client){
     $this->servicePath = 'youtube/analytics/v1/';
     $this->version = 'v1';
     $this->serviceName = 'youtubeAnalytics';
 
     $client->addService($this->serviceName, $this->version);
-    $this->reports = new Google_ReportsServiceResource($this, $this->serviceName, 'reports', json_decode('{"methods": {"query": {"id": "youtubeAnalytics.reports.query", "path": "reports", "httpMethod": "GET", "parameters": {"dimensions": {"type": "string", "location": "query"}, "end-date": {"type": "string", "required": true, "location": "query"}, "filters": {"type": "string", "location": "query"}, "ids": {"type": "string", "required": true, "location": "query"}, "max-results": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "metrics": {"type": "string", "required": true, "location": "query"}, "sort": {"type": "string", "location": "query"}, "start-date": {"type": "string", "required": true, "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "ResultTable"}, "scopes": ["https://www.googleapis.com/auth/yt-analytics-monetary.readonly", "https://www.googleapis.com/auth/yt-analytics.readonly"]}}}', true));
+    $this->reports = new Google_ReportsServiceResource($this, $this->serviceName, 'reports', json_decode('{"methods": {"query": {"id": "youtubeAnalytics.reports.query", "path": "reports", "httpMethod": "GET", "parameters": {"dimensions": {"type": "string", "location": "query"}, "end-date": {"type": "string", "required": true, "location": "query"}, "filters": {"type": "string", "location": "query"}, "ids": {"type": "string", "required": true, "location": "query"}, "max-results": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}, "metrics": {"type": "string", "required": true, "location": "query"}, "sort": {"type": "string", "location": "query"}, "start-date": {"type": "string", "required": true, "location": "query"}, "start-index": {"type": "integer", "format": "int32", "minimum": "1", "location": "query"}}, "response": {"$ref": "ResultTable"}, "scopes": ["https://www.googleapis.com/auth/yt-analytics-monetary.readonly", "https://www.googleapis.com/auth/yt-analytics.readonly"]}}}', true) );
 
   }
 }
@@ -94,24 +94,24 @@ class Google_ResultTable extends Google_Model {
   public $columnHeaders;
   public $kind;
   public $rows;
-  public function setColumnHeaders(/* array(Google_ResultTableColumnHeaders) */ $columnHeaders) {
+  public function setColumnHeaders(/* array(Google_ResultTableColumnHeaders) */ $columnHeaders){
     $this->assertIsArray($columnHeaders, 'Google_ResultTableColumnHeaders', __METHOD__);
     $this->columnHeaders = $columnHeaders;
   }
-  public function getColumnHeaders() {
+  public function getColumnHeaders(){
     return $this->columnHeaders;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setRows(/* array(Google_object) */ $rows) {
+  public function setRows(/* array(Google_object) */ $rows){
     $this->assertIsArray($rows, 'Google_object', __METHOD__);
     $this->rows = $rows;
   }
-  public function getRows() {
+  public function getRows(){
     return $this->rows;
   }
 }
@@ -120,22 +120,22 @@ class Google_ResultTableColumnHeaders extends Google_Model {
   public $columnType;
   public $dataType;
   public $name;
-  public function setColumnType( $columnType) {
+  public function setColumnType( $columnType){
     $this->columnType = $columnType;
   }
-  public function getColumnType() {
+  public function getColumnType(){
     return $this->columnType;
   }
-  public function setDataType( $dataType) {
+  public function setDataType( $dataType){
     $this->dataType = $dataType;
   }
-  public function getDataType() {
+  public function getDataType(){
     return $this->dataType;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
 }

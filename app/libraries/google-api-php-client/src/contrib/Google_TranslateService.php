@@ -31,11 +31,11 @@
      * @param array $optParams Optional parameters.
      * @return Google_DetectionsListResponse
      */
-    public function listDetections($q, $optParams = array()) {
+    public function listDetections($q, $optParams = array()){
       $params = array('q' => $q);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_DetectionsListResponse($data);
       } else {
         return $data;
@@ -61,11 +61,11 @@
      * @opt_param string target the language and collation in which the localized results should be returned
      * @return Google_LanguagesListResponse
      */
-    public function listLanguages($optParams = array()) {
+    public function listLanguages($optParams = array()){
       $params = array();
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_LanguagesListResponse($data);
       } else {
         return $data;
@@ -95,11 +95,11 @@
      * @opt_param string source The source language of the text
      * @return Google_TranslationsListResponse
      */
-    public function listTranslations($q, $target, $optParams = array()) {
+    public function listTranslations($q, $target, $optParams = array()){
       $params = array('q' => $q, 'target' => $target);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_TranslationsListResponse($data);
       } else {
         return $data;
@@ -130,15 +130,15 @@ class Google_TranslateService extends Google_Service {
    *
    * @param Google_Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Google_Client $client){
     $this->servicePath = 'language/translate/';
     $this->version = 'v2';
     $this->serviceName = 'translate';
 
     $client->addService($this->serviceName, $this->version);
-    $this->detections = new Google_DetectionsServiceResource($this, $this->serviceName, 'detections', json_decode('{"methods": {"list": {"id": "language.detections.list", "path": "v2/detect", "httpMethod": "GET", "parameters": {"q": {"type": "string", "required": true, "repeated": true, "location": "query"}}, "response": {"$ref": "DetectionsListResponse"}}}}', true));
-    $this->languages = new Google_LanguagesServiceResource($this, $this->serviceName, 'languages', json_decode('{"methods": {"list": {"id": "language.languages.list", "path": "v2/languages", "httpMethod": "GET", "parameters": {"target": {"type": "string", "location": "query"}}, "response": {"$ref": "LanguagesListResponse"}}}}', true));
-    $this->translations = new Google_TranslationsServiceResource($this, $this->serviceName, 'translations', json_decode('{"methods": {"list": {"id": "language.translations.list", "path": "v2", "httpMethod": "GET", "parameters": {"cid": {"type": "string", "repeated": true, "location": "query"}, "format": {"type": "string", "enum": ["html", "text"], "location": "query"}, "q": {"type": "string", "required": true, "repeated": true, "location": "query"}, "source": {"type": "string", "location": "query"}, "target": {"type": "string", "required": true, "location": "query"}}, "response": {"$ref": "TranslationsListResponse"}}}}', true));
+    $this->detections = new Google_DetectionsServiceResource($this, $this->serviceName, 'detections', json_decode('{"methods": {"list": {"id": "language.detections.list", "path": "v2/detect", "httpMethod": "GET", "parameters": {"q": {"type": "string", "required": true, "repeated": true, "location": "query"}}, "response": {"$ref": "DetectionsListResponse"}}}}', true) );
+    $this->languages = new Google_LanguagesServiceResource($this, $this->serviceName, 'languages', json_decode('{"methods": {"list": {"id": "language.languages.list", "path": "v2/languages", "httpMethod": "GET", "parameters": {"target": {"type": "string", "location": "query"}}, "response": {"$ref": "LanguagesListResponse"}}}}', true) );
+    $this->translations = new Google_TranslationsServiceResource($this, $this->serviceName, 'translations', json_decode('{"methods": {"list": {"id": "language.translations.list", "path": "v2", "httpMethod": "GET", "parameters": {"cid": {"type": "string", "repeated": true, "location": "query"}, "format": {"type": "string", "enum": ["html", "text"], "location": "query"}, "q": {"type": "string", "required": true, "repeated": true, "location": "query"}, "source": {"type": "string", "location": "query"}, "target": {"type": "string", "required": true, "location": "query"}}, "response": {"$ref": "TranslationsListResponse"}}}}', true) );
 
   }
 }
@@ -149,11 +149,11 @@ class Google_DetectionsListResponse extends Google_Model {
   protected $__detectionsType = 'Google_DetectionsResourceItems';
   protected $__detectionsDataType = 'array';
   public $detections;
-  public function setDetections(/* array(Google_DetectionsResourceItems) */ $detections) {
+  public function setDetections(/* array(Google_DetectionsResourceItems) */ $detections){
     $this->assertIsArray($detections, 'Google_DetectionsResourceItems', __METHOD__);
     $this->detections = $detections;
   }
-  public function getDetections() {
+  public function getDetections(){
     return $this->detections;
   }
 }
@@ -162,22 +162,22 @@ class Google_DetectionsResourceItems extends Google_Model {
   public $confidence;
   public $isReliable;
   public $language;
-  public function setConfidence( $confidence) {
+  public function setConfidence( $confidence){
     $this->confidence = $confidence;
   }
-  public function getConfidence() {
+  public function getConfidence(){
     return $this->confidence;
   }
-  public function setIsReliable( $isReliable) {
+  public function setIsReliable( $isReliable){
     $this->isReliable = $isReliable;
   }
-  public function getIsReliable() {
+  public function getIsReliable(){
     return $this->isReliable;
   }
-  public function setLanguage( $language) {
+  public function setLanguage( $language){
     $this->language = $language;
   }
-  public function getLanguage() {
+  public function getLanguage(){
     return $this->language;
   }
 }
@@ -186,11 +186,11 @@ class Google_LanguagesListResponse extends Google_Model {
   protected $__languagesType = 'Google_LanguagesResource';
   protected $__languagesDataType = 'array';
   public $languages;
-  public function setLanguages(/* array(Google_LanguagesResource) */ $languages) {
+  public function setLanguages(/* array(Google_LanguagesResource) */ $languages){
     $this->assertIsArray($languages, 'Google_LanguagesResource', __METHOD__);
     $this->languages = $languages;
   }
-  public function getLanguages() {
+  public function getLanguages(){
     return $this->languages;
   }
 }
@@ -198,16 +198,16 @@ class Google_LanguagesListResponse extends Google_Model {
 class Google_LanguagesResource extends Google_Model {
   public $language;
   public $name;
-  public function setLanguage( $language) {
+  public function setLanguage( $language){
     $this->language = $language;
   }
-  public function getLanguage() {
+  public function getLanguage(){
     return $this->language;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
 }
@@ -216,11 +216,11 @@ class Google_TranslationsListResponse extends Google_Model {
   protected $__translationsType = 'Google_TranslationsResource';
   protected $__translationsDataType = 'array';
   public $translations;
-  public function setTranslations(/* array(Google_TranslationsResource) */ $translations) {
+  public function setTranslations(/* array(Google_TranslationsResource) */ $translations){
     $this->assertIsArray($translations, 'Google_TranslationsResource', __METHOD__);
     $this->translations = $translations;
   }
-  public function getTranslations() {
+  public function getTranslations(){
     return $this->translations;
   }
 }
@@ -228,16 +228,16 @@ class Google_TranslationsListResponse extends Google_Model {
 class Google_TranslationsResource extends Google_Model {
   public $detectedSourceLanguage;
   public $translatedText;
-  public function setDetectedSourceLanguage( $detectedSourceLanguage) {
+  public function setDetectedSourceLanguage( $detectedSourceLanguage){
     $this->detectedSourceLanguage = $detectedSourceLanguage;
   }
-  public function getDetectedSourceLanguage() {
+  public function getDetectedSourceLanguage(){
     return $this->detectedSourceLanguage;
   }
-  public function setTranslatedText( $translatedText) {
+  public function setTranslatedText( $translatedText){
     $this->translatedText = $translatedText;
   }
-  public function getTranslatedText() {
+  public function getTranslatedText(){
     return $this->translatedText;
   }
 }

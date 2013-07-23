@@ -14,25 +14,25 @@ $client->setApplicationName("Google+ PHP Starter Application");
 // $client->setDeveloperKey('insert_your_developer_key');
 $plus = new Google_PlusService($client);
 
-if (isset($_GET['logout'])) {
+if (isset($_GET['logout'])){
   unset($_SESSION['token']);
 }
 
-if (isset($_GET['code'])) {
-  if (strval($_SESSION['state']) !== strval($_GET['state'])) {
+if (isset($_GET['code'])){
+  if (strval($_SESSION['state']) !== strval($_GET['state'])){
     die("The session state did not match.");
   }
   $client->authenticate();
   $_SESSION['token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL) );
 }
 
-if (isset($_SESSION['token'])) {
+if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->getAccessToken()) {
+if ($client->getAccessToken()){
   $me = $plus->people->get('me');
   print "Your Profile: <pre>" . print_r($me, true) . "</pre>";
 
@@ -45,7 +45,7 @@ if ($client->getAccessToken()) {
     'maxResults' => '20',
   );
   $results = $plus->activities->search('Google+ API', $params);
-  foreach($results['items'] as $result) {
+  foreach($results['items'] as $result){
     print "Search Result: <pre>{$result['object']['content']}</pre>\n";
   }
 

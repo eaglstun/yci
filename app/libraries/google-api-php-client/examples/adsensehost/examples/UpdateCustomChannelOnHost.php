@@ -32,13 +32,13 @@ define('CUSTOM_CHANNEL_ID', 'INSERT_CUSTOM_CHANNEL_ID_HERE');
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class UpdateCustomChannelOnHost extends BaseExample {
-  public function render() {
+  public function render(){
     $adClientId = HOST_AD_CLIENT_ID;
     $customChannelId = CUSTOM_CHANNEL_ID;
 
     $customChannel = new Google_CustomChannel();
     $customChannel->setName(sprintf('Updated Sample Channel #%s',
-        $this->getUniqueName()));
+        $this->getUniqueName()) );
 
     // Retrieve custom channels list, and display it.
     $result = $this->adSenseHostService->customchannels

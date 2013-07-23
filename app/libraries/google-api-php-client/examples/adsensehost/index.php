@@ -37,7 +37,7 @@ try {
   require_once "AdSenseHostAuth.php";
   require_once "BaseExample.php";
   require_once "htmlHelper.php";
-} catch (Exception $e) {
+} catch (Exception $e){
   die('Missing requirement: ' . $e->getMessage() . "\n");
 }
 
@@ -48,19 +48,19 @@ try {
   $auth = new AdSenseHostAuth();
   $auth->authenticate('sample_user');
   // To get rid of the code in the URL after the authentication.
-  if (isset($_GET['code'])) {
+  if (isset($_GET['code'])){
     header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
   }
   // If the action is set dispatch the action if supported
-  if (isset($_GET["action"])) {
+  if (isset($_GET["action"])){
     $action = $_GET["action"];
-    if (!in_array($action, $actions)) {
+    if (!in_array($action, $actions)){
       die('Unsupported action:' . $action . "\n");
     }
     // Render the required action.
     require_once 'examples/' . $action . '.php';
     $class = ucfirst($action);
-    $example = new $class($auth->getAdSenseHostService());
+    $example = new $class($auth->getAdSenseHostService() );
     $title = actionNameToWords($action) . ' example';
     printHtmlHeader($title);
     $example->render();
@@ -72,19 +72,19 @@ try {
     printIndex($actions);
     printHtmlFooter();
   }
-} catch (Exception $e) {
-  die('Runtime error: ' . $e->getMessage() . "\n" . $e->getTraceAsString());
+} catch (Exception $e){
+  die('Runtime error: ' . $e->getMessage() . "\n" . $e->getTraceAsString() );
 }
 
 /**
  * Builds an array containing the supported actions.
  * @return array
  */
-function getSupportedActions() {
+function getSupportedActions(){
   $actions = array();
   $dirHandler = opendir('examples');
-  while ($actionFile = readdir($dirHandler)) {
-    if (preg_match('/\.php$/', $actionFile)) {
+  while ($actionFile = readdir($dirHandler)){
+    if (preg_match('/\.php$/', $actionFile)){
       $action = preg_replace('/\.php$/', '', $actionFile);
       $actions[] = $action;
     }

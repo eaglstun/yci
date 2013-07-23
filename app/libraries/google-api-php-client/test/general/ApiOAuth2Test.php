@@ -24,7 +24,7 @@ require_once "io/Google_REST.php";
 
 class ApiOAuth2Test extends BaseTest {
 
-  public function testSign() {
+  public function testSign(){
     $oauth = new Google_OAuth2();
 
     $oauth->developerKey = "devKey";
@@ -37,7 +37,7 @@ class ApiOAuth2Test extends BaseTest {
     $req = new Google_HttpRequest('http://localhost');
     $req = $oauth->sign($req);
 
-    $this->assertEquals('http://localhost?key=devKey', $req->getUrl());
+    $this->assertEquals('http://localhost?key=devKey', $req->getUrl() );
 
     // test accessToken
     $oauth->token = array(
@@ -51,7 +51,7 @@ class ApiOAuth2Test extends BaseTest {
     $this->assertEquals('Bearer ACCESS_TOKEN', $auth);
   }
 
-  public function testCreateAuthUrl() {
+  public function testCreateAuthUrl(){
     $oauth = new Google_OAuth2();
 
     $oauth->developerKey = "devKey";

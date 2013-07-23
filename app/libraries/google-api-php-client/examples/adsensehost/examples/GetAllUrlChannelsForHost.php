@@ -28,7 +28,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Silvano Luciani <silvano.luciani@gmail.com>
  */
 class GetAllUrlChannelsForHost extends BaseExample {
-  public function render() {
+  public function render(){
     $adClientId = HOST_AD_CLIENT_ID;
     $optParams['maxResults'] = MAX_PAGE_SIZE;
     $listClass = 'list';
@@ -40,8 +40,8 @@ class GetAllUrlChannelsForHost extends BaseExample {
       $result = $this->adSenseHostService->urlchannels
           ->listUrlchannels($adClientId, $optParams);
       $urlChannels = $result['items'];
-      if (isset($urlChannels)) {
-        foreach ($urlChannels as $urlChannel) {
+      if (isset($urlChannels)){
+        foreach ($urlChannels as $urlChannel){
           $format = 'URL channel with ID "%s" and URL pattern "%s" was found.';
           $content = sprintf($format, $urlChannel['id'],
               $urlChannel['urlPattern']);

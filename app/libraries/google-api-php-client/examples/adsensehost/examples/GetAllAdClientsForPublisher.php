@@ -27,7 +27,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Silvano Luciani <silvano.luciani@gmail.com>
  */
 class GetAllAdClientsForPublisher extends BaseExample {
-  public function render() {
+  public function render(){
     $accountId = PUBLISHER_ACCOUNT_ID;
     $optParams['maxResults'] = MAX_PAGE_SIZE;
     $listClass = 'clients';
@@ -39,8 +39,8 @@ class GetAllAdClientsForPublisher extends BaseExample {
       $result = $this->adSenseHostService->accounts_adclients
           ->listAccountsAdclients($accountId, $optParams);
       $adClients = $result['items'];
-      if (isset($adClients)) {
-        foreach ($adClients as $adClient) {
+      if (isset($adClients)){
+        foreach ($adClients as $adClient){
           $content = array();
           $mainFormat = 'Ad client for product "%s" with ID "%s" was found.';
           $firstNestedFormat = 'Supports reporting: %s';

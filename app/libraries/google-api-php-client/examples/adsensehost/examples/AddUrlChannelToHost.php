@@ -27,12 +27,12 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class AddUrlChannelToHost extends BaseExample {
-  public function render() {
+  public function render(){
     $adClientId = HOST_AD_CLIENT_ID;
 
     $urlChannel = new Google_UrlChannel();
     $urlChannel->setUrlPattern(sprintf('www.example.com/%s',
-      $this->getUniqueName()));
+      $this->getUniqueName()) );
 
     // Retrieve URL channels list, and display it.
     $result = $this->adSenseHostService->urlchannels

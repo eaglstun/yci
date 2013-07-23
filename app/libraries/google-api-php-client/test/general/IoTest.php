@@ -19,7 +19,7 @@
  */
 
 class IoTest extends BaseTest {
-  public function testParseHttpResponseBody() {
+  public function testParseHttpResponseBody(){
     $io = new Google_CurlIO();
 
     $rawHeaders = "HTTP/1.1 200 OK\r\n"
@@ -31,15 +31,15 @@ class IoTest extends BaseTest {
 
     $rawResponse = "$rawHeaders\r\n$rawBody";
     list($headers, $body) = $io->parseHttpResponse($rawResponse, $size);
-    $this->assertEquals(3, sizeof($headers));
-    $this->assertEquals(array(), json_decode($body, true));
+    $this->assertEquals(3, sizeof($headers) );
+    $this->assertEquals(array(), json_decode($body, true) );
 
 
     // Test empty bodies.
     $rawResponse = $rawHeaders . "\r\n";
     list($headers, $body) = $io->parseHttpResponse($rawResponse, $size);
-    $this->assertEquals(3, sizeof($headers));
-    $this->assertEquals(null, json_decode($body, true));
+    $this->assertEquals(3, sizeof($headers) );
+    $this->assertEquals(null, json_decode($body, true) );
 
     // Test transforms from proxies.
     $rawHeaders = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\n";
@@ -49,11 +49,11 @@ class IoTest extends BaseTest {
     $rawResponse = Google_CurlIO::CONNECTION_ESTABLISHED
           . "$rawHeaders\r\n$rawBody";
     list($headers, $body) = $io->parseHttpResponse($rawResponse, $size);
-    $this->assertEquals(1, sizeof($headers));
-    $this->assertEquals(array(), json_decode($body, true));
+    $this->assertEquals(1, sizeof($headers) );
+    $this->assertEquals(array(), json_decode($body, true) );
   }
 
-  public function testProcessEntityRequest() {
+  public function testProcessEntityRequest(){
     $io = new Google_CurlIO();
     $req = new Google_HttpRequest("http://localhost.com");
     $req->setRequestMethod("POST");
@@ -61,37 +61,37 @@ class IoTest extends BaseTest {
     // Verify that the content-length is calculated.
     $req->setPostBody("{}");
     $io->processEntityRequest($req);
-    $this->assertEquals(2, $req->getRequestHeader("content-length"));
+    $this->assertEquals(2, $req->getRequestHeader("content-length") );
 
     // Test an empty post body.
     $req->setPostBody("");
     $io->processEntityRequest($req);
-    $this->assertEquals(0, $req->getRequestHeader("content-length"));
+    $this->assertEquals(0, $req->getRequestHeader("content-length") );
 
     // Test a null post body.
     $req->setPostBody(null);
     $io->processEntityRequest($req);
-    $this->assertEquals(0, $req->getRequestHeader("content-length"));
+    $this->assertEquals(0, $req->getRequestHeader("content-length") );
 
     // Set an array in the postbody, and verify that it is url-encoded.
-    $req->setPostBody(array("a" => "1", "b" => 2));
+    $req->setPostBody(array("a" => "1", "b" => 2) );
     $io->processEntityRequest($req);
-    $this->assertEquals(7, $req->getRequestHeader("content-length"));
+    $this->assertEquals(7, $req->getRequestHeader("content-length") );
     $this->assertEquals(Google_CurlIO::FORM_URLENCODED,
-        $req->getRequestHeader("content-type"));
-    $this->assertEquals("a=1&b=2", $req->getPostBody());
+        $req->getRequestHeader("content-type") );
+    $this->assertEquals("a=1&b=2", $req->getPostBody() );
 
     // Verify that the content-type isn't reset.
     $payload = array("a" => "1", "b" => 2);
     $req->setPostBody($payload);
-    $req->setRequestHeaders(array("content-type" => "multipart/form-data"));
+    $req->setRequestHeaders(array("content-type" => "multipart/form-data") );
     $io->processEntityRequest($req);
     $this->assertEquals("multipart/form-data",
-        $req->getRequestHeader("content-type"));
-    $this->assertEquals($payload, $req->getPostBody());
+        $req->getRequestHeader("content-type") );
+    $this->assertEquals($payload, $req->getPostBody() );
   }
 
-  public function testCacheHit() {
+  public function testCacheHit(){
     $io = new Google_CurlIO();
     $url = "http://www.googleapis.com";
     // Create a cacheable request/response.
@@ -99,7 +99,7 @@ class IoTest extends BaseTest {
     $cacheReq = new Google_HttpRequest($url, "GET");
     $cacheReq->setRequestHeaders(array(
       "Accept" => "*/*",
-    ));
+    ) );
     $cacheReq->setResponseBody("{\"a\": \"foo\"}");
     $cacheReq->setResponseHttpCode(200);
     $cacheReq->setResponseHeaders(array(
@@ -108,18 +108,18 @@ class IoTest extends BaseTest {
       "Expires" => "Sun, 22 Jan 2022 09:00:56 GMT",
       "Date: Sun, 1 Jan 2012 09:00:56 GMT",
       "Content-Type" => "application/json; charset=UTF-8",
-    ));
+    ) );
 
     // Populate the cache.
     $io->setCachedRequest($cacheReq);
 
     // Execute the same mock request, and expect a cache hit.
-    $res = $io->makeRequest(new Google_HttpRequest($url, "GET"));
-    $this->assertEquals("{\"a\": \"foo\"}", $res->getResponseBody());
-    $this->assertEquals(200, $res->getResponseHttpCode());
+    $res = $io->makeRequest(new Google_HttpRequest($url, "GET") );
+    $this->assertEquals("{\"a\": \"foo\"}", $res->getResponseBody() );
+    $this->assertEquals(200, $res->getResponseHttpCode() );
   }
 
-  public function testAuthCache() {
+  public function testAuthCache(){
     $io = new Google_CurlIO();
     $url = "http://www.googleapis.com/protected/resource";
 
@@ -128,7 +128,7 @@ class IoTest extends BaseTest {
     $cacheReq->setRequestHeaders(array(
       "Accept" => "*/*",
       "Authorization" => "Bearer Foo"
-    ));
+    ) );
     $cacheReq->setResponseBody("{\"a\": \"foo\"}");
     $cacheReq->setResponseHttpCode(200);
     $cacheReq->setResponseHeaders(array(
@@ -137,7 +137,7 @@ class IoTest extends BaseTest {
       "Expires" => "Sun, 22 Jan 2022 09:00:56 GMT",
       "Date: Sun, 1 Jan 2012 09:00:56 GMT",
       "Content-Type" => "application/json; charset=UTF-8",
-    ));
+    ) );
 
     $result = $io->setCachedRequest($cacheReq);
     $this->assertFalse($result);

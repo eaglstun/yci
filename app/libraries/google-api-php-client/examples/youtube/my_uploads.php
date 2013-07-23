@@ -21,8 +21,8 @@ $client->setRedirectUri($redirect);
 
 $youtube = new Google_YoutubeService($client);
 
-if (isset($_GET['code'])) {
-  if (strval($_SESSION['state']) !== strval($_GET['state'])) {
+if (isset($_GET['code'])){
+  if (strval($_SESSION['state']) !== strval($_GET['state'])){
     die('The session state did not match.');
   }
 
@@ -31,38 +31,38 @@ if (isset($_GET['code'])) {
   header('Location: ' . $redirect);
 }
 
-if (isset($_SESSION['token'])) {
+if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->getAccessToken()) {
+if ($client->getAccessToken()){
   try {
     $channelsResponse = $youtube->channels->listChannels('contentDetails', array(
       'mine' => 'true',
-    ));
+    ) );
 
     $htmlBody = '';
-    foreach ($channelsResponse['items'] as $channel) {
+    foreach ($channelsResponse['items'] as $channel){
       $uploadsListId = $channel['contentDetails']['relatedPlaylists']['uploads'];
 
       $playlistItemsResponse = $youtube->playlistItems->listPlaylistItems('snippet', array(
         'playlistId' => $uploadsListId,
         'maxResults' => 50
-      ));
+      ) );
 
       $htmlBody .= "<h3>Videos in list $uploadsListId</h3><ul>";
-      foreach ($playlistItemsResponse['items'] as $playlistItem) {
+      foreach ($playlistItemsResponse['items'] as $playlistItem){
         $htmlBody .= sprintf('<li>%s (%s)</li>', $playlistItem['snippet']['title'],
           $playlistItem['snippet']['resourceId']['videoId']);
       }
       $htmlBody .= '</ul>';
     }
-  } catch (Google_ServiceException $e) {
+  } catch (Google_ServiceException $e){
     $htmlBody .= sprintf('<p>A service error occurred: <code>%s</code></p>',
-      htmlspecialchars($e->getMessage()));
-  } catch (Google_Exception $e) {
+      htmlspecialchars($e->getMessage()) );
+  } catch (Google_Exception $e){
     $htmlBody .= sprintf('<p>An client error occurred: <code>%s</code></p>',
-      htmlspecialchars($e->getMessage()));
+      htmlspecialchars($e->getMessage()) );
   }
 
   $_SESSION['token'] = $client->getAccessToken();

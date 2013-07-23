@@ -16,7 +16,7 @@
  */
 
 // Error if PDO and PDO_SQLITE not present
-if (!extension_loaded('pdo') || !extension_loaded('pdo_sqlite')) {
+if (!extension_loaded('pdo') || !extension_loaded('pdo_sqlite')){
   throw new Exception('The sample code needs PDO and PDO_SQLITE PHP extension');
 }
 
@@ -44,7 +44,7 @@ class AdSenseAuth {
    * Create the dependencies.
    * (Inject them in a real world app!!)
    */
-  public function __construct() {
+  public function __construct(){
     // Create the apiClient instances.
     $this->apiClient = new Google_Client();
     // Visit https://code.google.com/apis/console?api=adsense to
@@ -64,7 +64,7 @@ class AdSenseAuth {
    * authentication.
    * @param string $user The user to authenticate
    */
-  public function authenticate($user) {
+  public function authenticate($user){
     $this->user = $user;
     $dbh = new PDO('sqlite:examples.sqlite');
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -72,16 +72,16 @@ class AdSenseAuth {
         '(user VARCHAR(255), token VARCHAR(255))');
     $stmt->execute();
     $token = $this->getToken($dbh);
-    if (isset($token)) {
+    if (isset($token)){
       // I already have the token.
       $this->apiClient->setAccessToken($token);
     } else {
       // Override the scope to use the readonly one
       $this->apiClient->setScopes(
-          array("https://www.googleapis.com/auth/adsense.readonly"));
+          array("https://www.googleapis.com/auth/adsense.readonly") );
       // Go get the token
-      $this->apiClient->setAccessToken($this->apiClient->authenticate());
-      $this->saveToken($dbh, false, $this->apiClient->getAccessToken());
+      $this->apiClient->setAccessToken($this->apiClient->authenticate() );
+      $this->saveToken($dbh, false, $this->apiClient->getAccessToken() );
     }
     $dbh = null;
   }
@@ -90,7 +90,7 @@ class AdSenseAuth {
    * Return the AdsenseService instance (to be used to retrieve data).
    * @return apiAdsenseService the authenticated apiAdsenseService instance
    */
-  public function getAdSenseService() {
+  public function getAdSenseService(){
     return $this->adSenseService;
   }
 
@@ -98,10 +98,10 @@ class AdSenseAuth {
    * During the request, the access code might have been changed for another.
    * This function updates the token in the db.
    */
-  public function refreshToken() {
-    if ($this->apiClient->getAccessToken() != null) {
+  public function refreshToken(){
+    if ($this->apiClient->getAccessToken() != null){
       $dbh = new PDO('sqlite:examples.sqlite');
-      $this->saveToken($dbh, true, $this->apiClient->getAccessToken());
+      $this->saveToken($dbh, true, $this->apiClient->getAccessToken() );
     }
   }
 
@@ -111,15 +111,15 @@ class AdSenseAuth {
    * @param bool $userExists true if the user already exists in the db
    * @param string $token the auth token to be saved
    */
-  private function saveToken($dbh, $userExists, $token) {
-    if ($userExists) {
+  private function saveToken($dbh, $userExists, $token){
+    if ($userExists){
       $stmt = $dbh->prepare('UPDATE auth SET token=:token WHERE user=:user');
     } else {
       $stmt = $dbh
           ->prepare('INSERT INTO auth (user, token) VALUES (:user, :token)');
     }
     $stmt->bindParam(':user', $this->user);
-    $stmt->bindParam(':token', $this->apiClient->getAccessToken());
+    $stmt->bindParam(':token', $this->apiClient->getAccessToken() );
     $stmt->execute();
   }
 
@@ -128,9 +128,9 @@ class AdSenseAuth {
    * @param PDO $dbh a PDO object for the local authentication db
    * @return string a JSON object representing the token
    */
-  private function getToken($dbh) {
+  private function getToken($dbh){
     $stmt = $dbh->prepare('SELECT token FROM auth WHERE user= ?');
-    $stmt->execute(array($this->user));
+    $stmt->execute(array($this->user) );
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     return $row['token'];
   }

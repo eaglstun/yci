@@ -27,7 +27,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author david.t@google.com (David Torres)
  */
 class SubmitCreative extends BaseExample {
-  protected function getInputParameters() {
+  protected function getInputParameters(){
     return array(array('name' => 'account_id',
                        'display' => 'Account id',
                        'required' => true),
@@ -51,10 +51,10 @@ class SubmitCreative extends BaseExample {
                        'required' => true),
                  array('name' => 'height',
                        'display' => 'Height',
-                       'required' => true));
+                       'required' => true) );
   }
 
-  public function run() {
+  public function run(){
     $values = $this->formValues;
 
     $creative = new Google_Creative();
@@ -63,7 +63,7 @@ class SubmitCreative extends BaseExample {
     $creative->setBuyerCreativeId($values['buyer_creative_id']);
     $creative->setAdvertiserName($values['advertiser_name']);
     $creative->setHTMLSnippet($values['html_snippet']);
-    $creative->setClickThroughUrl(explode(',', $values['click_through_urls']));
+    $creative->setClickThroughUrl(explode(',', $values['click_through_urls']) );
     $creative->setWidth($values['width']);
     $creative->setHeight($values['height']);
 
@@ -77,7 +77,7 @@ class SubmitCreative extends BaseExample {
    * @see BaseExample::getName()
    * @return string
    */
-  public function getName() {
+  public function getName(){
     return 'Submit Creative';
   }
 }

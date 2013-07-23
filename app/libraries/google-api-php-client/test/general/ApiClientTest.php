@@ -19,13 +19,13 @@
  */
 
 class TestApiClient extends Google_Client {
-  public function prepareService() {
+  public function prepareService(){
     return parent::prepareService();
   }
 };
 
 class ApiClientTest extends BaseTest {
-  public function testClient() {
+  public function testClient(){
     $client = new Google_Client();
     $client->setAccessType('foo');
     $this->assertEquals('foo', $client->getAuth()->accessType);
@@ -33,27 +33,27 @@ class ApiClientTest extends BaseTest {
     $client->setDeveloperKey('foo');
     $this->assertEquals('foo', $client->getAuth()->developerKey);
 
-    $client->setAccessToken(json_encode(array('access_token' => '1')));
-    $this->assertEquals("{\"access_token\":\"1\"}", $client->getAccessToken());
+    $client->setAccessToken(json_encode(array('access_token' => '1')) );
+    $this->assertEquals("{\"access_token\":\"1\"}", $client->getAccessToken() );
   }
 
-  public function testPrepareService() {
+  public function testPrepareService(){
     $client = new TestApiClient();
 
     $service = $client->prepareService();
     $this->assertEquals("", $service['scope']);
 
-    $client->setScopes(array("scope1", "scope2"));
+    $client->setScopes(array("scope1", "scope2") );
     $service = $client->prepareService();
     $this->assertEquals("scope1 scope2", $service['scope']);
 
-    $client->setScopes(array("", "scope2"));
+    $client->setScopes(array("", "scope2") );
     $service = $client->prepareService();
     $this->assertEquals(" scope2", $service['scope']);
 
     $client->setClientId('test1');
     $client->setRedirectUri('http://localhost/');
-    $client->setScopes(array("http://test.com", "scope2"));
+    $client->setScopes(array("http://test.com", "scope2") );
     $service = $client->prepareService();
     $this->assertEquals("http://test.com scope2", $service['scope']);
     $this->assertEquals(''
@@ -61,10 +61,10 @@ class ApiClientTest extends BaseTest {
         . '?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2F'
         . '&client_id=test1'
         . '&scope=http%3A%2F%2Ftest.com+scope2&access_type=offline'
-        . '&approval_prompt=force', $client->createAuthUrl());
+        . '&approval_prompt=force', $client->createAuthUrl() );
   }
 
-  public function testSettersGetters() {
+  public function testSettersGetters(){
     $client = new Google_Client();
     $client->setClientId("client1");
     $client->setClientSecret('client1secret');
@@ -79,9 +79,9 @@ class ApiClientTest extends BaseTest {
     $client->setRedirectUri('localhost');
     $client->setApplicationName('me');
     $client->setUseObjects(false);
-    $this->assertEquals('object', gettype($client->getAuth()));
-    $this->assertEquals('object', gettype($client->getCache()));
-    $this->assertEquals('object', gettype($client->getIo()));
+    $this->assertEquals('object', gettype($client->getAuth()) );
+    $this->assertEquals('object', gettype($client->getCache()) );
+    $this->assertEquals('object', gettype($client->getIo()) );
 
 
     $client->setAuthClass('Google_AuthNone');
@@ -90,12 +90,12 @@ class ApiClientTest extends BaseTest {
     try {
       $client->setAccessToken(null);
       die('Should have thrown an Google_AuthException.');
-    } catch(Google_AuthException $e) {
-      $this->assertEquals('Could not json decode the token', $e->getMessage());
+    } catch(Google_AuthException $e){
+      $this->assertEquals('Could not json decode the token', $e->getMessage() );
     }
 
-    $token = json_encode(array('access_token' => 'token'));
+    $token = json_encode(array('access_token' => 'token') );
     $client->setAccessToken($token);
-    $this->assertEquals($token, $client->getAccessToken());
+    $this->assertEquals($token, $client->getAccessToken() );
   }
 }

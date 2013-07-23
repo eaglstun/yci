@@ -27,12 +27,12 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class AddCustomChannelToHost extends BaseExample {
-  public function render() {
+  public function render(){
     $adClientId = HOST_AD_CLIENT_ID;
 
     $customChannel = new Google_CustomChannel();
     $customChannel->setName(sprintf('Sample Channel #%s',
-        $this->getUniqueName()));
+        $this->getUniqueName()) );
 
     // Retrieve custom channels list, and display it.
     $result = $this->adSenseHostService->customchannels

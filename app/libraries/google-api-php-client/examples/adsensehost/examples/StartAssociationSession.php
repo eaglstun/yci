@@ -26,7 +26,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class StartAssociationSession extends BaseExample {
-  public function render() {
+  public function render(){
     // Retrieve report.
     $result = $this->adSenseHostService->associationsessions
         ->start('AFC', 'www.example.com/blog');

@@ -26,7 +26,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class GetAllSavedAdStyles extends BaseExample {
-  public function render() {
+  public function render(){
     $accountId = ACCOUNT_ID;
     $optParams['maxResults'] = AD_MAX_PAGE_SIZE;
     $listClass = 'saved ad styles';
@@ -38,8 +38,8 @@ class GetAllSavedAdStyles extends BaseExample {
       $result = $this->adSenseService->accounts_savedadstyles
           ->listAccountsSavedadstyles($accountId, $optParams);
       $savedAdStyles = $result['items'];
-      if (empty($savedAdStyles)) {
-        foreach ($savedAdStyles as $savedAdStyle) {
+      if (empty($savedAdStyles)){
+        foreach ($savedAdStyles as $savedAdStyle){
           $content = array();
           $mainFormat = 'Saved ad style with name "%s" and ID "%s" was found.';
           $content[] = sprintf(

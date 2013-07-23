@@ -24,7 +24,7 @@ $client->setScopes(array(
     'https://apps-apis.google.com/a/feeds/groups/',
     'https://apps-apis.google.com/a/feeds/alias/',
     'https://apps-apis.google.com/a/feeds/user/',
-));
+) );
 
 // Documentation: http://code.google.com/googleapps/domain/provisioning_API_v2_developers_guide.html
 // Visit https://code.google.com/apis/console to generate your
@@ -34,22 +34,22 @@ $client->setScopes(array(
 // $client->setRedirectUri('insert_your_oauth2_redirect_uri');
 // $client->setDeveloperKey('insert_your_simple_api_key');
 
-if (isset($_REQUEST['logout'])) {
+if (isset($_REQUEST['logout'])){
   unset($_SESSION['access_token']);
 }
 
-if (isset($_GET['code'])) {
+if (isset($_GET['code'])){
   $client->authenticate();
   $_SESSION['access_token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL) );
 }
 
-if (isset($_SESSION['access_token'])) {
+if (isset($_SESSION['access_token'])){
   $client->setAccessToken($_SESSION['access_token']);
 }
 
-if ($client->getAccessToken()) {
+if ($client->getAccessToken()){
   // Retrieving a Single User in a Domain:
   $domain = "example.com";
   $user = rawurlencode("user@domain.com");
@@ -83,7 +83,7 @@ if ($client->getAccessToken()) {
   $authUrl = $client->createAuthUrl();
 }
 
-if(isset($authUrl)) {
+if(isset($authUrl)){
   print "<a class='login' href='$authUrl'>Connect Me!</a>";
 } else {
  print "<a class='logout' href='?logout'>Logout</a>";

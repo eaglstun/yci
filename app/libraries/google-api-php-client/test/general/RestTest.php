@@ -23,11 +23,11 @@ class RestTest extends BaseTest {
    */
   private $rest;
   
-  public function setUp() {
+  public function setUp(){
     $this->rest = new Google_REST();
   }
 
-  public function testDecodeResponse() {
+  public function testDecodeResponse(){
     $url = 'http://localhost';
     
     $response = new Google_HttpRequest($url);
@@ -36,7 +36,7 @@ class RestTest extends BaseTest {
     $this->assertEquals(null, $decoded);
 
 
-    foreach (array(200, 201) as $code) {
+    foreach (array(200, 201) as $code){
       $headers = array('foo', 'bar');
       $response = new Google_HttpRequest($url, 'GET', $headers);
       $response->setResponseBody('{"a": 1}');
@@ -52,7 +52,7 @@ class RestTest extends BaseTest {
     $error = "";
     try {
       $this->rest->decodeHttpResponse($response);
-    } catch (Exception $e) {
+    } catch (Exception $e){
       $error = $e->getMessage();
 
     }
@@ -60,10 +60,10 @@ class RestTest extends BaseTest {
   }
 
 
-  public function testDecodeEmptyResponse() {
+  public function testDecodeEmptyResponse(){
     $url = 'http://localhost';
 
-    $response = new Google_HttpRequest($url, 'GET', array());
+    $response = new Google_HttpRequest($url, 'GET', array() );
     $response->setResponseBody('{}');
 
     $response->setResponseHttpCode(200);
@@ -71,7 +71,7 @@ class RestTest extends BaseTest {
     $this->assertEquals(array(), $decoded);
   }
 
-  public function testCreateRequestUri() {
+  public function testCreateRequestUri(){
     $basePath = "http://localhost";
     $restPath = "/plus/{u}";
     

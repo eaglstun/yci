@@ -27,24 +27,24 @@ $client = new Google_Client();
 //$client->setRedirectUri('insert_your_oauth2_redirect_uri');
 $service = new Google_UrlshortenerService($client);
 
-if (isset($_REQUEST['logout'])) {
+if (isset($_REQUEST['logout'])){
   unset($_SESSION['access_token']);
 }
 
-if (isset($_GET['code'])) {
+if (isset($_GET['code'])){
   $client->authenticate();
   $_SESSION['access_token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL) );
 }
 
-if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+if (isset($_SESSION['access_token']) && $_SESSION['access_token']){
   $client->setAccessToken($_SESSION['access_token']);
 } else {
   $authUrl = $client->createAuthUrl();
 }
 
-if ($client->getAccessToken() && isset($_GET['url'])) {
+if ($client->getAccessToken() && isset($_GET['url'])){
   // Start to make API requests.
   $url = new Google_Url();
   $url->longUrl = $_GET['url'];

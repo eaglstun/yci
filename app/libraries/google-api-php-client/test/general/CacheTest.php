@@ -19,7 +19,7 @@
  */
 
 class CacheTest extends BaseTest {
-  public function testSet() {
+  public function testSet(){
     $cache = new Google_FileCache();
     $cache->set('foo', 'bar');
     $this->assertEquals($cache->get('foo'), 'bar');
@@ -42,7 +42,7 @@ class CacheTest extends BaseTest {
     $this->assertEquals($cache->get('foo'), $obj);
   }
 
-  public function testDelete() {
+  public function testDelete(){
     global $apiConfig;
     $apiConfig['ioFileCache_directory'] = '/tmp/google-api-php-client/tests';
     $cache = new Google_FileCache();

@@ -33,11 +33,11 @@
      * @opt_param string pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
      * @return Google_AdClients
      */
-    public function listAdclients($optParams = array()) {
+    public function listAdclients($optParams = array()){
       $params = array();
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_AdClients($data);
       } else {
         return $data;
@@ -63,11 +63,11 @@
      * @param array $optParams Optional parameters.
      * @return Google_AdUnit
      */
-    public function get($adClientId, $adUnitId, $optParams = array()) {
+    public function get($adClientId, $adUnitId, $optParams = array()){
       $params = array('adClientId' => $adClientId, 'adUnitId' => $adUnitId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('get', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('get', array($params) );
+      if ($this->useObjects()){
         return new Google_AdUnit($data);
       } else {
         return $data;
@@ -84,11 +84,11 @@
      * @opt_param string pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
      * @return Google_AdUnits
      */
-    public function listAdunits($adClientId, $optParams = array()) {
+    public function listAdunits($adClientId, $optParams = array()){
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_AdUnits($data);
       } else {
         return $data;
@@ -117,11 +117,11 @@
      * @opt_param string pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
      * @return Google_CustomChannels
      */
-    public function listAdunitsCustomchannels($adClientId, $adUnitId, $optParams = array()) {
+    public function listAdunitsCustomchannels($adClientId, $adUnitId, $optParams = array()){
       $params = array('adClientId' => $adClientId, 'adUnitId' => $adUnitId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_CustomChannels($data);
       } else {
         return $data;
@@ -147,11 +147,11 @@
      * @param array $optParams Optional parameters.
      * @return Google_CustomChannel
      */
-    public function get($adClientId, $customChannelId, $optParams = array()) {
+    public function get($adClientId, $customChannelId, $optParams = array()){
       $params = array('adClientId' => $adClientId, 'customChannelId' => $customChannelId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('get', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('get', array($params) );
+      if ($this->useObjects()){
         return new Google_CustomChannel($data);
       } else {
         return $data;
@@ -168,11 +168,11 @@
      * @opt_param string pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
      * @return Google_CustomChannels
      */
-    public function listCustomchannels($adClientId, $optParams = array()) {
+    public function listCustomchannels($adClientId, $optParams = array()){
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_CustomChannels($data);
       } else {
         return $data;
@@ -202,11 +202,11 @@
      * @opt_param string pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
      * @return Google_AdUnits
      */
-    public function listCustomchannelsAdunits($adClientId, $customChannelId, $optParams = array()) {
+    public function listCustomchannelsAdunits($adClientId, $customChannelId, $optParams = array()){
       $params = array('adClientId' => $adClientId, 'customChannelId' => $customChannelId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_AdUnits($data);
       } else {
         return $data;
@@ -242,11 +242,11 @@
      * @opt_param string startIndex Index of the first row of report data to return.
      * @return Google_Report
      */
-    public function generate($startDate, $endDate, $optParams = array()) {
+    public function generate($startDate, $endDate, $optParams = array()){
       $params = array('startDate' => $startDate, 'endDate' => $endDate);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('generate', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('generate', array($params) );
+      if ($this->useObjects()){
         return new Google_Report($data);
       } else {
         return $data;
@@ -276,11 +276,11 @@
      * @opt_param int startIndex Index of the first row of report data to return.
      * @return Google_Report
      */
-    public function generate($savedReportId, $optParams = array()) {
+    public function generate($savedReportId, $optParams = array()){
       $params = array('savedReportId' => $savedReportId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('generate', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('generate', array($params) );
+      if ($this->useObjects()){
         return new Google_Report($data);
       } else {
         return $data;
@@ -295,11 +295,11 @@
      * @opt_param string pageToken A continuation token, used to page through saved reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
      * @return Google_SavedReports
      */
-    public function listReportsSaved($optParams = array()) {
+    public function listReportsSaved($optParams = array()){
       $params = array();
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_SavedReports($data);
       } else {
         return $data;
@@ -327,11 +327,11 @@
      * @opt_param string pageToken A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
      * @return Google_UrlChannels
      */
-    public function listUrlchannels($adClientId, $optParams = array()) {
+    public function listUrlchannels($adClientId, $optParams = array()){
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('list', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('list', array($params) );
+      if ($this->useObjects()){
         return new Google_UrlChannels($data);
       } else {
         return $data;
@@ -367,20 +367,20 @@ class Google_AdExchangeSellerService extends Google_Service {
    *
    * @param Google_Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Google_Client $client){
     $this->servicePath = 'adexchangeseller/v1/';
     $this->version = 'v1';
     $this->serviceName = 'adexchangeseller';
 
     $client->addService($this->serviceName, $this->version);
-    $this->adclients = new Google_AdclientsServiceResource($this, $this->serviceName, 'adclients', json_decode('{"methods": {"list": {"id": "adexchangeseller.adclients.list", "path": "adclients", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdClients"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true));
-    $this->adunits = new Google_AdunitsServiceResource($this, $this->serviceName, 'adunits', json_decode('{"methods": {"get": {"id": "adexchangeseller.adunits.get", "path": "adclients/{adClientId}/adunits/{adUnitId}", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}, "list": {"id": "adexchangeseller.adunits.list", "path": "adclients/{adClientId}/adunits", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "includeInactive": {"type": "boolean", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdUnits"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true));
-    $this->adunits_customchannels = new Google_AdunitsCustomchannelsServiceResource($this, $this->serviceName, 'customchannels', json_decode('{"methods": {"list": {"id": "adexchangeseller.adunits.customchannels.list", "path": "adclients/{adClientId}/adunits/{adUnitId}/customchannels", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "CustomChannels"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true));
-    $this->customchannels = new Google_CustomchannelsServiceResource($this, $this->serviceName, 'customchannels', json_decode('{"methods": {"get": {"id": "adexchangeseller.customchannels.get", "path": "adclients/{adClientId}/customchannels/{customChannelId}", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "customChannelId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}, "list": {"id": "adexchangeseller.customchannels.list", "path": "adclients/{adClientId}/customchannels", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "CustomChannels"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true));
-    $this->customchannels_adunits = new Google_CustomchannelsAdunitsServiceResource($this, $this->serviceName, 'adunits', json_decode('{"methods": {"list": {"id": "adexchangeseller.customchannels.adunits.list", "path": "adclients/{adClientId}/customchannels/{customChannelId}/adunits", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "customChannelId": {"type": "string", "required": true, "location": "path"}, "includeInactive": {"type": "boolean", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdUnits"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true));
-    $this->reports = new Google_ReportsServiceResource($this, $this->serviceName, 'reports', json_decode('{"methods": {"generate": {"id": "adexchangeseller.reports.generate", "path": "reports", "httpMethod": "GET", "parameters": {"dimension": {"type": "string", "repeated": true, "location": "query"}, "endDate": {"type": "string", "required": true, "location": "query"}, "filter": {"type": "string", "repeated": true, "location": "query"}, "locale": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "50000", "location": "query"}, "metric": {"type": "string", "repeated": true, "location": "query"}, "sort": {"type": "string", "repeated": true, "location": "query"}, "startDate": {"type": "string", "required": true, "location": "query"}, "startIndex": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "5000", "location": "query"}}, "response": {"$ref": "Report"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"], "supportsMediaDownload": true}}}', true));
-    $this->reports_saved = new Google_ReportsSavedServiceResource($this, $this->serviceName, 'saved', json_decode('{"methods": {"generate": {"id": "adexchangeseller.reports.saved.generate", "path": "reports/{savedReportId}", "httpMethod": "GET", "parameters": {"locale": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "int32", "minimum": "0", "maximum": "50000", "location": "query"}, "savedReportId": {"type": "string", "required": true, "location": "path"}, "startIndex": {"type": "integer", "format": "int32", "minimum": "0", "maximum": "5000", "location": "query"}}, "response": {"$ref": "Report"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}, "list": {"id": "adexchangeseller.reports.saved.list", "path": "reports/saved", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "int32", "minimum": "0", "maximum": "100", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "SavedReports"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true));
-    $this->urlchannels = new Google_UrlchannelsServiceResource($this, $this->serviceName, 'urlchannels', json_decode('{"methods": {"list": {"id": "adexchangeseller.urlchannels.list", "path": "adclients/{adClientId}/urlchannels", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "UrlChannels"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true));
+    $this->adclients = new Google_AdclientsServiceResource($this, $this->serviceName, 'adclients', json_decode('{"methods": {"list": {"id": "adexchangeseller.adclients.list", "path": "adclients", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdClients"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true) );
+    $this->adunits = new Google_AdunitsServiceResource($this, $this->serviceName, 'adunits', json_decode('{"methods": {"get": {"id": "adexchangeseller.adunits.get", "path": "adclients/{adClientId}/adunits/{adUnitId}", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}, "list": {"id": "adexchangeseller.adunits.list", "path": "adclients/{adClientId}/adunits", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "includeInactive": {"type": "boolean", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdUnits"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true) );
+    $this->adunits_customchannels = new Google_AdunitsCustomchannelsServiceResource($this, $this->serviceName, 'customchannels', json_decode('{"methods": {"list": {"id": "adexchangeseller.adunits.customchannels.list", "path": "adclients/{adClientId}/adunits/{adUnitId}/customchannels", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "CustomChannels"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true) );
+    $this->customchannels = new Google_CustomchannelsServiceResource($this, $this->serviceName, 'customchannels', json_decode('{"methods": {"get": {"id": "adexchangeseller.customchannels.get", "path": "adclients/{adClientId}/customchannels/{customChannelId}", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "customChannelId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}, "list": {"id": "adexchangeseller.customchannels.list", "path": "adclients/{adClientId}/customchannels", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "CustomChannels"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true) );
+    $this->customchannels_adunits = new Google_CustomchannelsAdunitsServiceResource($this, $this->serviceName, 'adunits', json_decode('{"methods": {"list": {"id": "adexchangeseller.customchannels.adunits.list", "path": "adclients/{adClientId}/customchannels/{customChannelId}/adunits", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "customChannelId": {"type": "string", "required": true, "location": "path"}, "includeInactive": {"type": "boolean", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdUnits"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true) );
+    $this->reports = new Google_ReportsServiceResource($this, $this->serviceName, 'reports', json_decode('{"methods": {"generate": {"id": "adexchangeseller.reports.generate", "path": "reports", "httpMethod": "GET", "parameters": {"dimension": {"type": "string", "repeated": true, "location": "query"}, "endDate": {"type": "string", "required": true, "location": "query"}, "filter": {"type": "string", "repeated": true, "location": "query"}, "locale": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "50000", "location": "query"}, "metric": {"type": "string", "repeated": true, "location": "query"}, "sort": {"type": "string", "repeated": true, "location": "query"}, "startDate": {"type": "string", "required": true, "location": "query"}, "startIndex": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "5000", "location": "query"}}, "response": {"$ref": "Report"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"], "supportsMediaDownload": true}}}', true) );
+    $this->reports_saved = new Google_ReportsSavedServiceResource($this, $this->serviceName, 'saved', json_decode('{"methods": {"generate": {"id": "adexchangeseller.reports.saved.generate", "path": "reports/{savedReportId}", "httpMethod": "GET", "parameters": {"locale": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "int32", "minimum": "0", "maximum": "50000", "location": "query"}, "savedReportId": {"type": "string", "required": true, "location": "path"}, "startIndex": {"type": "integer", "format": "int32", "minimum": "0", "maximum": "5000", "location": "query"}}, "response": {"$ref": "Report"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}, "list": {"id": "adexchangeseller.reports.saved.list", "path": "reports/saved", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "int32", "minimum": "0", "maximum": "100", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "SavedReports"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true) );
+    $this->urlchannels = new Google_UrlchannelsServiceResource($this, $this->serviceName, 'urlchannels', json_decode('{"methods": {"list": {"id": "adexchangeseller.urlchannels.list", "path": "adclients/{adClientId}/urlchannels", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "UrlChannels"}, "scopes": ["https://www.googleapis.com/auth/adexchange.seller", "https://www.googleapis.com/auth/adexchange.seller.readonly"]}}}', true) );
 
   }
 }
@@ -393,34 +393,34 @@ class Google_AdClient extends Google_Model {
   public $kind;
   public $productCode;
   public $supportsReporting;
-  public function setArcOptIn( $arcOptIn) {
+  public function setArcOptIn( $arcOptIn){
     $this->arcOptIn = $arcOptIn;
   }
-  public function getArcOptIn() {
+  public function getArcOptIn(){
     return $this->arcOptIn;
   }
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setProductCode( $productCode) {
+  public function setProductCode( $productCode){
     $this->productCode = $productCode;
   }
-  public function getProductCode() {
+  public function getProductCode(){
     return $this->productCode;
   }
-  public function setSupportsReporting( $supportsReporting) {
+  public function setSupportsReporting( $supportsReporting){
     $this->supportsReporting = $supportsReporting;
   }
-  public function getSupportsReporting() {
+  public function getSupportsReporting(){
     return $this->supportsReporting;
   }
 }
@@ -432,29 +432,29 @@ class Google_AdClients extends Google_Model {
   public $items;
   public $kind;
   public $nextPageToken;
-  public function setEtag( $etag) {
+  public function setEtag( $etag){
     $this->etag = $etag;
   }
-  public function getEtag() {
+  public function getEtag(){
     return $this->etag;
   }
-  public function setItems(/* array(Google_AdClient) */ $items) {
+  public function setItems(/* array(Google_AdClient) */ $items){
     $this->assertIsArray($items, 'Google_AdClient', __METHOD__);
     $this->items = $items;
   }
-  public function getItems() {
+  public function getItems(){
     return $this->items;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setNextPageToken( $nextPageToken) {
+  public function setNextPageToken( $nextPageToken){
     $this->nextPageToken = $nextPageToken;
   }
-  public function getNextPageToken() {
+  public function getNextPageToken(){
     return $this->nextPageToken;
   }
 }
@@ -465,34 +465,34 @@ class Google_AdUnit extends Google_Model {
   public $kind;
   public $name;
   public $status;
-  public function setCode( $code) {
+  public function setCode( $code){
     $this->code = $code;
   }
-  public function getCode() {
+  public function getCode(){
     return $this->code;
   }
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
-  public function setStatus( $status) {
+  public function setStatus( $status){
     $this->status = $status;
   }
-  public function getStatus() {
+  public function getStatus(){
     return $this->status;
   }
 }
@@ -504,29 +504,29 @@ class Google_AdUnits extends Google_Model {
   public $items;
   public $kind;
   public $nextPageToken;
-  public function setEtag( $etag) {
+  public function setEtag( $etag){
     $this->etag = $etag;
   }
-  public function getEtag() {
+  public function getEtag(){
     return $this->etag;
   }
-  public function setItems(/* array(Google_AdUnit) */ $items) {
+  public function setItems(/* array(Google_AdUnit) */ $items){
     $this->assertIsArray($items, 'Google_AdUnit', __METHOD__);
     $this->items = $items;
   }
-  public function getItems() {
+  public function getItems(){
     return $this->items;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setNextPageToken( $nextPageToken) {
+  public function setNextPageToken( $nextPageToken){
     $this->nextPageToken = $nextPageToken;
   }
-  public function getNextPageToken() {
+  public function getNextPageToken(){
     return $this->nextPageToken;
   }
 }
@@ -539,34 +539,34 @@ class Google_CustomChannel extends Google_Model {
   protected $__targetingInfoType = 'Google_CustomChannelTargetingInfo';
   protected $__targetingInfoDataType = '';
   public $targetingInfo;
-  public function setCode( $code) {
+  public function setCode( $code){
     $this->code = $code;
   }
-  public function getCode() {
+  public function getCode(){
     return $this->code;
   }
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
-  public function setTargetingInfo(Google_CustomChannelTargetingInfo $targetingInfo) {
+  public function setTargetingInfo(Google_CustomChannelTargetingInfo $targetingInfo){
     $this->targetingInfo = $targetingInfo;
   }
-  public function getTargetingInfo() {
+  public function getTargetingInfo(){
     return $this->targetingInfo;
   }
 }
@@ -576,28 +576,28 @@ class Google_CustomChannelTargetingInfo extends Google_Model {
   public $description;
   public $location;
   public $siteLanguage;
-  public function setAdsAppearOn( $adsAppearOn) {
+  public function setAdsAppearOn( $adsAppearOn){
     $this->adsAppearOn = $adsAppearOn;
   }
-  public function getAdsAppearOn() {
+  public function getAdsAppearOn(){
     return $this->adsAppearOn;
   }
-  public function setDescription( $description) {
+  public function setDescription( $description){
     $this->description = $description;
   }
-  public function getDescription() {
+  public function getDescription(){
     return $this->description;
   }
-  public function setLocation( $location) {
+  public function setLocation( $location){
     $this->location = $location;
   }
-  public function getLocation() {
+  public function getLocation(){
     return $this->location;
   }
-  public function setSiteLanguage( $siteLanguage) {
+  public function setSiteLanguage( $siteLanguage){
     $this->siteLanguage = $siteLanguage;
   }
-  public function getSiteLanguage() {
+  public function getSiteLanguage(){
     return $this->siteLanguage;
   }
 }
@@ -609,29 +609,29 @@ class Google_CustomChannels extends Google_Model {
   public $items;
   public $kind;
   public $nextPageToken;
-  public function setEtag( $etag) {
+  public function setEtag( $etag){
     $this->etag = $etag;
   }
-  public function getEtag() {
+  public function getEtag(){
     return $this->etag;
   }
-  public function setItems(/* array(Google_CustomChannel) */ $items) {
+  public function setItems(/* array(Google_CustomChannel) */ $items){
     $this->assertIsArray($items, 'Google_CustomChannel', __METHOD__);
     $this->items = $items;
   }
-  public function getItems() {
+  public function getItems(){
     return $this->items;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setNextPageToken( $nextPageToken) {
+  public function setNextPageToken( $nextPageToken){
     $this->nextPageToken = $nextPageToken;
   }
-  public function getNextPageToken() {
+  public function getNextPageToken(){
     return $this->nextPageToken;
   }
 }
@@ -646,51 +646,51 @@ class Google_Report extends Google_Model {
   public $totalMatchedRows;
   public $totals;
   public $warnings;
-  public function setAverages(/* array(Google_string) */ $averages) {
+  public function setAverages(/* array(Google_string) */ $averages){
     $this->assertIsArray($averages, 'Google_string', __METHOD__);
     $this->averages = $averages;
   }
-  public function getAverages() {
+  public function getAverages(){
     return $this->averages;
   }
-  public function setHeaders(/* array(Google_ReportHeaders) */ $headers) {
+  public function setHeaders(/* array(Google_ReportHeaders) */ $headers){
     $this->assertIsArray($headers, 'Google_ReportHeaders', __METHOD__);
     $this->headers = $headers;
   }
-  public function getHeaders() {
+  public function getHeaders(){
     return $this->headers;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setRows(/* array(Google_string) */ $rows) {
+  public function setRows(/* array(Google_string) */ $rows){
     $this->assertIsArray($rows, 'Google_string', __METHOD__);
     $this->rows = $rows;
   }
-  public function getRows() {
+  public function getRows(){
     return $this->rows;
   }
-  public function setTotalMatchedRows( $totalMatchedRows) {
+  public function setTotalMatchedRows( $totalMatchedRows){
     $this->totalMatchedRows = $totalMatchedRows;
   }
-  public function getTotalMatchedRows() {
+  public function getTotalMatchedRows(){
     return $this->totalMatchedRows;
   }
-  public function setTotals(/* array(Google_string) */ $totals) {
+  public function setTotals(/* array(Google_string) */ $totals){
     $this->assertIsArray($totals, 'Google_string', __METHOD__);
     $this->totals = $totals;
   }
-  public function getTotals() {
+  public function getTotals(){
     return $this->totals;
   }
-  public function setWarnings(/* array(Google_string) */ $warnings) {
+  public function setWarnings(/* array(Google_string) */ $warnings){
     $this->assertIsArray($warnings, 'Google_string', __METHOD__);
     $this->warnings = $warnings;
   }
-  public function getWarnings() {
+  public function getWarnings(){
     return $this->warnings;
   }
 }
@@ -699,22 +699,22 @@ class Google_ReportHeaders extends Google_Model {
   public $currency;
   public $name;
   public $type;
-  public function setCurrency( $currency) {
+  public function setCurrency( $currency){
     $this->currency = $currency;
   }
-  public function getCurrency() {
+  public function getCurrency(){
     return $this->currency;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
-  public function setType( $type) {
+  public function setType( $type){
     $this->type = $type;
   }
-  public function getType() {
+  public function getType(){
     return $this->type;
   }
 }
@@ -723,22 +723,22 @@ class Google_SavedReport extends Google_Model {
   public $id;
   public $kind;
   public $name;
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
 }
@@ -750,29 +750,29 @@ class Google_SavedReports extends Google_Model {
   public $items;
   public $kind;
   public $nextPageToken;
-  public function setEtag( $etag) {
+  public function setEtag( $etag){
     $this->etag = $etag;
   }
-  public function getEtag() {
+  public function getEtag(){
     return $this->etag;
   }
-  public function setItems(/* array(Google_SavedReport) */ $items) {
+  public function setItems(/* array(Google_SavedReport) */ $items){
     $this->assertIsArray($items, 'Google_SavedReport', __METHOD__);
     $this->items = $items;
   }
-  public function getItems() {
+  public function getItems(){
     return $this->items;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setNextPageToken( $nextPageToken) {
+  public function setNextPageToken( $nextPageToken){
     $this->nextPageToken = $nextPageToken;
   }
-  public function getNextPageToken() {
+  public function getNextPageToken(){
     return $this->nextPageToken;
   }
 }
@@ -781,22 +781,22 @@ class Google_UrlChannel extends Google_Model {
   public $id;
   public $kind;
   public $urlPattern;
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setUrlPattern( $urlPattern) {
+  public function setUrlPattern( $urlPattern){
     $this->urlPattern = $urlPattern;
   }
-  public function getUrlPattern() {
+  public function getUrlPattern(){
     return $this->urlPattern;
   }
 }
@@ -808,29 +808,29 @@ class Google_UrlChannels extends Google_Model {
   public $items;
   public $kind;
   public $nextPageToken;
-  public function setEtag( $etag) {
+  public function setEtag( $etag){
     $this->etag = $etag;
   }
-  public function getEtag() {
+  public function getEtag(){
     return $this->etag;
   }
-  public function setItems(/* array(Google_UrlChannel) */ $items) {
+  public function setItems(/* array(Google_UrlChannel) */ $items){
     $this->assertIsArray($items, 'Google_UrlChannel', __METHOD__);
     $this->items = $items;
   }
-  public function getItems() {
+  public function getItems(){
     return $this->items;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setNextPageToken( $nextPageToken) {
+  public function setNextPageToken( $nextPageToken){
     $this->nextPageToken = $nextPageToken;
   }
-  public function getNextPageToken() {
+  public function getNextPageToken(){
     return $this->nextPageToken;
   }
 }

@@ -43,7 +43,7 @@ class AuthHelper {
    *     tokens.
    * @param string $controllerUrl The Url of the main controller.
    */
-  function __construct(&$client, &$storage, $controllerUrl) {
+  function __construct(&$client, &$storage, $controllerUrl){
     $this->client = $client;
     $this->storage = $storage;
     $this->controllerUrl = $controllerUrl;
@@ -53,9 +53,9 @@ class AuthHelper {
    * Retrieves an access token from the storage object and sets it into the
    * client object.
    */
-  public function setTokenFromStorage() {
+  public function setTokenFromStorage(){
     $accessToken = $this->storage->get();
-    if (isset($accessToken)) {
+    if (isset($accessToken)){
       $this->client->setAccessToken($accessToken);
     }
   }
@@ -71,17 +71,17 @@ class AuthHelper {
    * If an authorization error occurs, the exception is caught and the error
    * message is saved in $error.
    */
-  public function authenticate() {
+  public function authenticate(){
     try {
       $accessToken = $this->client->authenticate();
       $this->storage->set($accessToken);
 
       // Keep things pretty. Removes the auth code from the URL.
-      if ($_GET['code']) {
+      if ($_GET['code']){
         header("Location: $this->controllerUrl");
       }
 
-    } catch (Google_AuthException $e) {
+    } catch (Google_AuthException $e){
       $this->errorMsg = $e->getMessage();
     }
   }
@@ -92,14 +92,14 @@ class AuthHelper {
    * token from the storage mechanism. If any errors occur, the authorization
    * exception is caught and the message is stored in error.
    */
-  public function revokeToken() {
+  public function revokeToken(){
     $accessToken = $this->storage->get();
-    if ($accessToken) {
+    if ($accessToken){
       $tokenObj = json_decode($accessToken);
       try {
         $this->client->revokeToken($tokenObj->refresh_token);
         $this->storage->delete();
-      } catch (Google_AuthException $e) {
+      } catch (Google_AuthException $e){
         $this->errorMsg = $e->getMessage();
       }
     }
@@ -112,14 +112,14 @@ class AuthHelper {
    * the user can make authorized requests to the API.
    * @return bool Whether the client is authorized to make API requests.
    */
-  public function isAuthorized() {
+  public function isAuthorized(){
     return $this->client->getAccessToken() ? true : false;
   }
 
   /**
    * @return string Any error messages.
    */
-  public function getError() {
+  public function getError(){
     return $this->errorMsg;
   }
 }

@@ -28,7 +28,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Silvano Luciani <silvano.luciani@gmail.com>
  */
 class GetAllCustomChannelsForHost extends BaseExample {
-  public function render() {
+  public function render(){
     $adClientId = HOST_AD_CLIENT_ID;
     $optParams['maxResults'] = MAX_PAGE_SIZE;
     $listClass = 'list';
@@ -40,8 +40,8 @@ class GetAllCustomChannelsForHost extends BaseExample {
       $result = $this->adSenseHostService->customchannels
           ->listCustomchannels($adClientId, $optParams);
       $customChannels = $result['items'];
-      if (isset($customChannels)) {
-        foreach ($customChannels as $customChannel) {
+      if (isset($customChannels)){
+        foreach ($customChannels as $customChannel){
           $content = array();
           $mainFormat =
               'Custom channel with ID "%s", code "%s" and name "%s" found.';

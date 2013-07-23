@@ -30,11 +30,11 @@
      * @param array $optParams Optional parameters.
      * @return Google_ElectionsQueryResponse
      */
-    public function electionQuery($optParams = array()) {
+    public function electionQuery($optParams = array()){
       $params = array();
       $params = array_merge($params, $optParams);
-      $data = $this->__call('electionQuery', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('electionQuery', array($params) );
+      if ($this->useObjects()){
         return new Google_ElectionsQueryResponse($data);
       } else {
         return $data;
@@ -51,11 +51,11 @@
      * @opt_param bool officialOnly If set to true, only data from official state sources will be returned.
      * @return Google_VoterInfoResponse
      */
-    public function voterInfoQuery($electionId, Google_VoterInfoRequest $postBody, $optParams = array()) {
+    public function voterInfoQuery($electionId, Google_VoterInfoRequest $postBody, $optParams = array()){
       $params = array('electionId' => $electionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
-      $data = $this->__call('voterInfoQuery', array($params));
-      if ($this->useObjects()) {
+      $data = $this->__call('voterInfoQuery', array($params) );
+      if ($this->useObjects()){
         return new Google_VoterInfoResponse($data);
       } else {
         return $data;
@@ -84,13 +84,13 @@ class Google_CivicInfoService extends Google_Service {
    *
    * @param Google_Client $client
    */
-  public function __construct(Google_Client $client) {
+  public function __construct(Google_Client $client){
     $this->servicePath = 'civicinfo/us_v1/';
     $this->version = 'us_v1';
     $this->serviceName = 'civicinfo';
 
     $client->addService($this->serviceName, $this->version);
-    $this->elections = new Google_ElectionsServiceResource($this, $this->serviceName, 'elections', json_decode('{"methods": {"electionQuery": {"id": "civicinfo.elections.electionQuery", "path": "elections", "httpMethod": "GET", "response": {"$ref": "ElectionsQueryResponse"}}, "voterInfoQuery": {"id": "civicinfo.elections.voterInfoQuery", "path": "voterinfo/{electionId}/lookup", "httpMethod": "POST", "parameters": {"electionId": {"type": "string", "required": true, "format": "int64", "location": "path"}, "officialOnly": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "VoterInfoRequest"}, "response": {"$ref": "VoterInfoResponse"}}}}', true));
+    $this->elections = new Google_ElectionsServiceResource($this, $this->serviceName, 'elections', json_decode('{"methods": {"electionQuery": {"id": "civicinfo.elections.electionQuery", "path": "elections", "httpMethod": "GET", "response": {"$ref": "ElectionsQueryResponse"}}, "voterInfoQuery": {"id": "civicinfo.elections.voterInfoQuery", "path": "voterinfo/{electionId}/lookup", "httpMethod": "POST", "parameters": {"electionId": {"type": "string", "required": true, "format": "int64", "location": "path"}, "officialOnly": {"type": "boolean", "default": "false", "location": "query"}}, "request": {"$ref": "VoterInfoRequest"}, "response": {"$ref": "VoterInfoResponse"}}}}', true) );
 
   }
 }
@@ -109,35 +109,35 @@ class Google_AdministrationRegion extends Google_Model {
   protected $__sourcesType = 'Google_Source';
   protected $__sourcesDataType = 'array';
   public $sources;
-  public function setElectionAdministrationBody(Google_AdministrativeBody $electionAdministrationBody) {
+  public function setElectionAdministrationBody(Google_AdministrativeBody $electionAdministrationBody){
     $this->electionAdministrationBody = $electionAdministrationBody;
   }
-  public function getElectionAdministrationBody() {
+  public function getElectionAdministrationBody(){
     return $this->electionAdministrationBody;
   }
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setLocal_jurisdiction(Google_AdministrationRegion $local_jurisdiction) {
+  public function setLocal_jurisdiction(Google_AdministrationRegion $local_jurisdiction){
     $this->local_jurisdiction = $local_jurisdiction;
   }
-  public function getLocal_jurisdiction() {
+  public function getLocal_jurisdiction(){
     return $this->local_jurisdiction;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
-  public function setSources(/* array(Google_Source) */ $sources) {
+  public function setSources(/* array(Google_Source) */ $sources){
     $this->assertIsArray($sources, 'Google_Source', __METHOD__);
     $this->sources = $sources;
   }
-  public function getSources() {
+  public function getSources(){
     return $this->sources;
   }
 }
@@ -162,84 +162,84 @@ class Google_AdministrativeBody extends Google_Model {
   public $physicalAddress;
   public $voter_services;
   public $votingLocationFinderUrl;
-  public function setAbsenteeVotingInfoUrl( $absenteeVotingInfoUrl) {
+  public function setAbsenteeVotingInfoUrl( $absenteeVotingInfoUrl){
     $this->absenteeVotingInfoUrl = $absenteeVotingInfoUrl;
   }
-  public function getAbsenteeVotingInfoUrl() {
+  public function getAbsenteeVotingInfoUrl(){
     return $this->absenteeVotingInfoUrl;
   }
-  public function setBallotInfoUrl( $ballotInfoUrl) {
+  public function setBallotInfoUrl( $ballotInfoUrl){
     $this->ballotInfoUrl = $ballotInfoUrl;
   }
-  public function getBallotInfoUrl() {
+  public function getBallotInfoUrl(){
     return $this->ballotInfoUrl;
   }
-  public function setCorrespondenceAddress(Google_SimpleAddressType $correspondenceAddress) {
+  public function setCorrespondenceAddress(Google_SimpleAddressType $correspondenceAddress){
     $this->correspondenceAddress = $correspondenceAddress;
   }
-  public function getCorrespondenceAddress() {
+  public function getCorrespondenceAddress(){
     return $this->correspondenceAddress;
   }
-  public function setElectionInfoUrl( $electionInfoUrl) {
+  public function setElectionInfoUrl( $electionInfoUrl){
     $this->electionInfoUrl = $electionInfoUrl;
   }
-  public function getElectionInfoUrl() {
+  public function getElectionInfoUrl(){
     return $this->electionInfoUrl;
   }
-  public function setElectionOfficials(/* array(Google_ElectionOfficial) */ $electionOfficials) {
+  public function setElectionOfficials(/* array(Google_ElectionOfficial) */ $electionOfficials){
     $this->assertIsArray($electionOfficials, 'Google_ElectionOfficial', __METHOD__);
     $this->electionOfficials = $electionOfficials;
   }
-  public function getElectionOfficials() {
+  public function getElectionOfficials(){
     return $this->electionOfficials;
   }
-  public function setElectionRegistrationConfirmationUrl( $electionRegistrationConfirmationUrl) {
+  public function setElectionRegistrationConfirmationUrl( $electionRegistrationConfirmationUrl){
     $this->electionRegistrationConfirmationUrl = $electionRegistrationConfirmationUrl;
   }
-  public function getElectionRegistrationConfirmationUrl() {
+  public function getElectionRegistrationConfirmationUrl(){
     return $this->electionRegistrationConfirmationUrl;
   }
-  public function setElectionRegistrationUrl( $electionRegistrationUrl) {
+  public function setElectionRegistrationUrl( $electionRegistrationUrl){
     $this->electionRegistrationUrl = $electionRegistrationUrl;
   }
-  public function getElectionRegistrationUrl() {
+  public function getElectionRegistrationUrl(){
     return $this->electionRegistrationUrl;
   }
-  public function setElectionRulesUrl( $electionRulesUrl) {
+  public function setElectionRulesUrl( $electionRulesUrl){
     $this->electionRulesUrl = $electionRulesUrl;
   }
-  public function getElectionRulesUrl() {
+  public function getElectionRulesUrl(){
     return $this->electionRulesUrl;
   }
-  public function setHoursOfOperation( $hoursOfOperation) {
+  public function setHoursOfOperation( $hoursOfOperation){
     $this->hoursOfOperation = $hoursOfOperation;
   }
-  public function getHoursOfOperation() {
+  public function getHoursOfOperation(){
     return $this->hoursOfOperation;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
-  public function setPhysicalAddress(Google_SimpleAddressType $physicalAddress) {
+  public function setPhysicalAddress(Google_SimpleAddressType $physicalAddress){
     $this->physicalAddress = $physicalAddress;
   }
-  public function getPhysicalAddress() {
+  public function getPhysicalAddress(){
     return $this->physicalAddress;
   }
-  public function setVoter_services(/* array(Google_string) */ $voter_services) {
+  public function setVoter_services(/* array(Google_string) */ $voter_services){
     $this->assertIsArray($voter_services, 'Google_string', __METHOD__);
     $this->voter_services = $voter_services;
   }
-  public function getVoter_services() {
+  public function getVoter_services(){
     return $this->voter_services;
   }
-  public function setVotingLocationFinderUrl( $votingLocationFinderUrl) {
+  public function setVotingLocationFinderUrl( $votingLocationFinderUrl){
     $this->votingLocationFinderUrl = $votingLocationFinderUrl;
   }
-  public function getVotingLocationFinderUrl() {
+  public function getVotingLocationFinderUrl(){
     return $this->votingLocationFinderUrl;
   }
 }
@@ -255,53 +255,53 @@ class Google_Candidate extends Google_Model {
   public $party;
   public $phone;
   public $photoUrl;
-  public function setCandidateUrl( $candidateUrl) {
+  public function setCandidateUrl( $candidateUrl){
     $this->candidateUrl = $candidateUrl;
   }
-  public function getCandidateUrl() {
+  public function getCandidateUrl(){
     return $this->candidateUrl;
   }
-  public function setChannels(/* array(Google_Channel) */ $channels) {
+  public function setChannels(/* array(Google_Channel) */ $channels){
     $this->assertIsArray($channels, 'Google_Channel', __METHOD__);
     $this->channels = $channels;
   }
-  public function getChannels() {
+  public function getChannels(){
     return $this->channels;
   }
-  public function setEmail( $email) {
+  public function setEmail( $email){
     $this->email = $email;
   }
-  public function getEmail() {
+  public function getEmail(){
     return $this->email;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
-  public function setOrderOnBallot( $orderOnBallot) {
+  public function setOrderOnBallot( $orderOnBallot){
     $this->orderOnBallot = $orderOnBallot;
   }
-  public function getOrderOnBallot() {
+  public function getOrderOnBallot(){
     return $this->orderOnBallot;
   }
-  public function setParty( $party) {
+  public function setParty( $party){
     $this->party = $party;
   }
-  public function getParty() {
+  public function getParty(){
     return $this->party;
   }
-  public function setPhone( $phone) {
+  public function setPhone( $phone){
     $this->phone = $phone;
   }
-  public function getPhone() {
+  public function getPhone(){
     return $this->phone;
   }
-  public function setPhotoUrl( $photoUrl) {
+  public function setPhotoUrl( $photoUrl){
     $this->photoUrl = $photoUrl;
   }
-  public function getPhotoUrl() {
+  public function getPhotoUrl(){
     return $this->photoUrl;
   }
 }
@@ -309,16 +309,16 @@ class Google_Candidate extends Google_Model {
 class Google_Channel extends Google_Model {
   public $id;
   public $type;
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setType( $type) {
+  public function setType( $type){
     $this->type = $type;
   }
-  public function getType() {
+  public function getType(){
     return $this->type;
   }
 }
@@ -346,102 +346,102 @@ class Google_Contest extends Google_Model {
   public $sources;
   public $special;
   public $type;
-  public function setBallotPlacement( $ballotPlacement) {
+  public function setBallotPlacement( $ballotPlacement){
     $this->ballotPlacement = $ballotPlacement;
   }
-  public function getBallotPlacement() {
+  public function getBallotPlacement(){
     return $this->ballotPlacement;
   }
-  public function setCandidates(/* array(Google_Candidate) */ $candidates) {
+  public function setCandidates(/* array(Google_Candidate) */ $candidates){
     $this->assertIsArray($candidates, 'Google_Candidate', __METHOD__);
     $this->candidates = $candidates;
   }
-  public function getCandidates() {
+  public function getCandidates(){
     return $this->candidates;
   }
-  public function setDistrict(Google_ElectoralDistrict $district) {
+  public function setDistrict(Google_ElectoralDistrict $district){
     $this->district = $district;
   }
-  public function getDistrict() {
+  public function getDistrict(){
     return $this->district;
   }
-  public function setElectorateSpecifications( $electorateSpecifications) {
+  public function setElectorateSpecifications( $electorateSpecifications){
     $this->electorateSpecifications = $electorateSpecifications;
   }
-  public function getElectorateSpecifications() {
+  public function getElectorateSpecifications(){
     return $this->electorateSpecifications;
   }
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setLevel( $level) {
+  public function setLevel( $level){
     $this->level = $level;
   }
-  public function getLevel() {
+  public function getLevel(){
     return $this->level;
   }
-  public function setNumberElected( $numberElected) {
+  public function setNumberElected( $numberElected){
     $this->numberElected = $numberElected;
   }
-  public function getNumberElected() {
+  public function getNumberElected(){
     return $this->numberElected;
   }
-  public function setNumberVotingFor( $numberVotingFor) {
+  public function setNumberVotingFor( $numberVotingFor){
     $this->numberVotingFor = $numberVotingFor;
   }
-  public function getNumberVotingFor() {
+  public function getNumberVotingFor(){
     return $this->numberVotingFor;
   }
-  public function setOffice( $office) {
+  public function setOffice( $office){
     $this->office = $office;
   }
-  public function getOffice() {
+  public function getOffice(){
     return $this->office;
   }
-  public function setPrimaryParty( $primaryParty) {
+  public function setPrimaryParty( $primaryParty){
     $this->primaryParty = $primaryParty;
   }
-  public function getPrimaryParty() {
+  public function getPrimaryParty(){
     return $this->primaryParty;
   }
-  public function setReferendumSubtitle( $referendumSubtitle) {
+  public function setReferendumSubtitle( $referendumSubtitle){
     $this->referendumSubtitle = $referendumSubtitle;
   }
-  public function getReferendumSubtitle() {
+  public function getReferendumSubtitle(){
     return $this->referendumSubtitle;
   }
-  public function setReferendumTitle( $referendumTitle) {
+  public function setReferendumTitle( $referendumTitle){
     $this->referendumTitle = $referendumTitle;
   }
-  public function getReferendumTitle() {
+  public function getReferendumTitle(){
     return $this->referendumTitle;
   }
-  public function setReferendumUrl( $referendumUrl) {
+  public function setReferendumUrl( $referendumUrl){
     $this->referendumUrl = $referendumUrl;
   }
-  public function getReferendumUrl() {
+  public function getReferendumUrl(){
     return $this->referendumUrl;
   }
-  public function setSources(/* array(Google_Source) */ $sources) {
+  public function setSources(/* array(Google_Source) */ $sources){
     $this->assertIsArray($sources, 'Google_Source', __METHOD__);
     $this->sources = $sources;
   }
-  public function getSources() {
+  public function getSources(){
     return $this->sources;
   }
-  public function setSpecial( $special) {
+  public function setSpecial( $special){
     $this->special = $special;
   }
-  public function getSpecial() {
+  public function getSpecial(){
     return $this->special;
   }
-  public function setType( $type) {
+  public function setType( $type){
     $this->type = $type;
   }
-  public function getType() {
+  public function getType(){
     return $this->type;
   }
 }
@@ -450,22 +450,22 @@ class Google_Election extends Google_Model {
   public $electionDay;
   public $id;
   public $name;
-  public function setElectionDay( $electionDay) {
+  public function setElectionDay( $electionDay){
     $this->electionDay = $electionDay;
   }
-  public function getElectionDay() {
+  public function getElectionDay(){
     return $this->electionDay;
   }
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
 }
@@ -476,34 +476,34 @@ class Google_ElectionOfficial extends Google_Model {
   public $name;
   public $officePhoneNumber;
   public $title;
-  public function setEmailAddress( $emailAddress) {
+  public function setEmailAddress( $emailAddress){
     $this->emailAddress = $emailAddress;
   }
-  public function getEmailAddress() {
+  public function getEmailAddress(){
     return $this->emailAddress;
   }
-  public function setFaxNumber( $faxNumber) {
+  public function setFaxNumber( $faxNumber){
     $this->faxNumber = $faxNumber;
   }
-  public function getFaxNumber() {
+  public function getFaxNumber(){
     return $this->faxNumber;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
-  public function setOfficePhoneNumber( $officePhoneNumber) {
+  public function setOfficePhoneNumber( $officePhoneNumber){
     $this->officePhoneNumber = $officePhoneNumber;
   }
-  public function getOfficePhoneNumber() {
+  public function getOfficePhoneNumber(){
     return $this->officePhoneNumber;
   }
-  public function setTitle( $title) {
+  public function setTitle( $title){
     $this->title = $title;
   }
-  public function getTitle() {
+  public function getTitle(){
     return $this->title;
   }
 }
@@ -513,17 +513,17 @@ class Google_ElectionsQueryResponse extends Google_Model {
   protected $__electionsDataType = 'array';
   public $elections;
   public $kind;
-  public function setElections(/* array(Google_Election) */ $elections) {
+  public function setElections(/* array(Google_Election) */ $elections){
     $this->assertIsArray($elections, 'Google_Election', __METHOD__);
     $this->elections = $elections;
   }
-  public function getElections() {
+  public function getElections(){
     return $this->elections;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
 }
@@ -532,22 +532,22 @@ class Google_ElectoralDistrict extends Google_Model {
   public $id;
   public $name;
   public $scope;
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
-  public function setScope( $scope) {
+  public function setScope( $scope){
     $this->scope = $scope;
   }
-  public function getScope() {
+  public function getScope(){
     return $this->scope;
   }
 }
@@ -566,59 +566,59 @@ class Google_PollingLocation extends Google_Model {
   public $sources;
   public $startDate;
   public $voterServices;
-  public function setAddress(Google_SimpleAddressType $address) {
+  public function setAddress(Google_SimpleAddressType $address){
     $this->address = $address;
   }
-  public function getAddress() {
+  public function getAddress(){
     return $this->address;
   }
-  public function setEndDate( $endDate) {
+  public function setEndDate( $endDate){
     $this->endDate = $endDate;
   }
-  public function getEndDate() {
+  public function getEndDate(){
     return $this->endDate;
   }
-  public function setId( $id) {
+  public function setId( $id){
     $this->id = $id;
   }
-  public function getId() {
+  public function getId(){
     return $this->id;
   }
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
-  public function setNotes( $notes) {
+  public function setNotes( $notes){
     $this->notes = $notes;
   }
-  public function getNotes() {
+  public function getNotes(){
     return $this->notes;
   }
-  public function setPollingHours( $pollingHours) {
+  public function setPollingHours( $pollingHours){
     $this->pollingHours = $pollingHours;
   }
-  public function getPollingHours() {
+  public function getPollingHours(){
     return $this->pollingHours;
   }
-  public function setSources(/* array(Google_Source) */ $sources) {
+  public function setSources(/* array(Google_Source) */ $sources){
     $this->assertIsArray($sources, 'Google_Source', __METHOD__);
     $this->sources = $sources;
   }
-  public function getSources() {
+  public function getSources(){
     return $this->sources;
   }
-  public function setStartDate( $startDate) {
+  public function setStartDate( $startDate){
     $this->startDate = $startDate;
   }
-  public function getStartDate() {
+  public function getStartDate(){
     return $this->startDate;
   }
-  public function setVoterServices( $voterServices) {
+  public function setVoterServices( $voterServices){
     $this->voterServices = $voterServices;
   }
-  public function getVoterServices() {
+  public function getVoterServices(){
     return $this->voterServices;
   }
 }
@@ -631,46 +631,46 @@ class Google_SimpleAddressType extends Google_Model {
   public $locationName;
   public $state;
   public $zip;
-  public function setCity( $city) {
+  public function setCity( $city){
     $this->city = $city;
   }
-  public function getCity() {
+  public function getCity(){
     return $this->city;
   }
-  public function setLine1( $line1) {
+  public function setLine1( $line1){
     $this->line1 = $line1;
   }
-  public function getLine1() {
+  public function getLine1(){
     return $this->line1;
   }
-  public function setLine2( $line2) {
+  public function setLine2( $line2){
     $this->line2 = $line2;
   }
-  public function getLine2() {
+  public function getLine2(){
     return $this->line2;
   }
-  public function setLine3( $line3) {
+  public function setLine3( $line3){
     $this->line3 = $line3;
   }
-  public function getLine3() {
+  public function getLine3(){
     return $this->line3;
   }
-  public function setLocationName( $locationName) {
+  public function setLocationName( $locationName){
     $this->locationName = $locationName;
   }
-  public function getLocationName() {
+  public function getLocationName(){
     return $this->locationName;
   }
-  public function setState( $state) {
+  public function setState( $state){
     $this->state = $state;
   }
-  public function getState() {
+  public function getState(){
     return $this->state;
   }
-  public function setZip( $zip) {
+  public function setZip( $zip){
     $this->zip = $zip;
   }
-  public function getZip() {
+  public function getZip(){
     return $this->zip;
   }
 }
@@ -678,26 +678,26 @@ class Google_SimpleAddressType extends Google_Model {
 class Google_Source extends Google_Model {
   public $name;
   public $official;
-  public function setName( $name) {
+  public function setName( $name){
     $this->name = $name;
   }
-  public function getName() {
+  public function getName(){
     return $this->name;
   }
-  public function setOfficial( $official) {
+  public function setOfficial( $official){
     $this->official = $official;
   }
-  public function getOfficial() {
+  public function getOfficial(){
     return $this->official;
   }
 }
 
 class Google_VoterInfoRequest extends Google_Model {
   public $address;
-  public function setAddress( $address) {
+  public function setAddress( $address){
     $this->address = $address;
   }
-  public function getAddress() {
+  public function getAddress(){
     return $this->address;
   }
 }
@@ -723,56 +723,56 @@ class Google_VoterInfoResponse extends Google_Model {
   protected $__stateDataType = 'array';
   public $state;
   public $status;
-  public function setContests(/* array(Google_Contest) */ $contests) {
+  public function setContests(/* array(Google_Contest) */ $contests){
     $this->assertIsArray($contests, 'Google_Contest', __METHOD__);
     $this->contests = $contests;
   }
-  public function getContests() {
+  public function getContests(){
     return $this->contests;
   }
-  public function setEarlyVoteSites(/* array(Google_PollingLocation) */ $earlyVoteSites) {
+  public function setEarlyVoteSites(/* array(Google_PollingLocation) */ $earlyVoteSites){
     $this->assertIsArray($earlyVoteSites, 'Google_PollingLocation', __METHOD__);
     $this->earlyVoteSites = $earlyVoteSites;
   }
-  public function getEarlyVoteSites() {
+  public function getEarlyVoteSites(){
     return $this->earlyVoteSites;
   }
-  public function setElection(Google_Election $election) {
+  public function setElection(Google_Election $election){
     $this->election = $election;
   }
-  public function getElection() {
+  public function getElection(){
     return $this->election;
   }
-  public function setKind( $kind) {
+  public function setKind( $kind){
     $this->kind = $kind;
   }
-  public function getKind() {
+  public function getKind(){
     return $this->kind;
   }
-  public function setNormalizedInput(Google_SimpleAddressType $normalizedInput) {
+  public function setNormalizedInput(Google_SimpleAddressType $normalizedInput){
     $this->normalizedInput = $normalizedInput;
   }
-  public function getNormalizedInput() {
+  public function getNormalizedInput(){
     return $this->normalizedInput;
   }
-  public function setPollingLocations(/* array(Google_PollingLocation) */ $pollingLocations) {
+  public function setPollingLocations(/* array(Google_PollingLocation) */ $pollingLocations){
     $this->assertIsArray($pollingLocations, 'Google_PollingLocation', __METHOD__);
     $this->pollingLocations = $pollingLocations;
   }
-  public function getPollingLocations() {
+  public function getPollingLocations(){
     return $this->pollingLocations;
   }
-  public function setState(/* array(Google_AdministrationRegion) */ $state) {
+  public function setState(/* array(Google_AdministrationRegion) */ $state){
     $this->assertIsArray($state, 'Google_AdministrationRegion', __METHOD__);
     $this->state = $state;
   }
-  public function getState() {
+  public function getState(){
     return $this->state;
   }
-  public function setStatus( $status) {
+  public function setStatus( $status){
     $this->status = $status;
   }
-  public function getStatus() {
+  public function getStatus(){
     return $this->status;
   }
 }

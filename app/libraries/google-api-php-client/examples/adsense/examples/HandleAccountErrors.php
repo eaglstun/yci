@@ -26,7 +26,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class HandleAccountErrors extends BaseExample {
-  public function render() {
+  public function render(){
     $optParams['maxResults'] = AD_MAX_PAGE_SIZE;
     try {
       $result = $this->adSenseService->adclients->listAdclients($optParams);
@@ -36,9 +36,9 @@ class HandleAccountErrors extends BaseExample {
 
     // Handle a few known API errors. See full list at
     // https://developers.google.com/adsense/management/v1.1/reference/#errors
-    } catch (Google_ServiceException $e) {
-      foreach ($e->getErrors() as $error) {
-        switch ($error['reason']) {
+    } catch (Google_ServiceException $e){
+      foreach ($e->getErrors() as $error){
+        switch ($error['reason']){
           case 'noAdSenseAccount':
             print 'Error handled! No AdSense account for this user.';
             break;

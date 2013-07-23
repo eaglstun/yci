@@ -30,22 +30,22 @@ $plus = new Google_PlusService($client);
 // $client->setRedirectUri('insert_your_oauth2_redirect_uri');
 // $client->setDeveloperKey('insert_your_developer_key');
 
-if (isset($_GET['logout'])) {
+if (isset($_GET['logout'])){
   unset($_SESSION['token']);
 }
 
-if (isset($_GET['code'])) {
+if (isset($_GET['code'])){
   $client->authenticate();
   $_SESSION['token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL) );
 }
 
-if (isset($_SESSION['token'])) {
+if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->getAccessToken()) {
+if ($client->getAccessToken()){
   $client->setUseBatch(true);
  
   $batch = new Google_BatchRequest();

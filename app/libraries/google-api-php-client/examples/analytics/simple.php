@@ -14,22 +14,22 @@ $client->setApplicationName("Google Analytics PHP Starter Application");
 // $client->setDeveloperKey('insert_your_developer_key');
 $service = new Google_AnalyticsService($client);
 
-if (isset($_GET['logout'])) {
+if (isset($_GET['logout'])){
   unset($_SESSION['token']);
 }
 
-if (isset($_GET['code'])) {
+if (isset($_GET['code'])){
   $client->authenticate();
   $_SESSION['token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL) );
 }
 
-if (isset($_SESSION['token'])) {
+if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->getAccessToken()) {
+if ($client->getAccessToken()){
   $props = $service->management_webproperties->listManagementWebproperties("~all");
   print "<h1>Web Properties</h1><pre>" . print_r($props, true) . "</pre>";
 

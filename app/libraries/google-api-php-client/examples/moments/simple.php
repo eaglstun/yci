@@ -15,14 +15,14 @@ $client->setDeveloperKey('insert_developer_key');
 
 $moments = new Google_PlusMomentsService($client);
 
-if (isset($_GET['signout'])) {
+if (isset($_GET['signout'])){
   unset($_SESSION['token']);
 }
 
-if (isset($_GET['code'])) {
+if (isset($_GET['code'])){
   // Validate the state parameter (the CSRF token generated with the
   // Google+ sign-in button).
-  if (strval($_SESSION['state']) !== strval($_GET['state'])) {
+  if (strval($_SESSION['state']) !== strval($_GET['state'])){
     die("The session state did not match.");
   }
 
@@ -38,14 +38,14 @@ if (isset($_GET['code'])) {
 
 // Recall the credentials from the session.  In practice, you want to
 // look-up the token from a database.
-if (isset($_SESSION['token'])) {
+if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->isAccessTokenExpired()) {
+if ($client->isAccessTokenExpired()){
 
   // Generate a unique CSRF token.
-  $state = sha1(uniqid(mt_rand(), true));
+  $state = sha1(uniqid(mt_rand(), true) );
   $_SESSION['state'] = $state;
 
   // Render the Google+ sign-in button.
@@ -55,7 +55,7 @@ if ($client->isAccessTokenExpired()) {
 <script type="text/javascript">
   // The simplest possible solution to this callback. In your application,
   // you would want to replace the button with markup that indicates the state.
-  function onSignIn() {
+  function onSignIn(){
     window.location.reload(true);
   }
 </script></head>

@@ -32,7 +32,7 @@ $client = new Google_Client();
 $client->setApplicationName('DoubleClick Ad Exchange Buyer API PHP Samples');
 // Visit https://code.google.com/apis/console?api=adexchangebuyer to generate
 // your client id, client secret, and to register your redirect uri.
-$client->setScopes(array('https://www.googleapis.com/auth/adexchange.buyer'));
+$client->setScopes(array('https://www.googleapis.com/auth/adexchange.buyer') );
 // Visit https://code.google.com/apis/console?api=adexchangebuyer to generate
 // your oauth2_client_id, oauth2_client_secret, and to register your
 // oauth2_redirect_uri.
@@ -42,37 +42,37 @@ $client->setScopes(array('https://www.googleapis.com/auth/adexchange.buyer'));
 // $client->setDeveloperKey('insert_your_simple_api_key');
 $service = new Google_AdexchangebuyerService($client);
 
-if (isset($_GET['code'])) {
+if (isset($_GET['code'])){
   $client->authenticate();
   $_SESSION['token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL) );
 }
 
-if (isset($_SESSION['token'])) {
+if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->getAccessToken()) {
+if ($client->getAccessToken()){
   // Build the list of supported actions.
   $actions = getSupportedActions();
 
   // If the action is set dispatch the action if supported
-  if (isset($_GET["action"])) {
+  if (isset($_GET["action"])){
     $action = $_GET["action"];
-    if (!in_array($action, $actions)) {
+    if (!in_array($action, $actions)){
       die('Unsupported action:' . $action . "\n");
     }
     // Render the required action.
     require_once 'examples/' . $action . '.php';
     $class = ucfirst($action);
     $example = new $class($service);
-    printHtmlHeader($example->getName());
+    printHtmlHeader($example->getName() );
     try {
       $example->execute();
-    } catch (Google_Exception $ex) {
+    } catch (Google_Exception $ex){
       printf('An error as occurred while calling the example:<br/>');
-      printf($ex->getMessage());
+      printf($ex->getMessage() );
     }
     printSampleHtmlFooter();
   } else {
@@ -92,7 +92,7 @@ if ($client->getAccessToken()) {
 /**
  * Builds an array containing the supported actions.
  */
-function getSupportedActions() {
+function getSupportedActions(){
   return array('GetAllAccounts', 'GetCreative', 'GetDirectDeals',
                'SubmitCreative', 'UpdateAccount');
 }

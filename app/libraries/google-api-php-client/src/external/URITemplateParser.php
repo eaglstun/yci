@@ -41,20 +41,20 @@ class URI_Template_Parser {
   public static $reserved;
   public static $reserved_pct;
 
-  public function __construct($template) {
+  public function __construct($template){
     self::$reserved = array_merge(self::$gen_delims, self::$sub_delims);
     self::$reserved_pct = array_merge(self::$gen_delims_pct, self::$sub_delims_pct);
     $this->template = $template;
   }
 
-  public function expand($data) {
+  public function expand($data){
     // Modification to make this a bit more performant (since gettype is very slow)
-    if (! is_array($data)) {
+    if (! is_array($data)){
       $data = (array)$data;
     }
     /*
     // Original code, which uses a slow gettype() statement, kept in place for if the assumption that is_array always works here is incorrect
-    switch (gettype($data)) {
+    switch (gettype($data)){
       case "boolean":
       case "integer":
       case "double":
@@ -68,7 +68,7 @@ class URI_Template_Parser {
     // Resolve template vars
     preg_match_all('/\{([^\}]*)\}/', $this->template, $em);
 
-    foreach ($em[1] as $i => $bare_expression) {
+    foreach ($em[1] as $i => $bare_expression){
       preg_match('/^([\+\;\?\/\.]{1})?(.*)$/', $bare_expression, $lm);
       $exp = new StdClass();
       $exp->expression = $em[0][$i];
@@ -76,7 +76,7 @@ class URI_Template_Parser {
       $exp->variable_list = $lm[2];
       $exp->varspecs = explode(',', $exp->variable_list);
       $exp->vars = array();
-      foreach ($exp->varspecs as $varspec) {
+      foreach ($exp->varspecs as $varspec){
         preg_match('/^([a-zA-Z0-9_]+)([\*\+]{1})?([\:\^][0-9-]+)?(\=[^,]+)?$/', $varspec, $vm);
         $var = new StdClass();
         $var->name = $vm[1];
@@ -90,7 +90,7 @@ class URI_Template_Parser {
       $exp->reserved = false;
       $exp->prefix = '';
       $exp->delimiter = ',';
-      switch ($exp->operator) {
+      switch ($exp->operator){
         case '+':
           $exp->reserved = 'true';
           break;
@@ -117,16 +117,16 @@ class URI_Template_Parser {
     // Expansion
     $this->expansion = $this->template;
 
-    foreach ($expressions as $exp) {
+    foreach ($expressions as $exp){
       $part = $exp->prefix;
       $exp->one_var_defined = false;
-      foreach ($exp->vars as $var) {
+      foreach ($exp->vars as $var){
         $val = '';
-        if ($exp->one_var_defined && isset($data[$var->name])) {
+        if ($exp->one_var_defined && isset($data[$var->name])){
           $part .= $exp->delimiter;
         }
         // Variable present
-        if (isset($data[$var->name])) {
+        if (isset($data[$var->name])){
           $exp->one_var_defined = true;
           $var->data = $data[$var->name];
 
@@ -134,7 +134,7 @@ class URI_Template_Parser {
 
         // Variable missing
         } else {
-          if ($var->default) {
+          if ($var->default){
             $exp->one_var_defined = true;
             $val = $var->default;
           }
@@ -148,24 +148,24 @@ class URI_Template_Parser {
     return $this->expansion;
   }
 
-  private function val_from_var($var, $exp) {
+  private function val_from_var($var, $exp){
     $val = '';
-    if (is_array($var->data)) {
+    if (is_array($var->data)){
       $i = 0;
-      if ($exp->operator == '?' && ! $var->modifier) {
+      if ($exp->operator == '?' && ! $var->modifier){
         $val .= $var->name . '=';
       }
-      foreach ($var->data as $k => $v) {
+      foreach ($var->data as $k => $v){
         $del = $var->modifier ? $exp->delimiter : ',';
         $ek = rawurlencode($k);
         $ev = rawurlencode($v);
 
         // Array
-        if ($k !== $i) {
-          if ($var->modifier == '+') {
+        if ($k !== $i){
+          if ($var->modifier == '+'){
             $val .= $var->name . '.';
           }
-          if ($exp->operator == '?' && $var->modifier || $exp->operator == ';' && $var->modifier == '*' || $exp->operator == ';' && $var->modifier == '+') {
+          if ($exp->operator == '?' && $var->modifier || $exp->operator == ';' && $var->modifier == '*' || $exp->operator == ';' && $var->modifier == '+'){
             $val .= $ek . '=';
           } else {
             $val .= $ek . $del;
@@ -173,8 +173,8 @@ class URI_Template_Parser {
 
         // List
         } else {
-          if ($var->modifier == '+') {
-            if ($exp->operator == ';' && $var->modifier == '*' || $exp->operator == ';' && $var->modifier == '+' || $exp->operator == '?' && $var->modifier == '+') {
+          if ($var->modifier == '+'){
+            if ($exp->operator == ';' && $var->modifier == '*' || $exp->operator == ';' && $var->modifier == '+' || $exp->operator == '?' && $var->modifier == '+'){
               $val .= $var->name . '=';
             } else {
               $val .= $var->name . '.';
@@ -188,22 +188,22 @@ class URI_Template_Parser {
 
     // Strings, numbers, etc.
     } else {
-      if ($exp->operator == '?') {
+      if ($exp->operator == '?'){
         $val = $var->name . (isset($var->data) ? '=' : '');
-      } else if ($exp->operator == ';') {
+      } else if ($exp->operator == ';'){
         $val = $var->name . ($var->data ? '=' : '');
       }
       $val .= rawurlencode($var->data);
-      if ($exp->operator == '+') {
+      if ($exp->operator == '+'){
         $val = str_replace(self::$reserved_pct, self::$reserved, $val);
       }
     }
     return $val;
   }
 
-  public function match($uri) {}
+  public function match($uri){}
 
-  public function __toString() {
+  public function __toString(){
     return $this->template;
   }
 }

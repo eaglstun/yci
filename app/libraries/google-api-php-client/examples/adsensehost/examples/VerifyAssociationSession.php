@@ -29,7 +29,7 @@ define('TOKEN', 'INSERT_TOKEN_HERE');
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class VerifyAssociationSession extends BaseExample {
-  public function render() {
+  public function render(){
     // Retrieve report.
     $result = $this->adSenseHostService->associationsessions->verify(TOKEN);
 

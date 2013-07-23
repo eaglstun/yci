@@ -50,7 +50,7 @@ class CoreReportingApiReference {
    * @internal param Google_AnalyticsService $analytics The analytics service
    *     object to make requests to the API.
    */
-  function __construct(&$analytics, $controllerUrl) {
+  function __construct(&$analytics, $controllerUrl){
     $this->analytics = $analytics;
     $this->controllerUrl;
   }
@@ -68,15 +68,15 @@ class CoreReportingApiReference {
    *     for details.
    * @return string The formatted results from the API.
    */
-  function getHtmlOutput($tableId = null) {
+  function getHtmlOutput($tableId = null){
     $output = $this->getHTMLForm($tableId);
 
-    if (isset($tableId)) {
+    if (isset($tableId)){
       try {
         $results = $this->queryCoreReportingApi($tableId);
         $output .= $this->getFormattedResults($results);
 
-      } catch (Google_ServiceException $e) {
+      } catch (Google_ServiceException $e){
         $this->error = $e->getMessage();
       }
     }
@@ -94,7 +94,7 @@ class CoreReportingApiReference {
    *     for details.
    * @return GaData The results from the Core Reporting API.
    */
-  private function queryCoreReportingApi($tableId) {
+  private function queryCoreReportingApi($tableId){
 
     $optParams = array(
         'dimensions' => 'ga:source,ga:keyword',
@@ -115,7 +115,7 @@ class CoreReportingApiReference {
    * @param GaData $results The results from the Core Reporting API.
    * @return string The formatted results.
    */
-  private function getFormattedResults(&$results) {
+  private function getFormattedResults(&$results){
     return implode('', array(
         $this->getReportInfo($results),
         $this->getPaginationInfo($results),
@@ -124,7 +124,7 @@ class CoreReportingApiReference {
         $this->getColumnHeaders($results),
         $this->getTotalsForAllResults($results),
         $this->getRows($results)
-    ));
+    ) );
     
   }
 
@@ -133,7 +133,7 @@ class CoreReportingApiReference {
    * @param GaData $results The results from the Core Reporting API.
    * @return string The formatted results.
    */
-  private function getReportInfo(&$results) {
+  private function getReportInfo(&$results){
     return <<<HTML
 <h3>Report Information</h3>
 <pre>
@@ -150,7 +150,7 @@ HTML;
    * @param GaData $results The results from the Core Reporting API.
    * @return string The formatted results.
    */
-  private function getPaginationInfo(&$results) {
+  private function getPaginationInfo(&$results){
     return<<<HTML
 <h3>Pagination Info</h3>
 <pre>
@@ -168,7 +168,7 @@ HTML;
    * @param GaData $results The results from the Core Reporting API.
    * @return string The formatted results.
    */
-  private function getProfileInformation(&$results) {
+  private function getProfileInformation(&$results){
     $profileInfo = $results->getProfileInfo();
 
     return<<<HTML
@@ -189,11 +189,11 @@ HTML;
    * @param GaData $results The results from the Core Reporting API.
    * @return string The formatted results.
    */
-  private function getQueryParameters(&$results) {
+  private function getQueryParameters(&$results){
     $query = $results->getQuery();
 
     $html = '<h3>Query Parameters</h3><pre>';
-    foreach ($query as $paramName => $value) {
+    foreach ($query as $paramName => $value){
       $html .= "$paramName = $value\n";
     }
     $html .= '</pre>';
@@ -205,11 +205,11 @@ HTML;
    * @param GaData $results The results from the Core Reporting API.
    * @return string The formatted results.
    */
-  private function getColumnHeaders(&$results) {
+  private function getColumnHeaders(&$results){
     $html = '<h3>Column Headers</h3><pre>';
 
     $headers = $results->getColumnHeaders();
-    foreach ($headers as $header) {
+    foreach ($headers as $header){
       $html .= <<<HTML
 
 Column Name = {$header->getName()}
@@ -228,9 +228,9 @@ HTML;
    * @param GaData $results The results from the Core Reporting API.
    * @return string The formatted results.
    */
-  private function getTotalsForAllResults(&$results) {
+  private function getTotalsForAllResults(&$results){
 
-    $rowCount = count($results->getRows());
+    $rowCount = count($results->getRows() );
     $totalResults = $results->getTotalResults();
 
     $html = '<h3>Total Metrics For All Results</h3>';
@@ -240,7 +240,7 @@ HTML;
     $html .= '<pre>';
 
     $totals = $results->getTotalsForAllResults();
-    foreach ($totals as $metricName => $metricTotal) {
+    foreach ($totals as $metricName => $metricTotal){
       $html .= "Metric Name  = $metricName\n";
       $html .= "Metric Total = $metricTotal";
     }
@@ -253,24 +253,24 @@ HTML;
    * @param GaData $results The results from the Core Reporting API.
    * @return string The formatted results.
    */
-  private function getRows($results) {
+  private function getRows($results){
     $table = '<h3>Rows Of Data</h3>';
 
-    if (count($results->getRows()) > 0) {
+    if (count($results->getRows()) > 0){
       $table .= '<table>';
 
       // Print headers.
       $table .= '<tr>';
 
-      foreach ($results->getColumnHeaders() as $header) {
+      foreach ($results->getColumnHeaders() as $header){
         $table .= '<th>' . $header->name . '</th>';
       }
       $table .= '</tr>';
 
       // Print table rows.
-      foreach ($results->getRows() as $row) {
+      foreach ($results->getRows() as $row){
         $table .= '<tr>';
-          foreach ($row as $cell) {
+          foreach ($row as $cell){
             $table .= '<td>'
                    . htmlspecialchars($cell, ENT_NOQUOTES)
                    . '</td>';
@@ -294,7 +294,7 @@ HTML;
    * @param string $tableId The table ID value to add to the HTML form
    * @return string The HTML form.
    */
-  private function getHtmlForm($tableId) {
+  private function getHtmlForm($tableId){
     $tableId = htmlspecialchars($tableId);
 
     return <<<HTML
@@ -311,7 +311,7 @@ HTML;
  /**
   * @return string Any error that occurred.
   */
-  function getError() {
+  function getError(){
     return $this->error;
   }
 }

@@ -28,24 +28,24 @@ $client->setApplicationName("Google UserInfo PHP Starter Application");
 // $client->setDeveloperKey('insert_your_developer_key');
 $oauth2 = new Google_Oauth2Service($client);
 
-if (isset($_GET['code'])) {
+if (isset($_GET['code'])){
   $client->authenticate($_GET['code']);
   $_SESSION['token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL) );
   return;
 }
 
-if (isset($_SESSION['token'])) {
+if (isset($_SESSION['token'])){
  $client->setAccessToken($_SESSION['token']);
 }
 
-if (isset($_REQUEST['logout'])) {
+if (isset($_REQUEST['logout'])){
   unset($_SESSION['token']);
   $client->revokeToken();
 }
 
-if ($client->getAccessToken()) {
+if ($client->getAccessToken()){
   $user = $oauth2->userinfo->get();
 
   // These fields are currently filtered through the PHP sanitize filters.
@@ -69,7 +69,7 @@ if ($client->getAccessToken()) {
 <?php print $personMarkup ?>
 <?php endif ?>
 <?php
-  if(isset($authUrl)) {
+  if(isset($authUrl)){
     print "<a class='login' href='$authUrl'>Connect Me!</a>";
   } else {
    print "<a class='logout' href='?logout'>Logout</a>";

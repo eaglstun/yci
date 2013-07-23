@@ -22,7 +22,7 @@ $client = new Google_Client();
 $client->setApplicationName("PageSpeedOnline_Example_App");
 $service = new Google_PagespeedonlineService($client);
 
-if (isset($_GET['url'])) {
+if (isset($_GET['url'])){
   $result = $service->pagespeedapi->runpagespeed($_GET['url']);
 }
 ?>

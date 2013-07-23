@@ -26,7 +26,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Sérgio Gomes <sgomes@google.com>
  */
 class GetAllSavedReports extends BaseExample {
-  public function render() {
+  public function render(){
     $accountId = ACCOUNT_ID;
     $optParams['maxResults'] = AD_MAX_PAGE_SIZE;
     $listClass = 'saved reports';
@@ -38,8 +38,8 @@ class GetAllSavedReports extends BaseExample {
       $result = $this->adSenseService->accounts_reports_saved
           ->listAccountsReportsSaved($accountId, $optParams);
       $savedReports = $result['items'];
-      if (empty($savedReports)) {
-        foreach ($savedReports as $savedReport) {
+      if (empty($savedReports)){
+        foreach ($savedReports as $savedReport){
           $content = array();
           $mainFormat = 'Saved report with name "%s" and ID "%s" was found.';
           $content[] = sprintf(

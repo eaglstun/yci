@@ -25,7 +25,7 @@
  * Opens the HTML.
  * @param string $title the title of the page
  */
-function printHtmlHeader($title) {
+function printHtmlHeader($title){
   $htmlTitle = filter_var($title, FILTER_SANITIZE_SPECIAL_CHARS);
   print '<!DOCTYPE html>';
   print '<html>';
@@ -37,7 +37,7 @@ function printHtmlHeader($title) {
 /**
  * Closes the HTML.
  */
-function printHtmlFooter() {
+function printHtmlFooter(){
   print '</body>';
   print '</html>';
 }
@@ -45,7 +45,7 @@ function printHtmlFooter() {
 /**
  * Closes the HTML for samples.
  */
-function printSampleHtmlFooter() {
+function printSampleHtmlFooter(){
   print '<a href="index.php">Go back to samples list</a>';
   printHtmlFooter();
 }
@@ -54,14 +54,14 @@ function printSampleHtmlFooter() {
  * Prints the index with links to the examples.
  * @param array $actions supported actions
  */
-function printExamplesIndex($actions) {
+function printExamplesIndex($actions){
   print '<h2>Select a sample from the list</h2>';
   print '<ul class="nav">';
-  foreach ($actions as $action) {
+  foreach ($actions as $action){
     require_once 'examples/' . $action . '.php';
     $class = ucfirst($action);
     printf('<li><a class="highlight" href="?action=%s">%s</a></li>', $action,
-        $class::getName());
+        $class::getName() );
   }
   print '</ul>';
 }

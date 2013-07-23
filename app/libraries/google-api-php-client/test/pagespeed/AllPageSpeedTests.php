@@ -21,7 +21,7 @@
 require_once 'PageSpeedTest.php';
 
 class AllPageSpeedTests extends PHPUnit_Framework_TestSuite {
-  public static function suite() {
+  public static function suite(){
     $suite = new PHPUnit_Framework_TestSuite();
     $suite->setName('Google PageSpeed API tests');
     $suite->addTestSuite('PageSpeedTest');

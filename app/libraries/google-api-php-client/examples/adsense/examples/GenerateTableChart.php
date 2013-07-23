@@ -24,7 +24,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Silvano Luciani <silvano.luciani@gmail.com>
  */
 class GenerateTableChart extends BaseExample {
-  public function render() {
+  public function render(){
     $startDate = $this->getSixMonthsBeforeNow();
     $endDate = $this->getNow();
     $optParams = array(
@@ -38,7 +38,7 @@ class GenerateTableChart extends BaseExample {
         ->generate($startDate, $endDate, $optParams);
     $data = $report['rows'];
     // We need to convert the metrics to numeric values for the chart.
-    foreach ($data as &$row) {
+    foreach ($data as &$row){
       $row[1] = (int)$row[1];
       $row[2] = (int)$row[2];
       $row[3] = (int)$row[3];
@@ -51,7 +51,7 @@ class GenerateTableChart extends BaseExample {
       array('number', 'Individual ad impressions')
     );
     $type = 'Table';
-    $options = json_encode(array());
+    $options = json_encode(array() );
     print generateChartHtml($data, $columns, $type, $options);
   }
 }

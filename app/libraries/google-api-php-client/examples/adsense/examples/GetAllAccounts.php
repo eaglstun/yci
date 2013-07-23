@@ -26,7 +26,7 @@ require_once __DIR__ . "/../BaseExample.php";
  * @author Silvano Luciani <silvano.luciani@gmail.com>
  */
 class GetAllAccounts extends BaseExample {
-  public function render() {
+  public function render(){
     $optParams['maxResults'] = AD_MAX_PAGE_SIZE;
     $listClass = 'list';
     printListHeader($listClass);
@@ -36,8 +36,8 @@ class GetAllAccounts extends BaseExample {
       // Retrieve account list, and display it.
       $result = $this->adSenseService->accounts->listAccounts($optParams);
       $accounts = $result['items'];
-      if (isset($accounts)) {
-        foreach ($accounts as $account) {
+      if (isset($accounts)){
+        foreach ($accounts as $account){
           $format = 'Account with ID "%s" and name "%s" was found.';
           $content = sprintf(
               $format, $account['id'], $account['name']);

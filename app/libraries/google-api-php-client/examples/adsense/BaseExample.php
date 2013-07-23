@@ -36,7 +36,7 @@ abstract class BaseExample {
    * @param Google_AdsenseService $adSenseService an authenticated instance
    *     of Google_AdsenseService
    */
-  public function __construct(Google_AdsenseService $adSenseService) {
+  public function __construct(Google_AdsenseService $adSenseService){
     $this->adSenseService = $adSenseService;
   }
 
@@ -44,7 +44,7 @@ abstract class BaseExample {
    * Get the date for the instant of the call.
    * @return string the date in the format expressed by $this->dateFormat
    */
-  protected function getNow() {
+  protected function getNow(){
     $now = new DateTime();
     return $now->format($this->dateFormat);
   }
@@ -53,7 +53,7 @@ abstract class BaseExample {
    * Get the date six month before the instant of the call.
    * @return string the date in the format expressed by $this->dateFormat
    */
-  protected function getSixMonthsBeforeNow() {
+  protected function getSixMonthsBeforeNow(){
     $sixMonthsAgo = new DateTime('-6 months');
     return $sixMonthsAgo->format($this->dateFormat);
   }

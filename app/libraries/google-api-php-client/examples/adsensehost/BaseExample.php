@@ -37,7 +37,7 @@ abstract class BaseExample {
    * @param Google_AdsensehostService $adSenseHostService an authenticated
    *     instance of Google_AdsensehostService
    */
-  public function __construct(Google_AdsensehostService $adSenseHostService) {
+  public function __construct(Google_AdsensehostService $adSenseHostService){
     $this->adSenseHostService = $adSenseHostService;
   }
 
@@ -45,7 +45,7 @@ abstract class BaseExample {
    * Get the date for the instant of the call.
    * @return string the date in the format expressed by $this->dateFormat
    */
-  protected function getNow() {
+  protected function getNow(){
     $now = new DateTime();
     return $now->format($this->dateFormat);
   }
@@ -54,7 +54,7 @@ abstract class BaseExample {
    * Get the date six month before the instant of the call.
    * @return string the date in the format expressed by $this->dateFormat
    */
-  protected function getSixMonthsBeforeNow() {
+  protected function getSixMonthsBeforeNow(){
     $sixMonthsAgo = new DateTime('-6 months');
     return $sixMonthsAgo->format($this->dateFormat);
   }
@@ -63,7 +63,7 @@ abstract class BaseExample {
    * Returns a unique value to append to various properties in the samples.
    * @return string unique value
    */
-  protected function getUniqueName() {
+  protected function getUniqueName(){
     $now = new DateTime();
     return $now->format('YmdHisu');
   }

@@ -41,7 +41,7 @@ class HelloAnalyticsApi {
    * @param apiAnalyticsService The analytics service object to make
    *     requests to the API.
    */
-  function __construct(&$analytics) {
+  function __construct(&$analytics){
     $this->analytics = $analytics;
   }
 
@@ -51,19 +51,19 @@ class HelloAnalyticsApi {
    * and returned. If any error occurs, $this->error gets set.
    * @return string The formatted API response.
    */
-  public function getHtmlOutput() {
+  public function getHtmlOutput(){
     try {
       $profileId = $this->getFirstProfileId();
-      if (isset($profileId)) {
+      if (isset($profileId)){
         $results = $this->queryCoreReportingApi($profileId);
         return $this->getFormattedResults($results);
       }
 
-    } catch (Google_ServiceException $e) {
+    } catch (Google_ServiceException $e){
       // Error from the API.
       $this->error = $e->getMessage();
 
-    } catch (demoException $e) {
+    } catch (demoException $e){
       // Error running this demo.
       $this->error = $e->getMessage();
     }
@@ -78,25 +78,25 @@ class HelloAnalyticsApi {
    *     items.
    * @return string The user's first profile ID.
    */
-  private function getFirstprofileId() {
+  private function getFirstprofileId(){
     $accounts =
         $this->analytics->management_accounts->listManagementAccounts();
 
-    if (count($accounts->getItems()) > 0) {
+    if (count($accounts->getItems()) > 0){
       $items = $accounts->getItems();
       $firstAccountId = $items[0]->getId();
 
       $webproperties = $this->analytics->management_webproperties
           ->listManagementWebproperties($firstAccountId);
 
-      if (count($webproperties->getItems()) > 0) {
+      if (count($webproperties->getItems()) > 0){
         $items = $webproperties->getItems();
         $firstWebpropertyId = $items[0]->getId();
 
         $profiles = $this->analytics->management_profiles
             ->listManagementProfiles($firstAccountId, $firstWebpropertyId);
 
-        if (count($profiles->getItems()) > 0) {
+        if (count($profiles->getItems()) > 0){
           $items = $profiles->getItems();
           return $items[0]->getId();
 
@@ -117,7 +117,7 @@ class HelloAnalyticsApi {
    * @param string $profileId The profileId to use in the query.
    * @return GaData the results from the Core Reporting API.
    */
-  private function queryCoreReportingApi($profileId) {
+  private function queryCoreReportingApi($profileId){
 
     return $this->analytics->data_ga->get(
         'ga:' . $profileId,
@@ -128,7 +128,7 @@ class HelloAnalyticsApi {
             'dimensions' => 'ga:source,ga:keyword',
             'sort' => '-ga:visits,ga:keyword',
             'filters' => 'ga:medium==organic',
-            'max-results' => '25'));
+            'max-results' => '25') );
   }
 
   /**
@@ -140,27 +140,27 @@ class HelloAnalyticsApi {
    * @param GaData $results The Results from the Core Reporting API.
    * @return string The nicely formatted results.
    */
-  private function getFormattedResults($results) {
+  private function getFormattedResults($results){
     $profileName = $results->getProfileInfo()->getProfileName();
     $output = '<h3>Results for profile: '
         . htmlspecialchars($profileName, ENT_NOQUOTES)
         . '</h3>';
 
-    if (count($results->getRows()) > 0) {
+    if (count($results->getRows()) > 0){
       $table = '<table>';
 
       // Print headers.
       $table .= '<tr>';
 
-      foreach ($results->getColumnHeaders() as $header) {
+      foreach ($results->getColumnHeaders() as $header){
         $table .= '<th>' . $header->getName() . '</th>';
       }
       $table .= '</tr>';
 
       // Print table rows.
-      foreach ($results->getRows() as $row) {
+      foreach ($results->getRows() as $row){
         $table .= '<tr>';
-          foreach ($row as $cell) {
+          foreach ($row as $cell){
             $table .= '<td>'
                    . htmlspecialchars($cell, ENT_NOQUOTES)
                    . '</td>';
@@ -179,7 +179,7 @@ class HelloAnalyticsApi {
    * Returns any errors encountered in this script.
    * @return string The error message.
    */
-  public function getError() {
+  public function getError(){
     return $this->error;
   }
 }
