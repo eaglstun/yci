@@ -71,9 +71,9 @@ class Google_AssertionCredentials {
           'iss' => $this->serviceAccountName,
     );
 
-    if ($this->sub !== false){
+    if( $this->sub !== false){
       $jwtParams['sub'] = $this->sub;
-    } else if ($this->prn !== false){
+    } else if( $this->prn !== false){
       $jwtParams['prn'] = $this->prn;
     }
 
@@ -86,7 +86,7 @@ class Google_AssertionCredentials {
    * @return string The signed JWT.
    */
   private function makeSignedJwt($payload){
-    $header = array('typ' => 'JWT', 'alg' => 'RS256');
+    $header = array('typ' => 'JWT', 'alg' => 'RS256' );
 
     $segments = array(
       Google_Utils::urlSafeB64Encode(json_encode($header)),

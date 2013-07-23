@@ -25,10 +25,10 @@ $plus = new Google_PlusService($client);
 
 // Visit https://code.google.com/apis/console?api=plus to generate your
 // client id, client secret, and to register your redirect uri.
-// $client->setClientId('insert_your_oauth2_client_id');
-// $client->setClientSecret('insert_your_oauth2_client_secret');
-// $client->setRedirectUri('insert_your_oauth2_redirect_uri');
-// $client->setDeveloperKey('insert_your_developer_key');
+// $client->setClientId('insert_your_oauth2_client_id' );
+// $client->setClientSecret('insert_your_oauth2_client_secret' );
+// $client->setRedirectUri('insert_your_oauth2_redirect_uri' );
+// $client->setDeveloperKey('insert_your_developer_key' );
 
 if (isset($_GET['logout'])){
   unset($_SESSION['token']);
@@ -45,12 +45,12 @@ if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->getAccessToken()){
+if( $client->getAccessToken()){
   $client->setUseBatch(true);
  
   $batch = new Google_BatchRequest();
-  $batch->add($plus->people->get('me'), 'key1');
-  $batch->add($plus->people->get('me'), 'key2');
+  $batch->add($plus->people->get('me'), 'key1' );
+  $batch->add($plus->people->get('me'), 'key2' );
   $result = $batch->execute();
   print "<pre>" . print_r($result, true) . "</pre>";
 

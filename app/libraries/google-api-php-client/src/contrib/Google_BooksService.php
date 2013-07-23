@@ -38,7 +38,7 @@
       $params = array('userId' => $userId, 'shelf' => $shelf);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Bookshelf($data);
       } else {
         return $data;
@@ -57,7 +57,7 @@
       $params = array('userId' => $userId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Bookshelves($data);
       } else {
         return $data;
@@ -92,7 +92,7 @@
       $params = array('userId' => $userId, 'shelf' => $shelf);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Volumes($data);
       } else {
         return $data;
@@ -125,7 +125,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('addBook', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BooksCloudloadingResource($data);
       } else {
         return $data;
@@ -154,7 +154,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('updateBook', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BooksCloudloadingResource($data);
       } else {
         return $data;
@@ -187,7 +187,7 @@
       $params = array('volumeId' => $volumeId, 'summaryId' => $summaryId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Layersummary($data);
       } else {
         return $data;
@@ -209,7 +209,7 @@
       $params = array('volumeId' => $volumeId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Layersummaries($data);
       } else {
         return $data;
@@ -247,7 +247,7 @@
       $params = array('volumeId' => $volumeId, 'layerId' => $layerId, 'annotationDataId' => $annotationDataId, 'contentVersion' => $contentVersion);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Annotationdata($data);
       } else {
         return $data;
@@ -277,7 +277,7 @@
       $params = array('volumeId' => $volumeId, 'layerId' => $layerId, 'contentVersion' => $contentVersion);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Annotationsdata($data);
       } else {
         return $data;
@@ -310,7 +310,7 @@
       $params = array('volumeId' => $volumeId, 'layerId' => $layerId, 'annotationId' => $annotationId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Volumeannotation($data);
       } else {
         return $data;
@@ -342,7 +342,7 @@
       $params = array('volumeId' => $volumeId, 'layerId' => $layerId, 'contentVersion' => $contentVersion);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Volumeannotations($data);
       } else {
         return $data;
@@ -375,7 +375,7 @@
       $params = array('volumeIds' => $volumeIds, 'cpksver' => $cpksver);
       $params = array_merge($params, $optParams);
       $data = $this->__call('releaseDownloadAccess', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DownloadAccesses($data);
       } else {
         return $data;
@@ -397,7 +397,7 @@
       $params = array('source' => $source, 'volumeId' => $volumeId, 'nonce' => $nonce, 'cpksver' => $cpksver);
       $params = array_merge($params, $optParams);
       $data = $this->__call('requestAccess', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_RequestAccess($data);
       } else {
         return $data;
@@ -421,7 +421,7 @@
       $params = array('source' => $source, 'nonce' => $nonce, 'cpksver' => $cpksver);
       $params = array_merge($params, $optParams);
       $data = $this->__call('syncVolumeLicenses', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Volumes($data);
       } else {
         return $data;
@@ -478,7 +478,7 @@
       $params = array('annotationId' => $annotationId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Annotation($data);
       } else {
         return $data;
@@ -497,7 +497,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Annotation($data);
       } else {
         return $data;
@@ -524,7 +524,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Annotations($data);
       } else {
         return $data;
@@ -544,7 +544,7 @@
       $params = array('annotationId' => $annotationId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Annotation($data);
       } else {
         return $data;
@@ -604,7 +604,7 @@
       $params = array('shelf' => $shelf);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Bookshelf($data);
       } else {
         return $data;
@@ -622,7 +622,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Bookshelves($data);
       } else {
         return $data;
@@ -690,7 +690,7 @@
       $params = array('shelf' => $shelf);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Volumes($data);
       } else {
         return $data;
@@ -721,7 +721,7 @@
       $params = array('volumeId' => $volumeId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ReadingPosition($data);
       } else {
         return $data;
@@ -774,7 +774,7 @@
       $params = array('volumeId' => $volumeId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Volume($data);
       } else {
         return $data;
@@ -804,7 +804,7 @@
       $params = array('q' => $q);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Volumes($data);
       } else {
         return $data;
@@ -837,7 +837,7 @@
       $params = array('volumeId' => $volumeId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Volumes($data);
       } else {
         return $data;
@@ -871,7 +871,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Volumes($data);
       } else {
         return $data;
@@ -901,7 +901,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Volumes($data);
       } else {
         return $data;
@@ -935,7 +935,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Volumes($data);
       } else {
         return $data;

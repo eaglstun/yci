@@ -37,7 +37,7 @@
       $params = array('datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('allocateIds', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AllocateIdsResponse($data);
       } else {
         return $data;
@@ -55,7 +55,7 @@
       $params = array('datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('beginTransaction', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BeginTransactionResponse($data);
       } else {
         return $data;
@@ -73,7 +73,7 @@
       $params = array('datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('blindWrite', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BlindWriteResponse($data);
       } else {
         return $data;
@@ -91,7 +91,7 @@
       $params = array('datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('commit', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommitResponse($data);
       } else {
         return $data;
@@ -109,7 +109,7 @@
       $params = array('datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('lookup', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LookupResponse($data);
       } else {
         return $data;
@@ -127,7 +127,7 @@
       $params = array('datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('rollback', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_RollbackResponse($data);
       } else {
         return $data;
@@ -145,7 +145,7 @@
       $params = array('datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('runQuery', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_RunQueryResponse($data);
       } else {
         return $data;

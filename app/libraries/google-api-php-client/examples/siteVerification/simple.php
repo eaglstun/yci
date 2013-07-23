@@ -8,10 +8,10 @@ $client->setApplicationName("Google Site Verification PHP Sample");
 
 // Visit https://code.google.com/apis/console?api=siteVerification to generate
 // your client id, client secret, and to register your redirect uri.
-// $client->setClientId('insert_your_oauth2_client_id');
-// $client->setClientSecret('insert_your_oauth2_client_secret');
-// $client->setRedirectUri('insert_your_oauth2_redirect_uri');
-// $client->setDeveloperKey('insert_your_developer_key');
+// $client->setClientId('insert_your_oauth2_client_id' );
+// $client->setClientSecret('insert_your_oauth2_client_secret' );
+// $client->setRedirectUri('insert_your_oauth2_redirect_uri' );
+// $client->setDeveloperKey('insert_your_developer_key' );
 $service = new Google_SiteVerificationService($client);
 
 if (isset($_GET['logout'])){
@@ -29,7 +29,7 @@ if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->getAccessToken()){
+if( $client->getAccessToken()){
   $resources = $service->webResource->listWebResource();
   print '<pre>' . print_r($resources, true) . '</pre>';
 

@@ -23,13 +23,13 @@
  */
 
 // Ad client ID to use in the examples where needed.
-define('AD_CLIENT_ID', 'INSERT_AD_CLIENT_ID_HERE');
+define('AD_CLIENT_ID', 'INSERT_AD_CLIENT_ID_HERE' );
 // Account ID to use in the examples where needed.
-define('ACCOUNT_ID', 'INSERT_ACCOUNT_ID_HERE');
+define('ACCOUNT_ID', 'INSERT_ACCOUNT_ID_HERE' );
 // Custom channel ID to use in the examples where needed.
-define('CUSTOM_CHANNEL_ID', 'INSERT_CUSTOM_CHANNEL_ID_HERE');
+define('CUSTOM_CHANNEL_ID', 'INSERT_CUSTOM_CHANNEL_ID_HERE' );
 // Ad unit ID to use in the examples where needed.
-define('AD_UNIT_ID', 'INSERT_AD_UNIT_ID_HERE');
+define('AD_UNIT_ID', 'INSERT_AD_UNIT_ID_HERE' );
 // Max results per page.
 define('AD_MAX_PAGE_SIZE', 50);
 // This is the maximum number of obtainable rows for paged reports.
@@ -49,7 +49,7 @@ try {
   $actions = getSupportedActions();
   // Go through API authentication.
   $auth = new AdSenseAuth();
-  $auth->authenticate('sample_user');
+  $auth->authenticate('sample_user' );
   // To get rid of the code in the URL after the authentication.
   if (isset($_GET['code'])){
     header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
@@ -71,7 +71,7 @@ try {
     $auth->refreshToken();
   } else {
     // Show the list of links to supported actions.
-    printHtmlHeader('AdSense Management API PHP usage examples.');
+    printHtmlHeader('AdSense Management API PHP usage examples.' );
     printIndex($actions);
     printHtmlFooter();
   }
@@ -85,7 +85,7 @@ try {
  */
 function getSupportedActions(){
   $actions = array();
-  $dirHandler = opendir('examples');
+  $dirHandler = opendir('examples' );
   while ($actionFile = readdir($dirHandler)){
     if (preg_match('/\.php$/', $actionFile)){
       $action = preg_replace('/\.php$/', '', $actionFile);

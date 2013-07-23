@@ -53,7 +53,7 @@
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Dataset($data);
       } else {
         return $data;
@@ -71,7 +71,7 @@
       $params = array('projectId' => $projectId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Dataset($data);
       } else {
         return $data;
@@ -92,7 +92,7 @@
       $params = array('projectId' => $projectId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DatasetList($data);
       } else {
         return $data;
@@ -114,7 +114,7 @@
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Dataset($data);
       } else {
         return $data;
@@ -136,7 +136,7 @@
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Dataset($data);
       } else {
         return $data;
@@ -166,7 +166,7 @@
       $params = array('projectId' => $projectId, 'jobId' => $jobId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Job($data);
       } else {
         return $data;
@@ -189,7 +189,7 @@
       $params = array('projectId' => $projectId, 'jobId' => $jobId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('getQueryResults', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_GetQueryResultsResponse($data);
       } else {
         return $data;
@@ -207,7 +207,7 @@
       $params = array('projectId' => $projectId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Job($data);
       } else {
         return $data;
@@ -230,7 +230,7 @@
       $params = array('projectId' => $projectId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_JobList($data);
       } else {
         return $data;
@@ -249,7 +249,7 @@
       $params = array('projectId' => $projectId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('query', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_QueryResponse($data);
       } else {
         return $data;
@@ -280,7 +280,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ProjectList($data);
       } else {
         return $data;
@@ -315,7 +315,7 @@
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'tableId' => $tableId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TableDataList($data);
       } else {
         return $data;
@@ -362,7 +362,7 @@
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'tableId' => $tableId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Table($data);
       } else {
         return $data;
@@ -381,7 +381,7 @@
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Table($data);
       } else {
         return $data;
@@ -402,7 +402,7 @@
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TableList($data);
       } else {
         return $data;
@@ -423,7 +423,7 @@
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'tableId' => $tableId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Table($data);
       } else {
         return $data;
@@ -443,7 +443,7 @@
       $params = array('projectId' => $projectId, 'datasetId' => $datasetId, 'tableId' => $tableId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Table($data);
       } else {
         return $data;

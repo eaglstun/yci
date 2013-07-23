@@ -97,8 +97,8 @@ abstract class Google_IO {
     }
 
     // Force the payload to match the content-type asserted in the header.
-    if ($contentType == self::FORM_URLENCODED && is_array($postBody)){
-      $postBody = http_build_query($postBody, '', '&');
+    if( $contentType == self::FORM_URLENCODED && is_array($postBody)){
+      $postBody = http_build_query($postBody, '', '&' );
       $request->setPostBody($postBody);
     }
 
@@ -122,12 +122,12 @@ abstract class Google_IO {
   protected function checkMustRevaliadateCachedRequest($cached, $request){
     if (Google_CacheParser::mustRevalidate($cached)){
       $addHeaders = array();
-      if ($cached->getResponseHeader('etag')){
+      if( $cached->getResponseHeader('etag')){
         // [13.3.4] If an entity tag has been provided by the origin server,
         // we must use that entity tag in any cache-conditional request.
-        $addHeaders['If-None-Match'] = $cached->getResponseHeader('etag');
-      } elseif ($cached->getResponseHeader('date')){
-        $addHeaders['If-Modified-Since'] = $cached->getResponseHeader('date');
+        $addHeaders['If-None-Match'] = $cached->getResponseHeader('etag' );
+      } elseif( $cached->getResponseHeader('date')){
+        $addHeaders['If-Modified-Since'] = $cached->getResponseHeader('date' );
       }
 
       $request->setRequestHeaders($addHeaders);

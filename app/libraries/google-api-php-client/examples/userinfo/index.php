@@ -22,10 +22,10 @@ $client = new Google_Client();
 $client->setApplicationName("Google UserInfo PHP Starter Application");
 // Visit https://code.google.com/apis/console?api=plus to generate your
 // oauth2_client_id, oauth2_client_secret, and to register your oauth2_redirect_uri.
-// $client->setClientId('insert_your_oauth2_client_id');
-// $client->setClientSecret('insert_your_oauth2_client_secret');
-// $client->setRedirectUri('insert_your_redirect_uri');
-// $client->setDeveloperKey('insert_your_developer_key');
+// $client->setClientId('insert_your_oauth2_client_id' );
+// $client->setClientSecret('insert_your_oauth2_client_secret' );
+// $client->setRedirectUri('insert_your_redirect_uri' );
+// $client->setDeveloperKey('insert_your_developer_key' );
 $oauth2 = new Google_Oauth2Service($client);
 
 if (isset($_GET['code'])){
@@ -45,7 +45,7 @@ if (isset($_REQUEST['logout'])){
   $client->revokeToken();
 }
 
-if ($client->getAccessToken()){
+if( $client->getAccessToken()){
   $user = $oauth2->userinfo->get();
 
   // These fields are currently filtered through the PHP sanitize filters.

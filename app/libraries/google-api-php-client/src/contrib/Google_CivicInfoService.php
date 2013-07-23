@@ -34,7 +34,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('electionQuery', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ElectionsQueryResponse($data);
       } else {
         return $data;
@@ -55,7 +55,7 @@
       $params = array('electionId' => $electionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('voterInfoQuery', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_VoterInfoResponse($data);
       } else {
         return $data;

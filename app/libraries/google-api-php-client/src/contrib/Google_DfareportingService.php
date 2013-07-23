@@ -39,7 +39,7 @@
       $params = array('profileId' => $profileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('query', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DimensionValueList($data);
       } else {
         return $data;
@@ -69,7 +69,7 @@
       $params = array('reportId' => $reportId, 'fileId' => $fileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DfareportingFile($data);
       } else {
         return $data;
@@ -92,7 +92,7 @@
       $params = array('profileId' => $profileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_FileList($data);
       } else {
         return $data;
@@ -135,7 +135,7 @@
       $params = array('profileId' => $profileId, 'reportId' => $reportId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Report($data);
       } else {
         return $data;
@@ -153,7 +153,7 @@
       $params = array('profileId' => $profileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Report($data);
       } else {
         return $data;
@@ -176,7 +176,7 @@
       $params = array('profileId' => $profileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ReportList($data);
       } else {
         return $data;
@@ -195,7 +195,7 @@
       $params = array('profileId' => $profileId, 'reportId' => $reportId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Report($data);
       } else {
         return $data;
@@ -215,7 +215,7 @@
       $params = array('profileId' => $profileId, 'reportId' => $reportId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('run', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DfareportingFile($data);
       } else {
         return $data;
@@ -234,7 +234,7 @@
       $params = array('profileId' => $profileId, 'reportId' => $reportId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Report($data);
       } else {
         return $data;
@@ -266,7 +266,7 @@
       $params = array('profileId' => $profileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('query', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CompatibleFields($data);
       } else {
         return $data;
@@ -296,7 +296,7 @@
       $params = array('profileId' => $profileId, 'reportId' => $reportId, 'fileId' => $fileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DfareportingFile($data);
       } else {
         return $data;
@@ -319,7 +319,7 @@
       $params = array('profileId' => $profileId, 'reportId' => $reportId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_FileList($data);
       } else {
         return $data;
@@ -348,7 +348,7 @@
       $params = array('profileId' => $profileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_UserProfile($data);
       } else {
         return $data;
@@ -364,7 +364,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_UserProfileList($data);
       } else {
         return $data;

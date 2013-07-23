@@ -19,7 +19,7 @@
 require_once __DIR__ . "/../BaseExample.php";
 
 // ID of the ad unit to be deleted.
-define('PUBLISHER_AD_UNIT_ID', 'INSERT_AD_UNIT_ID_HERE');
+define('PUBLISHER_AD_UNIT_ID', 'INSERT_AD_UNIT_ID_HERE' );
 
 /**
  * This example deletes an ad unit on a publisher ad client.

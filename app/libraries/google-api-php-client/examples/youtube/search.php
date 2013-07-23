@@ -11,7 +11,7 @@ $htmlBody = <<<END
 </form>
 END;
 
-if ($_GET['q'] && $_GET['maxResults']){
+if( $_GET['q'] && $_GET['maxResults']){
   // Call set_include_path() as needed to point to your client library.
 require_once 'google-api-php-client/src/Google_Client.php';
 require_once 'google-api-php-client/src/contrib/Google_YouTubeService.php';

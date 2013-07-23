@@ -49,7 +49,7 @@
       $params = array('tableId' => $tableId, 'columnId' => $columnId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Column($data);
       } else {
         return $data;
@@ -67,7 +67,7 @@
       $params = array('tableId' => $tableId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Column($data);
       } else {
         return $data;
@@ -87,7 +87,7 @@
       $params = array('tableId' => $tableId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ColumnList($data);
       } else {
         return $data;
@@ -107,7 +107,7 @@
       $params = array('tableId' => $tableId, 'columnId' => $columnId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Column($data);
       } else {
         return $data;
@@ -126,7 +126,7 @@
       $params = array('tableId' => $tableId, 'columnId' => $columnId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Column($data);
       } else {
         return $data;
@@ -158,7 +158,7 @@
       $params = array('sql' => $sql);
       $params = array_merge($params, $optParams);
       $data = $this->__call('sql', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Sqlresponse($data);
       } else {
         return $data;
@@ -178,7 +178,7 @@
       $params = array('sql' => $sql);
       $params = array_merge($params, $optParams);
       $data = $this->__call('sqlGet', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Sqlresponse($data);
       } else {
         return $data;
@@ -221,7 +221,7 @@
       $params = array('tableId' => $tableId, 'styleId' => $styleId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_StyleSetting($data);
       } else {
         return $data;
@@ -239,7 +239,7 @@
       $params = array('tableId' => $tableId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_StyleSetting($data);
       } else {
         return $data;
@@ -259,7 +259,7 @@
       $params = array('tableId' => $tableId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_StyleSettingList($data);
       } else {
         return $data;
@@ -278,7 +278,7 @@
       $params = array('tableId' => $tableId, 'styleId' => $styleId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_StyleSetting($data);
       } else {
         return $data;
@@ -297,7 +297,7 @@
       $params = array('tableId' => $tableId, 'styleId' => $styleId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_StyleSetting($data);
       } else {
         return $data;
@@ -328,7 +328,7 @@
       $params = array('tableId' => $tableId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('copy', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Table($data);
       } else {
         return $data;
@@ -357,7 +357,7 @@
       $params = array('tableId' => $tableId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Table($data);
       } else {
         return $data;
@@ -380,7 +380,7 @@
       $params = array('tableId' => $tableId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('importRows', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Import($data);
       } else {
         return $data;
@@ -400,7 +400,7 @@
       $params = array('name' => $name);
       $params = array_merge($params, $optParams);
       $data = $this->__call('importTable', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Table($data);
       } else {
         return $data;
@@ -417,7 +417,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Table($data);
       } else {
         return $data;
@@ -436,7 +436,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TableList($data);
       } else {
         return $data;
@@ -457,7 +457,7 @@
       $params = array('tableId' => $tableId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Table($data);
       } else {
         return $data;
@@ -478,7 +478,7 @@
       $params = array('tableId' => $tableId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Table($data);
       } else {
         return $data;
@@ -521,7 +521,7 @@
       $params = array('tableId' => $tableId, 'templateId' => $templateId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Template($data);
       } else {
         return $data;
@@ -539,7 +539,7 @@
       $params = array('tableId' => $tableId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Template($data);
       } else {
         return $data;
@@ -559,7 +559,7 @@
       $params = array('tableId' => $tableId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TemplateList($data);
       } else {
         return $data;
@@ -578,7 +578,7 @@
       $params = array('tableId' => $tableId, 'templateId' => $templateId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Template($data);
       } else {
         return $data;
@@ -597,7 +597,7 @@
       $params = array('tableId' => $tableId, 'templateId' => $templateId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Template($data);
       } else {
         return $data;

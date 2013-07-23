@@ -49,7 +49,7 @@
       $params = array('calendarId' => $calendarId, 'ruleId' => $ruleId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AclRule($data);
       } else {
         return $data;
@@ -67,7 +67,7 @@
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AclRule($data);
       } else {
         return $data;
@@ -84,7 +84,7 @@
       $params = array('calendarId' => $calendarId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Acl($data);
       } else {
         return $data;
@@ -103,7 +103,7 @@
       $params = array('calendarId' => $calendarId, 'ruleId' => $ruleId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AclRule($data);
       } else {
         return $data;
@@ -122,7 +122,7 @@
       $params = array('calendarId' => $calendarId, 'ruleId' => $ruleId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AclRule($data);
       } else {
         return $data;
@@ -163,7 +163,7 @@
       $params = array('calendarId' => $calendarId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CalendarListEntry($data);
       } else {
         return $data;
@@ -182,7 +182,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CalendarListEntry($data);
       } else {
         return $data;
@@ -203,7 +203,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CalendarList($data);
       } else {
         return $data;
@@ -224,7 +224,7 @@
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CalendarListEntry($data);
       } else {
         return $data;
@@ -244,7 +244,7 @@
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CalendarListEntry($data);
       } else {
         return $data;
@@ -298,7 +298,7 @@
       $params = array('calendarId' => $calendarId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Calendar($data);
       } else {
         return $data;
@@ -315,7 +315,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Calendar($data);
       } else {
         return $data;
@@ -333,7 +333,7 @@
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Calendar($data);
       } else {
         return $data;
@@ -351,7 +351,7 @@
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Calendar($data);
       } else {
         return $data;
@@ -379,7 +379,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Colors($data);
       } else {
         return $data;
@@ -428,7 +428,7 @@
       $params = array('calendarId' => $calendarId, 'eventId' => $eventId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Event($data);
       } else {
         return $data;
@@ -446,7 +446,7 @@
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('import', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Event($data);
       } else {
         return $data;
@@ -467,7 +467,7 @@
       $params = array('calendarId' => $calendarId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Event($data);
       } else {
         return $data;
@@ -495,7 +495,7 @@
       $params = array('calendarId' => $calendarId, 'eventId' => $eventId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('instances', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Events($data);
       } else {
         return $data;
@@ -527,7 +527,7 @@
       $params = array('calendarId' => $calendarId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Events($data);
       } else {
         return $data;
@@ -548,7 +548,7 @@
       $params = array('calendarId' => $calendarId, 'eventId' => $eventId, 'destination' => $destination);
       $params = array_merge($params, $optParams);
       $data = $this->__call('move', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Event($data);
       } else {
         return $data;
@@ -571,7 +571,7 @@
       $params = array('calendarId' => $calendarId, 'eventId' => $eventId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Event($data);
       } else {
         return $data;
@@ -591,7 +591,7 @@
       $params = array('calendarId' => $calendarId, 'text' => $text);
       $params = array_merge($params, $optParams);
       $data = $this->__call('quickAdd', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Event($data);
       } else {
         return $data;
@@ -614,7 +614,7 @@
       $params = array('calendarId' => $calendarId, 'eventId' => $eventId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Event($data);
       } else {
         return $data;
@@ -643,7 +643,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('query', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_FreeBusyResponse($data);
       } else {
         return $data;
@@ -672,7 +672,7 @@
       $params = array('setting' => $setting);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Setting($data);
       } else {
         return $data;
@@ -688,7 +688,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Settings($data);
       } else {
         return $data;

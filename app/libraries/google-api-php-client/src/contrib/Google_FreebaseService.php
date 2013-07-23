@@ -38,7 +38,7 @@
       $params = array('id' => $id);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ContentserviceGet($data);
       } else {
         return $data;
@@ -73,7 +73,7 @@
       $params = array('id' => $id);
       $params = array_merge($params, $optParams);
       $data = $this->__call('lookup', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TopicLookup($data);
       } else {
         return $data;

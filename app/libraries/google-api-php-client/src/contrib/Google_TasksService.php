@@ -47,7 +47,7 @@
       $params = array('tasklist' => $tasklist);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TaskList($data);
       } else {
         return $data;
@@ -64,7 +64,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TaskList($data);
       } else {
         return $data;
@@ -83,7 +83,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TaskLists($data);
       } else {
         return $data;
@@ -102,7 +102,7 @@
       $params = array('tasklist' => $tasklist, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TaskList($data);
       } else {
         return $data;
@@ -120,7 +120,7 @@
       $params = array('tasklist' => $tasklist, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TaskList($data);
       } else {
         return $data;
@@ -177,7 +177,7 @@
       $params = array('tasklist' => $tasklist, 'task' => $task);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Task($data);
       } else {
         return $data;
@@ -198,7 +198,7 @@
       $params = array('tasklist' => $tasklist, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Task($data);
       } else {
         return $data;
@@ -226,7 +226,7 @@
       $params = array('tasklist' => $tasklist);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Tasks($data);
       } else {
         return $data;
@@ -249,7 +249,7 @@
       $params = array('tasklist' => $tasklist, 'task' => $task);
       $params = array_merge($params, $optParams);
       $data = $this->__call('move', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Task($data);
       } else {
         return $data;
@@ -268,7 +268,7 @@
       $params = array('tasklist' => $tasklist, 'task' => $task, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Task($data);
       } else {
         return $data;
@@ -287,7 +287,7 @@
       $params = array('tasklist' => $tasklist, 'task' => $task, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Task($data);
       } else {
         return $data;

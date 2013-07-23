@@ -39,7 +39,7 @@
       $params = array('customerId' => $customerId, 'deviceId' => $deviceId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ChromeOsDevice($data);
       } else {
         return $data;
@@ -63,7 +63,7 @@
       $params = array('customerId' => $customerId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ChromeOsDevices($data);
       } else {
         return $data;
@@ -84,7 +84,7 @@
       $params = array('customerId' => $customerId, 'deviceId' => $deviceId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ChromeOsDevice($data);
       } else {
         return $data;
@@ -105,7 +105,7 @@
       $params = array('customerId' => $customerId, 'deviceId' => $deviceId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ChromeOsDevice($data);
       } else {
         return $data;
@@ -147,7 +147,7 @@
       $params = array('groupKey' => $groupKey);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Group($data);
       } else {
         return $data;
@@ -164,7 +164,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Group($data);
       } else {
         return $data;
@@ -186,7 +186,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Groups($data);
       } else {
         return $data;
@@ -204,7 +204,7 @@
       $params = array('groupKey' => $groupKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Group($data);
       } else {
         return $data;
@@ -222,7 +222,7 @@
       $params = array('groupKey' => $groupKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Group($data);
       } else {
         return $data;
@@ -266,7 +266,7 @@
       $params = array('groupKey' => $groupKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Alias($data);
       } else {
         return $data;
@@ -283,7 +283,7 @@
       $params = array('groupKey' => $groupKey);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Aliases($data);
       } else {
         return $data;
@@ -327,7 +327,7 @@
       $params = array('groupKey' => $groupKey, 'memberKey' => $memberKey);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Member($data);
       } else {
         return $data;
@@ -345,7 +345,7 @@
       $params = array('groupKey' => $groupKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Member($data);
       } else {
         return $data;
@@ -366,7 +366,7 @@
       $params = array('groupKey' => $groupKey);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Members($data);
       } else {
         return $data;
@@ -386,7 +386,7 @@
       $params = array('groupKey' => $groupKey, 'memberKey' => $memberKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Member($data);
       } else {
         return $data;
@@ -405,7 +405,7 @@
       $params = array('groupKey' => $groupKey, 'memberKey' => $memberKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Member($data);
       } else {
         return $data;
@@ -465,7 +465,7 @@
       $params = array('customerId' => $customerId, 'resourceId' => $resourceId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_MobileDevice($data);
       } else {
         return $data;
@@ -489,7 +489,7 @@
       $params = array('customerId' => $customerId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_MobileDevices($data);
       } else {
         return $data;
@@ -533,7 +533,7 @@
       $params = array('customerId' => $customerId, 'orgUnitPath' => $orgUnitPath);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_OrgUnit($data);
       } else {
         return $data;
@@ -551,7 +551,7 @@
       $params = array('customerId' => $customerId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_OrgUnit($data);
       } else {
         return $data;
@@ -571,7 +571,7 @@
       $params = array('customerId' => $customerId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_OrgUnits($data);
       } else {
         return $data;
@@ -590,7 +590,7 @@
       $params = array('customerId' => $customerId, 'orgUnitPath' => $orgUnitPath, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_OrgUnit($data);
       } else {
         return $data;
@@ -609,7 +609,7 @@
       $params = array('customerId' => $customerId, 'orgUnitPath' => $orgUnitPath, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_OrgUnit($data);
       } else {
         return $data;
@@ -651,7 +651,7 @@
       $params = array('userKey' => $userKey);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_User($data);
       } else {
         return $data;
@@ -668,7 +668,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_User($data);
       } else {
         return $data;
@@ -693,7 +693,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Users($data);
       } else {
         return $data;
@@ -724,7 +724,7 @@
       $params = array('userKey' => $userKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_User($data);
       } else {
         return $data;
@@ -755,7 +755,7 @@
       $params = array('userKey' => $userKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_User($data);
       } else {
         return $data;
@@ -799,7 +799,7 @@
       $params = array('userKey' => $userKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Alias($data);
       } else {
         return $data;
@@ -816,7 +816,7 @@
       $params = array('userKey' => $userKey);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Aliases($data);
       } else {
         return $data;
@@ -857,7 +857,7 @@
       $params = array('userKey' => $userKey);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_UserPhoto($data);
       } else {
         return $data;
@@ -875,7 +875,7 @@
       $params = array('userKey' => $userKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_UserPhoto($data);
       } else {
         return $data;
@@ -893,7 +893,7 @@
       $params = array('userKey' => $userKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_UserPhoto($data);
       } else {
         return $data;

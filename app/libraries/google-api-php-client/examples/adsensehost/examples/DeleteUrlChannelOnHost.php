@@ -19,7 +19,7 @@
 require_once __DIR__ . "/../BaseExample.php";
 
 // ID of the URL channel to be deleted.
-define('URL_CHANNEL_ID', 'INSERT_URL_CHANNEL_ID_HERE');
+define('URL_CHANNEL_ID', 'INSERT_URL_CHANNEL_ID_HERE' );
 
 /**
  * This example deletes a URL channel on a host ad client.

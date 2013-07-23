@@ -37,7 +37,7 @@ class UrlShortenerTests extends BaseTest {
   }
 
   public function testEmptyJsonResponse(){
-    $optParams = array('fields' => '');
+    $optParams = array('fields' => '' );
     $resp = $this->service->url->get('http://goo.gl/KkHq8', $optParams);
 
     $this->assertEquals(array(), $resp);

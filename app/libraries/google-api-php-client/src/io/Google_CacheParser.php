@@ -20,8 +20,8 @@
  * @author Chirag Shah <chirags@google.com>
  */
 class Google_CacheParser {
-  public static $CACHEABLE_HTTP_METHODS = array('GET', 'HEAD');
-  public static $CACHEABLE_STATUS_CODES = array('200', '203', '300', '301');
+  public static $CACHEABLE_HTTP_METHODS = array('GET', 'HEAD' );
+  public static $CACHEABLE_STATUS_CODES = array('200', '203', '300', '301' );
 
   private function __construct(){}
 
@@ -43,7 +43,7 @@ class Google_CacheParser {
     // [rfc2616-14.8] When a shared cache receives a request containing an
     // Authorization field, it MUST NOT return the corresponding response
     // as a reply to any other request...
-    if ($resp->getRequestHeader("authorization")){
+    if( $resp->getRequestHeader("authorization")){
       return false;
     }
 
@@ -86,8 +86,8 @@ class Google_CacheParser {
 
     // Pragma: no-cache is an http request directive, but is occasionally
     // used as a response header incorrectly.
-    $pragma = $resp->getResponseHeader('pragma');
-    if ($pragma == 'no-cache' || strpos($pragma, 'no-cache') !== false){
+    $pragma = $resp->getResponseHeader('pragma' );
+    if( $pragma == 'no-cache' || strpos($pragma, 'no-cache') !== false){
       return false;
     }
 
@@ -95,8 +95,8 @@ class Google_CacheParser {
     // a cache cannot determine from the request headers of a subsequent request
     // whether this response is the appropriate representation."
     // Given this, we deem responses with the Vary header as uncacheable.
-    $vary = $resp->getResponseHeader('vary');
-    if ($vary){
+    $vary = $resp->getResponseHeader('vary' );
+    if( $vary){
       return false;
     }
 
@@ -135,7 +135,7 @@ class Google_CacheParser {
       $freshnessLifetime = $cacheControl['max-age'];
     }
 
-    $rawDate = $resp->getResponseHeader('date');
+    $rawDate = $resp->getResponseHeader('date' );
     $parsedDate = strtotime($rawDate);
 
     if (empty($rawDate) || false == $parsedDate){

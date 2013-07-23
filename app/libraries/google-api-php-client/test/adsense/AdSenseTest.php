@@ -20,8 +20,8 @@ require_once '../src/contrib/Google_AdsenseService.php';
 class AdsenseTests extends PHPUnit_Framework_TestSuite {
   public static function suite(){
     $suite = new PHPUnit_Framework_TestSuite();
-    $suite->setName('AdSense Management API tests');
-    $suite->addTestSuite('AdSenseManagementTest');
+    $suite->setName('AdSense Management API tests' );
+    $suite->addTestSuite('AdSenseManagementTest' );
     return $suite;
   }
 }
@@ -36,7 +36,7 @@ class AdSenseManagementTest extends BaseTest {
   public function testAccountsList(){
     $accounts = $this->adsense->accounts->listAccounts();
     $this->assertArrayHasKey('kind', $accounts);
-    $this->assertEquals($accounts['kind'], 'adsense#accounts');
+    $this->assertEquals($accounts['kind'], 'adsense#accounts' );
     $account = $this->getRandomElementFromArray($accounts['items']);
     $this->checkAccountElement($account);
   }
@@ -356,7 +356,7 @@ class AdSenseManagementTest extends BaseTest {
 
   private function checkAdClientsCollection($adClients){
     $this->assertArrayHasKey('kind', $adClients);
-    $this->assertEquals($adClients['kind'], 'adsense#adClients');
+    $this->assertEquals($adClients['kind'], 'adsense#adClients' );
     foreach($adClients['items'] as $adClient){
       $this->assertArrayHasKey('id', $adClient);
       $this->assertArrayHasKey('kind', $adClient);
@@ -367,7 +367,7 @@ class AdSenseManagementTest extends BaseTest {
 
   private function checkAdUnitsCollection($adUnits){
     $this->assertArrayHasKey('kind', $adUnits);
-    $this->assertEquals($adUnits['kind'], 'adsense#adUnits');
+    $this->assertEquals($adUnits['kind'], 'adsense#adUnits' );
     if(array_key_exists('items', $adUnits)){
       foreach($adUnits['items'] as $adUnit){
         $this->checkAdUnitElement($adUnit);
@@ -385,7 +385,7 @@ class AdSenseManagementTest extends BaseTest {
 
   private function checkCustomChannelsCollection($customChannels){
     $this->assertArrayHasKey('kind', $customChannels);
-    $this->assertEquals($customChannels['kind'], 'adsense#customChannels');
+    $this->assertEquals($customChannels['kind'], 'adsense#customChannels' );
     if(array_key_exists('items', $customChannels)){
       foreach($customChannels['items'] as $customChannel){
         $this->checkCustomChannelElement($customChannel);
@@ -402,7 +402,7 @@ class AdSenseManagementTest extends BaseTest {
 
   private function checkUrlChannelsCollection($urlChannels){
     $this->assertArrayHasKey('kind', $urlChannels);
-    $this->assertEquals($urlChannels['kind'], 'adsense#urlChannels');
+    $this->assertEquals($urlChannels['kind'], 'adsense#urlChannels' );
     if(array_key_exists('items', $urlChannels)){
       foreach($urlChannels['items'] as $urlChannel){
         $this->assertArrayHasKey('kind', $urlChannel);
@@ -423,7 +423,7 @@ class AdSenseManagementTest extends BaseTest {
 
   private function checkReport($report){
     $this->assertArrayHasKey('kind', $report);
-    $this->assertEquals($report['kind'], 'adsense#report');
+    $this->assertEquals($report['kind'], 'adsense#report' );
     $this->assertArrayHasKey('totalMatchedRows', $report);
     $this->assertArrayHasKey('headers', $report);
     foreach($report['headers'] as $header){

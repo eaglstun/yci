@@ -21,20 +21,20 @@
 class CacheTest extends BaseTest {
   public function testSet(){
     $cache = new Google_FileCache();
-    $cache->set('foo', 'bar');
-    $this->assertEquals($cache->get('foo'), 'bar');
+    $cache->set('foo', 'bar' );
+    $this->assertEquals($cache->get('foo'), 'bar' );
 
-    $cache->set('foo.1', 'bar.1');
-    $this->assertEquals($cache->get('foo.1'), 'bar.1');
+    $cache->set('foo.1', 'bar.1' );
+    $this->assertEquals($cache->get('foo.1'), 'bar.1' );
 
-    $cache->set('foo', 'baz');
-    $this->assertEquals($cache->get('foo'), 'baz');
+    $cache->set('foo', 'baz' );
+    $this->assertEquals($cache->get('foo'), 'baz' );
 
     $cache->set('foo', null);
     $this->assertEquals($cache->get('foo'), null);
 
-    $cache->set('1/2/3', 'bar');
-    $this->assertEquals($cache->get('1/2/3'), 'bar');
+    $cache->set('1/2/3', 'bar' );
+    $this->assertEquals($cache->get('1/2/3'), 'bar' );
 
     $obj = new stdClass();
     $obj->foo = 'bar';
@@ -46,26 +46,26 @@ class CacheTest extends BaseTest {
     global $apiConfig;
     $apiConfig['ioFileCache_directory'] = '/tmp/google-api-php-client/tests';
     $cache = new Google_FileCache();
-    $cache->set('foo', 'bar');
-    $cache->delete('foo');
+    $cache->set('foo', 'bar' );
+    $cache->delete('foo' );
     $this->assertEquals($cache->get('foo'), false);
 
-    $cache->set('foo.1', 'bar.1');
-    $cache->delete('foo.1');
+    $cache->set('foo.1', 'bar.1' );
+    $cache->delete('foo.1' );
     $this->assertEquals($cache->get('foo.1'), false);
 
-    $cache->set('foo', 'baz');
-    $cache->delete('foo');
+    $cache->set('foo', 'baz' );
+    $cache->delete('foo' );
     $this->assertEquals($cache->get('foo'), false);
 
     $cache->set('foo', null);
-    $cache->delete('foo');
+    $cache->delete('foo' );
     $this->assertEquals($cache->get('foo'), false);
 
     $obj = new stdClass();
     $obj->foo = 'bar';
     $cache->set('foo', $obj);
-    $cache->delete('foo');
+    $cache->delete('foo' );
     $this->assertEquals($cache->get('foo'), false);
   }
 }

@@ -44,7 +44,7 @@
       $params = array('userKey' => $userKey, 'applicationName' => $applicationName);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Activities($data);
       } else {
         return $data;
@@ -77,7 +77,7 @@
       $params = array('date' => $date);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_UsageReports($data);
       } else {
         return $data;
@@ -113,7 +113,7 @@
       $params = array('userKey' => $userKey, 'date' => $date);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_UsageReports($data);
       } else {
         return $data;

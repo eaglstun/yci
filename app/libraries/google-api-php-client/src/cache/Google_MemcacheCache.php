@@ -56,7 +56,7 @@ class Google_MemcacheCache extends Google_Cache {
   private function removeLock($key){
     $this->check();
     // suppress all warnings, if some other process removed it that's ok too
-    @memcache_delete($this->connection, $key . '.lock');
+    @memcache_delete($this->connection, $key . '.lock' );
   }
 
   private function waitForLock($key){
@@ -69,7 +69,7 @@ class Google_MemcacheCache extends Google_Cache {
       usleep(250);
       $cnt ++;
     } while ($cnt <= $tries && $this->isLocked($key) );
-    if ($this->isLocked($key)){
+    if( $this->isLocked($key)){
       // 5 seconds passed, assume the owning process died off and remove it
       $this->removeLock($key);
     }

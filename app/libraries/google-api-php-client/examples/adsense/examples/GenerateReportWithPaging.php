@@ -56,13 +56,13 @@ class GenerateReportWithPaging extends BaseExample {
       $report = $this->adSenseService->reports
           ->generate($startDate, $endDate, $optParams);
 
-      if ($report['totalMatchedRows'] > AD_ROW_LIMIT){
+      if( $report['totalMatchedRows'] > AD_ROW_LIMIT){
         printPaginationError();
         break;
       } else {
-        if ($startIndex == 0){
+        if( $startIndex == 0){
           printReportTableHeader($report['headers']);
-          if ($report['totalMatchedRows'] == 0){
+          if( $report['totalMatchedRows'] == 0){
             printNoResultForTable(count($report['headers']) );
             break;
           }

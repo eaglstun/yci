@@ -29,15 +29,15 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 class URI_Template_Parser {
 
-  public static $operators = array('+', ';', '?', '/', '.');
-  public static $reserved_operators = array('|', '!', '@');
-  public static $explode_modifiers = array('+', '*');
-  public static $partial_modifiers = array(':', '^');
+  public static $operators = array('+', ';', '?', '/', '.' );
+  public static $reserved_operators = array('|', '!', '@' );
+  public static $explode_modifiers = array('+', '*' );
+  public static $partial_modifiers = array(':', '^' );
 
-  public static $gen_delims = array(':', '/', '?', '#', '[', ']', '@');
-  public static $gen_delims_pct = array('%3A', '%2F', '%3F', '%23', '%5B', '%5D', '%40');
-  public static $sub_delims = array('!', '$', '&', '\'', '(', ')', '*', '+', ',', ';', '=');
-  public static $sub_delims_pct = array('%21', '%24', '%26', '%27', '%28', '%29', '%2A', '%2B', '%2C', '%3B', '%3D');
+  public static $gen_delims = array(':', '/', '?', '#', '[', ']', '@' );
+  public static $gen_delims_pct = array('%3A', '%2F', '%3F', '%23', '%5B', '%5D', '%40' );
+  public static $sub_delims = array('!', '$', '&', '\'', '(', ')', '*', '+', ',', ';', '=' );
+  public static $sub_delims_pct = array('%21', '%24', '%26', '%27', '%28', '%29', '%2A', '%2B', '%2C', '%3B', '%3D' );
   public static $reserved;
   public static $reserved_pct;
 
@@ -122,7 +122,7 @@ class URI_Template_Parser {
       $exp->one_var_defined = false;
       foreach ($exp->vars as $var){
         $val = '';
-        if ($exp->one_var_defined && isset($data[$var->name])){
+        if( $exp->one_var_defined && isset($data[$var->name])){
           $part .= $exp->delimiter;
         }
         // Variable present
@@ -134,7 +134,7 @@ class URI_Template_Parser {
 
         // Variable missing
         } else {
-          if ($var->default){
+          if( $var->default){
             $exp->one_var_defined = true;
             $val = $var->default;
           }
@@ -152,7 +152,7 @@ class URI_Template_Parser {
     $val = '';
     if (is_array($var->data)){
       $i = 0;
-      if ($exp->operator == '?' && ! $var->modifier){
+      if( $exp->operator == '?' && ! $var->modifier){
         $val .= $var->name . '=';
       }
       foreach ($var->data as $k => $v){
@@ -161,11 +161,11 @@ class URI_Template_Parser {
         $ev = rawurlencode($v);
 
         // Array
-        if ($k !== $i){
-          if ($var->modifier == '+'){
+        if( $k !== $i){
+          if( $var->modifier == '+'){
             $val .= $var->name . '.';
           }
-          if ($exp->operator == '?' && $var->modifier || $exp->operator == ';' && $var->modifier == '*' || $exp->operator == ';' && $var->modifier == '+'){
+          if( $exp->operator == '?' && $var->modifier || $exp->operator == ';' && $var->modifier == '*' || $exp->operator == ';' && $var->modifier == '+'){
             $val .= $ek . '=';
           } else {
             $val .= $ek . $del;
@@ -173,8 +173,8 @@ class URI_Template_Parser {
 
         // List
         } else {
-          if ($var->modifier == '+'){
-            if ($exp->operator == ';' && $var->modifier == '*' || $exp->operator == ';' && $var->modifier == '+' || $exp->operator == '?' && $var->modifier == '+'){
+          if( $var->modifier == '+'){
+            if( $exp->operator == ';' && $var->modifier == '*' || $exp->operator == ';' && $var->modifier == '+' || $exp->operator == '?' && $var->modifier == '+'){
               $val .= $var->name . '=';
             } else {
               $val .= $var->name . '.';
@@ -188,13 +188,13 @@ class URI_Template_Parser {
 
     // Strings, numbers, etc.
     } else {
-      if ($exp->operator == '?'){
-        $val = $var->name . (isset($var->data) ? '=' : '');
-      } else if ($exp->operator == ';'){
-        $val = $var->name . ($var->data ? '=' : '');
+      if( $exp->operator == '?'){
+        $val = $var->name . (isset($var->data) ? '=' : '' );
+      } else if( $exp->operator == ';'){
+        $val = $var->name . ($var->data ? '=' : '' );
       }
       $val .= rawurlencode($var->data);
-      if ($exp->operator == '+'){
+      if( $exp->operator == '+'){
         $val = str_replace(self::$reserved_pct, self::$reserved, $val);
       }
     }

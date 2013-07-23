@@ -37,7 +37,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdClients($data);
       } else {
         return $data;
@@ -67,7 +67,7 @@
       $params = array('adClientId' => $adClientId, 'adUnitId' => $adUnitId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdUnit($data);
       } else {
         return $data;
@@ -88,7 +88,7 @@
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdUnits($data);
       } else {
         return $data;
@@ -121,7 +121,7 @@
       $params = array('adClientId' => $adClientId, 'adUnitId' => $adUnitId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CustomChannels($data);
       } else {
         return $data;
@@ -151,7 +151,7 @@
       $params = array('adClientId' => $adClientId, 'customChannelId' => $customChannelId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CustomChannel($data);
       } else {
         return $data;
@@ -172,7 +172,7 @@
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CustomChannels($data);
       } else {
         return $data;
@@ -206,7 +206,7 @@
       $params = array('adClientId' => $adClientId, 'customChannelId' => $customChannelId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdUnits($data);
       } else {
         return $data;
@@ -246,7 +246,7 @@
       $params = array('startDate' => $startDate, 'endDate' => $endDate);
       $params = array_merge($params, $optParams);
       $data = $this->__call('generate', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Report($data);
       } else {
         return $data;
@@ -280,7 +280,7 @@
       $params = array('savedReportId' => $savedReportId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('generate', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Report($data);
       } else {
         return $data;
@@ -299,7 +299,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SavedReports($data);
       } else {
         return $data;
@@ -331,7 +331,7 @@
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_UrlChannels($data);
       } else {
         return $data;

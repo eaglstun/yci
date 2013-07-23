@@ -62,7 +62,7 @@ class Google_HttpStreamIO extends Google_IO {
   public function makeRequest(Google_HttpRequest $request){
     // First, check to see if we have a valid cached version.
     $cached = $this->getCachedRequest($request);
-    if ($cached !== false){
+    if( $cached !== false){
       if( !$this->checkMustRevaliadateCachedRequest($cached, $request)){
         return $cached;
       }
@@ -77,12 +77,12 @@ class Google_HttpStreamIO extends Google_IO {
       $request = $this->processEntityRequest($request);
     }
 
-    if ($request->getPostBody()){
+    if( $request->getPostBody()){
       $requestHttpContext["content"] = $request->getPostBody();
     }
 
     $requestHeaders = $request->getRequestHeaders();
-    if ($requestHeaders && is_array($requestHeaders)){
+    if( $requestHeaders && is_array($requestHeaders)){
       $headers = "";
       foreach($requestHeaders as $k => $v){
         $headers .= "$k: $v\n";
@@ -118,7 +118,7 @@ class Google_HttpStreamIO extends Google_IO {
     $respHttpCode = $this->getHttpResponseCode($http_response_header);
     $responseHeaders = $this->getHttpResponseHeaders($http_response_header);
 
-    if ($respHttpCode == 304 && $cached){
+    if( $respHttpCode == 304 && $cached){
       // If the server responded NOT_MODIFIED, return the cached request.
       $this->updateCachedRequest($cached, $responseHeaders);
       return $cached;

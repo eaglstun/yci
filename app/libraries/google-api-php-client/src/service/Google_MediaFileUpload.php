@@ -155,7 +155,7 @@ class Google_MediaFileUpload {
 
     // This is a standard file upload with curl.
     $params = array('postBody' => array('file' => $file) );
-    if ($mime){
+    if( $mime){
       $params['content-type'] = $mime;
     }
 
@@ -241,7 +241,7 @@ class Google_MediaFileUpload {
   private function getResumeUri(Google_HttpRequest $httpRequest){
     $result = null;
     $body = $httpRequest->getPostBody();
-    if ($body){
+    if( $body){
       $httpRequest->setRequestHeaders(array(
         'content-type' => 'application/json; charset=UTF-8',
         'content-length' => Google_Utils::getStrLen($body),
@@ -252,7 +252,7 @@ class Google_MediaFileUpload {
     }
 
     $response = Google_Client::$io->makeRequest($httpRequest);
-    $location = $response->getResponseHeader('location');
+    $location = $response->getResponseHeader('location' );
     $code = $response->getResponseHttpCode();
     if (200 == $code && true == $location){
       return $location;

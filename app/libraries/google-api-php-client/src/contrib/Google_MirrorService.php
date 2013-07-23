@@ -47,7 +47,7 @@
       $params = array('id' => $id);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Contact($data);
       } else {
         return $data;
@@ -64,7 +64,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Contact($data);
       } else {
         return $data;
@@ -80,7 +80,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ContactsListResponse($data);
       } else {
         return $data;
@@ -98,7 +98,7 @@
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Contact($data);
       } else {
         return $data;
@@ -116,7 +116,7 @@
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Contact($data);
       } else {
         return $data;
@@ -145,7 +145,7 @@
       $params = array('id' => $id);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Location($data);
       } else {
         return $data;
@@ -161,7 +161,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LocationsListResponse($data);
       } else {
         return $data;
@@ -202,7 +202,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Subscription($data);
       } else {
         return $data;
@@ -218,7 +218,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SubscriptionsListResponse($data);
       } else {
         return $data;
@@ -236,7 +236,7 @@
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Subscription($data);
       } else {
         return $data;
@@ -277,7 +277,7 @@
       $params = array('id' => $id);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TimelineItem($data);
       } else {
         return $data;
@@ -294,7 +294,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TimelineItem($data);
       } else {
         return $data;
@@ -318,7 +318,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TimelineListResponse($data);
       } else {
         return $data;
@@ -336,7 +336,7 @@
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TimelineItem($data);
       } else {
         return $data;
@@ -354,7 +354,7 @@
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TimelineItem($data);
       } else {
         return $data;
@@ -397,7 +397,7 @@
       $params = array('itemId' => $itemId, 'attachmentId' => $attachmentId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Attachment($data);
       } else {
         return $data;
@@ -414,7 +414,7 @@
       $params = array('itemId' => $itemId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Attachment($data);
       } else {
         return $data;
@@ -431,7 +431,7 @@
       $params = array('itemId' => $itemId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AttachmentsListResponse($data);
       } else {
         return $data;

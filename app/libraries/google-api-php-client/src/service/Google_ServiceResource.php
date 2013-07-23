@@ -107,7 +107,7 @@ class Google_ServiceResource {
     
     $method['parameters'] = array_merge($method['parameters'], $this->stackParameters);
     foreach ($parameters as $key => $val){
-      if ($key != 'postBody' && ! isset($method['parameters'][$key])){
+      if( $key != 'postBody' && ! isset($method['parameters'][$key])){
         throw new Google_Exception("($name) unknown parameter: '$key'");
       }
     }
@@ -143,7 +143,7 @@ class Google_ServiceResource {
     $contentType = false;
     if (isset($method['mediaUpload'])){
       $media = Google_MediaFileUpload::process($postBody, $parameters);
-      if ($media){
+      if( $media){
         $contentType = isset($media['content-type']) ? $media['content-type']: null;
         $postBody = isset($media['postBody']) ? $media['postBody'] : null;
         $servicePath = $method['mediaUpload']['protocols']['simple']['path'];
@@ -153,7 +153,7 @@ class Google_ServiceResource {
 
     $url = Google_REST::createRequestUri($servicePath, $method['path'], $parameters);
     $httpRequest = new Google_HttpRequest($url, $method['httpMethod'], null, $postBody);
-    if ($postBody){
+    if( $postBody){
       $contentTypeHeader = array();
       if (isset($contentType) && $contentType){
         $contentTypeHeader['content-type'] = $contentType;
@@ -177,7 +177,7 @@ class Google_ServiceResource {
         $contentTypeHeader['content-type'] = $contentType;
       }
       $httpRequest->setRequestHeaders($contentTypeHeader);
-      if ($postBody){
+      if( $postBody){
         $httpRequest->setPostBody($postBody);
       }
       return $httpRequest;
@@ -194,7 +194,7 @@ class Google_ServiceResource {
   protected function stripNull(&$o){
     $o = (array) $o;
     foreach ($o as $k => $v){
-      if ($v === null || strstr($k, "\0*\0__")){
+      if( $v === null || strstr($k, "\0*\0__")){
         unset($o[$k]);
       }
       elseif (is_object($v) || is_array($v)){

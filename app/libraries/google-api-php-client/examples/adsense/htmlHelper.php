@@ -180,7 +180,7 @@ function generateChartHtml($data, $columns, $type, $options){
   $columnsHtml = '';
   foreach ($columns as $column){
     $columnsHtml .=
-        'data.addColumn(\'' . $column[0] . '\', \'' . $column[1] . '\');';
+        'data.addColumn(\'' . $column[0] . '\', \'' . $column[1] . '\' );';
   }
   $page = <<<CHART
 <html>

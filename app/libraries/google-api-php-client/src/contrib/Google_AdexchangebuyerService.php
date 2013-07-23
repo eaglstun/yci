@@ -35,7 +35,7 @@
       $params = array('id' => $id);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Account($data);
       } else {
         return $data;
@@ -51,7 +51,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AccountsList($data);
       } else {
         return $data;
@@ -69,7 +69,7 @@
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Account($data);
       } else {
         return $data;
@@ -87,7 +87,7 @@
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Account($data);
       } else {
         return $data;
@@ -117,7 +117,7 @@
       $params = array('accountId' => $accountId, 'buyerCreativeId' => $buyerCreativeId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Creative($data);
       } else {
         return $data;
@@ -134,7 +134,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Creative($data);
       } else {
         return $data;
@@ -154,7 +154,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CreativesList($data);
       } else {
         return $data;
@@ -183,7 +183,7 @@
       $params = array('id' => $id);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DirectDeal($data);
       } else {
         return $data;
@@ -199,7 +199,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DirectDealsList($data);
       } else {
         return $data;
@@ -230,7 +230,7 @@
       $params = array('accountId' => $accountId, 'endDateTime' => $endDateTime, 'startDateTime' => $startDateTime);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PerformanceReportList($data);
       } else {
         return $data;

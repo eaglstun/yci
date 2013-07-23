@@ -30,7 +30,7 @@ class Google_P12Signer extends Google_Signer {
   function __construct($p12, $password){
     if (!function_exists('openssl_x509_read')){
       throw new Exception(
-          'The Google PHP API library needs the openssl PHP extension');
+          'The Google PHP API library needs the openssl PHP extension' );
     }
 
     // This throws on error
@@ -52,7 +52,7 @@ class Google_P12Signer extends Google_Signer {
   }
 
   function __destruct(){
-    if ($this->privateKey){
+    if( $this->privateKey){
       openssl_pkey_free($this->privateKey);
     }
   }

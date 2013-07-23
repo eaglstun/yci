@@ -7,7 +7,7 @@ $client->setApplicationName("Google Shopping PHP Starter Application");
 
 // Visit https://code.google.com/apis/console?api=shopping to generate your
 // Simple API Key.
-//$client->setDeveloperKey('insert_your_api_key');
+//$client->setDeveloperKey('insert_your_api_key' );
 $service = new Google_ShoppingService($client);
 
 // Valid source values are "public", "cx:cse", and "gan:pid"

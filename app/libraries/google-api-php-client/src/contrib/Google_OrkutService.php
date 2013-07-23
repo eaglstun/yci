@@ -77,7 +77,7 @@
       $params = array('userId' => $userId, 'collection' => $collection);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ActivityList($data);
       } else {
         return $data;
@@ -106,7 +106,7 @@
       $params = array('activityId' => $activityId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Visibility($data);
       } else {
         return $data;
@@ -125,7 +125,7 @@
       $params = array('activityId' => $activityId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Visibility($data);
       } else {
         return $data;
@@ -143,7 +143,7 @@
       $params = array('activityId' => $activityId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Visibility($data);
       } else {
         return $data;
@@ -173,7 +173,7 @@
       $params = array('userId' => $userId, 'badgeId' => $badgeId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Badge($data);
       } else {
         return $data;
@@ -190,7 +190,7 @@
       $params = array('userId' => $userId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BadgeList($data);
       } else {
         return $data;
@@ -233,7 +233,7 @@
       $params = array('commentId' => $commentId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Comment($data);
       } else {
         return $data;
@@ -251,7 +251,7 @@
       $params = array('activityId' => $activityId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Comment($data);
       } else {
         return $data;
@@ -273,7 +273,7 @@
       $params = array('activityId' => $activityId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommentList($data);
       } else {
         return $data;
@@ -304,7 +304,7 @@
       $params = array('communityId' => $communityId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Community($data);
       } else {
         return $data;
@@ -325,7 +325,7 @@
       $params = array('userId' => $userId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityList($data);
       } else {
         return $data;
@@ -368,7 +368,7 @@
       $params = array('communityId' => $communityId, 'userId' => $userId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityMembers($data);
       } else {
         return $data;
@@ -413,7 +413,7 @@
       $params = array('communityId' => $communityId, 'userId' => $userId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityMembers($data);
       } else {
         return $data;
@@ -431,7 +431,7 @@
       $params = array('communityId' => $communityId, 'userId' => $userId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityMembers($data);
       } else {
         return $data;
@@ -455,7 +455,7 @@
       $params = array('communityId' => $communityId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityMembersList($data);
       } else {
         return $data;
@@ -500,7 +500,7 @@
       $params = array('communityId' => $communityId, 'topicId' => $topicId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityMessage($data);
       } else {
         return $data;
@@ -522,7 +522,7 @@
       $params = array('communityId' => $communityId, 'topicId' => $topicId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityMessageList($data);
       } else {
         return $data;
@@ -553,7 +553,7 @@
       $params = array('communityId' => $communityId, 'pollId' => $pollId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityPollComment($data);
       } else {
         return $data;
@@ -575,7 +575,7 @@
       $params = array('communityId' => $communityId, 'pollId' => $pollId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityPollCommentList($data);
       } else {
         return $data;
@@ -606,7 +606,7 @@
       $params = array('communityId' => $communityId, 'pollId' => $pollId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityPollVote($data);
       } else {
         return $data;
@@ -638,7 +638,7 @@
       $params = array('communityId' => $communityId, 'pollId' => $pollId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityPoll($data);
       } else {
         return $data;
@@ -659,7 +659,7 @@
       $params = array('communityId' => $communityId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityPollList($data);
       } else {
         return $data;
@@ -690,7 +690,7 @@
       $params = array('communityId' => $communityId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityList($data);
       } else {
         return $data;
@@ -735,7 +735,7 @@
       $params = array('communityId' => $communityId, 'topicId' => $topicId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityTopic($data);
       } else {
         return $data;
@@ -755,7 +755,7 @@
       $params = array('communityId' => $communityId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityTopic($data);
       } else {
         return $data;
@@ -776,7 +776,7 @@
       $params = array('communityId' => $communityId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommunityTopicList($data);
       } else {
         return $data;
@@ -805,7 +805,7 @@
       $params = array('userId' => $userId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Counters($data);
       } else {
         return $data;
@@ -834,7 +834,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Activity($data);
       } else {
         return $data;

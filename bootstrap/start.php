@@ -30,7 +30,7 @@ $env = $app->detectEnvironment(array(
 
 	'local' => array('your-machine-name'),
 
-));
+) );
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +43,7 @@ $env = $app->detectEnvironment(array(
 |
 */
 
-$app->bindInstallPaths(require __DIR__.'/paths.php');
+$app->bindInstallPaths(require __DIR__.'/paths.php' );
 
 /*
 |--------------------------------------------------------------------------

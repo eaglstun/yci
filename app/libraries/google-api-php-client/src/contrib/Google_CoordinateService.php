@@ -35,7 +35,7 @@
       $params = array('teamId' => $teamId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CustomFieldDefListResponse($data);
       } else {
         return $data;
@@ -65,7 +65,7 @@
       $params = array('teamId' => $teamId, 'jobId' => $jobId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Job($data);
       } else {
         return $data;
@@ -93,7 +93,7 @@
       $params = array('teamId' => $teamId, 'address' => $address, 'lat' => $lat, 'lng' => $lng, 'title' => $title, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Job($data);
       } else {
         return $data;
@@ -114,7 +114,7 @@
       $params = array('teamId' => $teamId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_JobListResponse($data);
       } else {
         return $data;
@@ -145,7 +145,7 @@
       $params = array('teamId' => $teamId, 'jobId' => $jobId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Job($data);
       } else {
         return $data;
@@ -175,7 +175,7 @@
       $params = array('teamId' => $teamId, 'jobId' => $jobId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Job($data);
       } else {
         return $data;
@@ -209,7 +209,7 @@
       $params = array('teamId' => $teamId, 'workerEmail' => $workerEmail, 'startTimestampMs' => $startTimestampMs);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LocationListResponse($data);
       } else {
         return $data;
@@ -239,7 +239,7 @@
       $params = array('teamId' => $teamId, 'jobId' => $jobId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Schedule($data);
       } else {
         return $data;
@@ -264,7 +264,7 @@
       $params = array('teamId' => $teamId, 'jobId' => $jobId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Schedule($data);
       } else {
         return $data;
@@ -288,7 +288,7 @@
       $params = array('teamId' => $teamId, 'jobId' => $jobId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Schedule($data);
       } else {
         return $data;
@@ -317,7 +317,7 @@
       $params = array('teamId' => $teamId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_WorkerListResponse($data);
       } else {
         return $data;

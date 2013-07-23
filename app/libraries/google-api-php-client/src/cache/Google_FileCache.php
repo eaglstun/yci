@@ -34,7 +34,7 @@ class Google_FileCache extends Google_Cache {
 
   private function isLocked($storageFile){
     // our lock file convention is simple: /the/file/path.lock
-    return file_exists($storageFile . '.lock');
+    return file_exists($storageFile . '.lock' );
   }
 
   private function createLock($storageFile){
@@ -49,12 +49,12 @@ class Google_FileCache extends Google_Cache {
       }
       // @codeCoverageIgnoreEnd
     }
-    @touch($storageFile . '.lock');
+    @touch($storageFile . '.lock' );
   }
 
   private function removeLock($storageFile){
     // suppress all warnings, if some other process removed it that's ok too
-    @unlink($storageFile . '.lock');
+    @unlink($storageFile . '.lock' );
   }
 
   private function waitForLock($storageFile){
@@ -68,7 +68,7 @@ class Google_FileCache extends Google_Cache {
       usleep(250);
       $cnt ++;
     } while ($cnt <= $tries && $this->isLocked($storageFile) );
-    if ($this->isLocked($storageFile)){
+    if( $this->isLocked($storageFile)){
       // 5 seconds passed, assume the owning process died off and remove it
       $this->removeLock($storageFile);
     }
@@ -90,7 +90,7 @@ class Google_FileCache extends Google_Cache {
     // See if this storage file is locked, if so we wait up to 5 seconds for the lock owning process to
     // complete it's work. If the lock is not released within that time frame, it's cleaned up.
     // This should give us a fair amount of 'Cache Stampeding' protection
-    if ($this->isLocked($storageFile)){
+    if( $this->isLocked($storageFile)){
       $this->waitForLock($storageFile);
     }
     if (file_exists($storageFile) && is_readable($storageFile)){
@@ -108,7 +108,7 @@ class Google_FileCache extends Google_Cache {
   public function set($key, $value){
     $storageDir = $this->getCacheDir(md5($key) );
     $storageFile = $this->getCacheFile(md5($key) );
-    if ($this->isLocked($storageFile)){
+    if( $this->isLocked($storageFile)){
       // some other process is writing to this file too, wait until it's done to prevent hiccups
       $this->waitForLock($storageFile);
     }

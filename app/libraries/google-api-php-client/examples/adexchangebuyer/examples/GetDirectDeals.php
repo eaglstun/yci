@@ -30,7 +30,7 @@ class GetDirectDeals extends BaseExample {
   public function run(){
     $result = $this->service->directDeals->listDirectDeals();
 
-    printf('<h2>Listing of user associated direct deals</h2>');
+    printf('<h2>Listing of user associated direct deals</h2>' );
 
     if (!isset($result['direct_deals']) || !count($result['direct_deals'])){
       print '<p>No direct deals found</p>';

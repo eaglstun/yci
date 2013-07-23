@@ -38,7 +38,7 @@
       $params = array('project' => $project, 'taskqueue' => $taskqueue);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TaskQueue($data);
       } else {
         return $data;
@@ -83,7 +83,7 @@
       $params = array('project' => $project, 'taskqueue' => $taskqueue, 'task' => $task);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Task($data);
       } else {
         return $data;
@@ -102,7 +102,7 @@
       $params = array('project' => $project, 'taskqueue' => $taskqueue, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Task($data);
       } else {
         return $data;
@@ -125,7 +125,7 @@
       $params = array('project' => $project, 'taskqueue' => $taskqueue, 'numTasks' => $numTasks, 'leaseSecs' => $leaseSecs);
       $params = array_merge($params, $optParams);
       $data = $this->__call('lease', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Tasks($data);
       } else {
         return $data;
@@ -143,7 +143,7 @@
       $params = array('project' => $project, 'taskqueue' => $taskqueue);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Tasks2($data);
       } else {
         return $data;
@@ -165,7 +165,7 @@
       $params = array('project' => $project, 'taskqueue' => $taskqueue, 'task' => $task, 'newLeaseSeconds' => $newLeaseSeconds, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Task($data);
       } else {
         return $data;
@@ -186,7 +186,7 @@
       $params = array('project' => $project, 'taskqueue' => $taskqueue, 'task' => $task, 'newLeaseSeconds' => $newLeaseSeconds, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Task($data);
       } else {
         return $data;

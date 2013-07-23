@@ -35,7 +35,7 @@
       $params = array('accountId' => $accountId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Account($data);
       } else {
         return $data;
@@ -52,7 +52,7 @@
       $params = array('filterAdClientId' => $filterAdClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Accounts($data);
       } else {
         return $data;
@@ -83,7 +83,7 @@
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdClient($data);
       } else {
         return $data;
@@ -103,7 +103,7 @@
       $params = array('accountId' => $accountId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdClients($data);
       } else {
         return $data;
@@ -133,7 +133,7 @@
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'adUnitId' => $adUnitId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdUnit($data);
       } else {
         return $data;
@@ -152,7 +152,7 @@
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'adUnitId' => $adUnitId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdUnit($data);
       } else {
         return $data;
@@ -174,7 +174,7 @@
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'adUnitId' => $adUnitId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('getAdCode', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdCode($data);
       } else {
         return $data;
@@ -193,7 +193,7 @@
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdUnit($data);
       } else {
         return $data;
@@ -215,7 +215,7 @@
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdUnits($data);
       } else {
         return $data;
@@ -236,7 +236,7 @@
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'adUnitId' => $adUnitId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdUnit($data);
       } else {
         return $data;
@@ -255,7 +255,7 @@
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdUnit($data);
       } else {
         return $data;
@@ -295,7 +295,7 @@
       $params = array('accountId' => $accountId, 'startDate' => $startDate, 'endDate' => $endDate);
       $params = array_merge($params, $optParams);
       $data = $this->__call('generate', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Report($data);
       } else {
         return $data;
@@ -324,7 +324,7 @@
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdClient($data);
       } else {
         return $data;
@@ -343,7 +343,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AdClients($data);
       } else {
         return $data;
@@ -377,7 +377,7 @@
       $params = array('productCode' => $productCode, 'websiteUrl' => $websiteUrl);
       $params = array_merge($params, $optParams);
       $data = $this->__call('start', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AssociationSession($data);
       } else {
         return $data;
@@ -395,7 +395,7 @@
       $params = array('token' => $token);
       $params = array_merge($params, $optParams);
       $data = $this->__call('verify', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AssociationSession($data);
       } else {
         return $data;
@@ -425,7 +425,7 @@
       $params = array('adClientId' => $adClientId, 'customChannelId' => $customChannelId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CustomChannel($data);
       } else {
         return $data;
@@ -443,7 +443,7 @@
       $params = array('adClientId' => $adClientId, 'customChannelId' => $customChannelId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CustomChannel($data);
       } else {
         return $data;
@@ -461,7 +461,7 @@
       $params = array('adClientId' => $adClientId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CustomChannel($data);
       } else {
         return $data;
@@ -481,7 +481,7 @@
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CustomChannels($data);
       } else {
         return $data;
@@ -501,7 +501,7 @@
       $params = array('adClientId' => $adClientId, 'customChannelId' => $customChannelId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CustomChannel($data);
       } else {
         return $data;
@@ -519,7 +519,7 @@
       $params = array('adClientId' => $adClientId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CustomChannel($data);
       } else {
         return $data;
@@ -559,7 +559,7 @@
       $params = array('startDate' => $startDate, 'endDate' => $endDate);
       $params = array_merge($params, $optParams);
       $data = $this->__call('generate', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Report($data);
       } else {
         return $data;
@@ -589,7 +589,7 @@
       $params = array('adClientId' => $adClientId, 'urlChannelId' => $urlChannelId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_UrlChannel($data);
       } else {
         return $data;
@@ -607,7 +607,7 @@
       $params = array('adClientId' => $adClientId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_UrlChannel($data);
       } else {
         return $data;
@@ -627,7 +627,7 @@
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_UrlChannels($data);
       } else {
         return $data;

@@ -19,7 +19,7 @@
 require_once __DIR__ . "/../BaseExample.php";
 
 // ID of the custom channel to be updated.
-define('CUSTOM_CHANNEL_ID', 'INSERT_CUSTOM_CHANNEL_ID_HERE');
+define('CUSTOM_CHANNEL_ID', 'INSERT_CUSTOM_CHANNEL_ID_HERE' );
 
 /**
  * This example updates a custom channel on a host ad client.

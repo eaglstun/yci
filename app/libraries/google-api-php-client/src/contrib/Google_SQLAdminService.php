@@ -38,7 +38,7 @@
       $params = array('project' => $project, 'instance' => $instance, 'backupConfiguration' => $backupConfiguration, 'dueTime' => $dueTime);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BackupRun($data);
       } else {
         return $data;
@@ -61,7 +61,7 @@
       $params = array('project' => $project, 'instance' => $instance, 'backupConfiguration' => $backupConfiguration);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BackupRunsListResponse($data);
       } else {
         return $data;
@@ -91,7 +91,7 @@
       $params = array('project' => $project, 'instance' => $instance);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstancesDeleteResponse($data);
       } else {
         return $data;
@@ -111,7 +111,7 @@
       $params = array('project' => $project, 'instance' => $instance, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('export', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstancesExportResponse($data);
       } else {
         return $data;
@@ -129,7 +129,7 @@
       $params = array('project' => $project, 'instance' => $instance);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DatabaseInstance($data);
       } else {
         return $data;
@@ -149,7 +149,7 @@
       $params = array('project' => $project, 'instance' => $instance, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('import', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstancesImportResponse($data);
       } else {
         return $data;
@@ -167,7 +167,7 @@
       $params = array('project' => $project, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstancesInsertResponse($data);
       } else {
         return $data;
@@ -188,7 +188,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstancesListResponse($data);
       } else {
         return $data;
@@ -209,7 +209,7 @@
       $params = array('project' => $project, 'instance' => $instance, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstancesUpdateResponse($data);
       } else {
         return $data;
@@ -227,7 +227,7 @@
       $params = array('project' => $project, 'instance' => $instance);
       $params = array_merge($params, $optParams);
       $data = $this->__call('restart', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstancesRestartResponse($data);
       } else {
         return $data;
@@ -247,7 +247,7 @@
       $params = array('project' => $project, 'instance' => $instance, 'backupConfiguration' => $backupConfiguration, 'dueTime' => $dueTime);
       $params = array_merge($params, $optParams);
       $data = $this->__call('restoreBackup', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstancesRestoreBackupResponse($data);
       } else {
         return $data;
@@ -268,7 +268,7 @@
       $params = array('project' => $project, 'instance' => $instance, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstancesUpdateResponse($data);
       } else {
         return $data;
@@ -299,7 +299,7 @@
       $params = array('project' => $project, 'instance' => $instance, 'operation' => $operation);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstanceOperation($data);
       } else {
         return $data;
@@ -321,7 +321,7 @@
       $params = array('project' => $project, 'instance' => $instance);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_OperationsListResponse($data);
       } else {
         return $data;
@@ -350,7 +350,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TiersListResponse($data);
       } else {
         return $data;

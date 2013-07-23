@@ -19,7 +19,7 @@
 require_once __DIR__ . "/../BaseExample.php";
 
 // The token returned in the association callback.
-define('TOKEN', 'INSERT_TOKEN_HERE');
+define('TOKEN', 'INSERT_TOKEN_HERE' );
 
 /**
  * This example verifies an association session callback token.

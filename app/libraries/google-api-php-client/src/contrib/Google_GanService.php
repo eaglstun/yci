@@ -40,7 +40,7 @@
       $params = array('role' => $role, 'roleId' => $roleId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Advertiser($data);
       } else {
         return $data;
@@ -67,7 +67,7 @@
       $params = array('role' => $role, 'roleId' => $roleId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Advertisers($data);
       } else {
         return $data;
@@ -99,7 +99,7 @@
       $params = array('publisher' => $publisher);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CcOffers($data);
       } else {
         return $data;
@@ -146,7 +146,7 @@
       $params = array('role' => $role, 'roleId' => $roleId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Events($data);
       } else {
         return $data;
@@ -179,7 +179,7 @@
       $params = array('role' => $role, 'roleId' => $roleId, 'linkId' => $linkId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Link($data);
       } else {
         return $data;
@@ -198,7 +198,7 @@
       $params = array('role' => $role, 'roleId' => $roleId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Link($data);
       } else {
         return $data;
@@ -230,7 +230,7 @@
       $params = array('role' => $role, 'roleId' => $roleId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Links($data);
       } else {
         return $data;
@@ -264,7 +264,7 @@
       $params = array('role' => $role, 'roleId' => $roleId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Publisher($data);
       } else {
         return $data;
@@ -291,7 +291,7 @@
       $params = array('role' => $role, 'roleId' => $roleId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Publishers($data);
       } else {
         return $data;
@@ -334,7 +334,7 @@
       $params = array('role' => $role, 'roleId' => $roleId, 'reportType' => $reportType);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Report($data);
       } else {
         return $data;

@@ -26,10 +26,10 @@ $client->setApplicationName("Google Prediction API PHP Starter Application");
 // Visit https://code.google.com/apis/console/?api=prediction to generate 
 // your oauth2_client_id, oauth2_client_secret, and to register your 
 // oauth2_redirect_uri.
-// $client->setClientId('insert_your_oauth2_client_id');
-// $client->setClientSecret('insert_your_oauth2_client_secret');
-// $client->setRedirectUri('insert_your_oauth2_redirect_uri');
-// $client->setDeveloperKey('insert_your_developer_key');
+// $client->setClientId('insert_your_oauth2_client_id' );
+// $client->setClientSecret('insert_your_oauth2_client_secret' );
+// $client->setRedirectUri('insert_your_oauth2_redirect_uri' );
+// $client->setDeveloperKey('insert_your_developer_key' );
 $client->setScopes(array('https://www.googleapis.com/auth/prediction') );
 
 $predictionService = new Google_PredictionService($client);
@@ -50,7 +50,7 @@ if (isset($_SESSION['access_token'])){
   $client->setAccessToken($_SESSION['access_token']);
 }
 
-if ($client->getAccessToken()){
+if( $client->getAccessToken()){
   $status = "Logged In";
 } else {
   $status = "Logged Out";

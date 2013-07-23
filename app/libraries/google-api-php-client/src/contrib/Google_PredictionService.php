@@ -37,7 +37,7 @@
       $params = array('project' => $project, 'hostedModelName' => $hostedModelName, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('predict', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Output($data);
       } else {
         return $data;
@@ -67,7 +67,7 @@
       $params = array('project' => $project, 'id' => $id);
       $params = array_merge($params, $optParams);
       $data = $this->__call('analyze', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Analyze($data);
       } else {
         return $data;
@@ -98,7 +98,7 @@
       $params = array('project' => $project, 'id' => $id);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Insert2($data);
       } else {
         return $data;
@@ -116,7 +116,7 @@
       $params = array('project' => $project, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Insert2($data);
       } else {
         return $data;
@@ -136,7 +136,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PredictionList($data);
       } else {
         return $data;
@@ -155,7 +155,7 @@
       $params = array('project' => $project, 'id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('predict', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Output($data);
       } else {
         return $data;
@@ -174,7 +174,7 @@
       $params = array('project' => $project, 'id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Insert2($data);
       } else {
         return $data;

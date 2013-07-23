@@ -46,7 +46,7 @@
       $params = array('ids' => $ids, 'start-date' => $start_date, 'end-date' => $end_date, 'metrics' => $metrics);
       $params = array_merge($params, $optParams);
       $data = $this->__call('query', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ResultTable($data);
       } else {
         return $data;

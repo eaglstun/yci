@@ -34,7 +34,7 @@ class ApiOAuth2Test extends BaseTest {
     $oauth->approvalPrompt = 'force';
     $oauth->accessType = "offline";
 
-    $req = new Google_HttpRequest('http://localhost');
+    $req = new Google_HttpRequest('http://localhost' );
     $req = $oauth->sign($req);
 
     $this->assertEquals('http://localhost?key=devKey', $req->getUrl() );
@@ -47,7 +47,7 @@ class ApiOAuth2Test extends BaseTest {
     );
 
     $req = $oauth->sign($req);
-    $auth = $req->getRequestHeader('authorization');
+    $auth = $req->getRequestHeader('authorization' );
     $this->assertEquals('Bearer ACCESS_TOKEN', $auth);
   }
 

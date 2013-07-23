@@ -35,7 +35,7 @@
       $params = array('customerId' => $customerId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Customer($data);
       } else {
         return $data;
@@ -54,7 +54,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Customer($data);
       } else {
         return $data;
@@ -73,7 +73,7 @@
       $params = array('customerId' => $customerId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Customer($data);
       } else {
         return $data;
@@ -91,7 +91,7 @@
       $params = array('customerId' => $customerId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Customer($data);
       } else {
         return $data;
@@ -122,7 +122,7 @@
       $params = array('customerId' => $customerId, 'subscriptionId' => $subscriptionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('changePlan', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Subscription($data);
       } else {
         return $data;
@@ -141,7 +141,7 @@
       $params = array('customerId' => $customerId, 'subscriptionId' => $subscriptionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('changeRenewalSettings', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Subscription($data);
       } else {
         return $data;
@@ -160,7 +160,7 @@
       $params = array('customerId' => $customerId, 'subscriptionId' => $subscriptionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('changeSeats', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Subscription($data);
       } else {
         return $data;
@@ -192,7 +192,7 @@
       $params = array('customerId' => $customerId, 'subscriptionId' => $subscriptionId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Subscription($data);
       } else {
         return $data;
@@ -212,7 +212,7 @@
       $params = array('customerId' => $customerId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Subscription($data);
       } else {
         return $data;
@@ -235,7 +235,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Subscriptions($data);
       } else {
         return $data;
@@ -253,7 +253,7 @@
       $params = array('customerId' => $customerId, 'subscriptionId' => $subscriptionId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('startPaidService', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Subscription($data);
       } else {
         return $data;

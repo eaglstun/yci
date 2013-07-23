@@ -19,7 +19,7 @@
 require_once __DIR__ . "/../BaseExample.php";
 
 // ID of the ad unit to be updated.
-define('PUBLISHER_AD_UNIT_ID', 'INSERT_AD_UNIT_ID_HERE');
+define('PUBLISHER_AD_UNIT_ID', 'INSERT_AD_UNIT_ID_HERE' );
 
 /**
  * This example updates an ad unit on a publisher ad client.
@@ -41,7 +41,7 @@ class UpdateAdUnitOnPublisher extends BaseExample {
     $contentAdsSettings = new Google_AdUnitContentAdsSettings();
     $customStyle = new Google_AdStyle();
     $colors = new Google_AdStyleColors();
-    $colors->setText('ff0000');
+    $colors->setText('ff0000' );
     $customStyle->setColors($colors);
     $adUnit->setCustomStyle($customStyle);
 

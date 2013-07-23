@@ -24,11 +24,11 @@
  */
 
 // Host ad client ID to use in the examples where needed.
-define('HOST_AD_CLIENT_ID', 'INSERT_HOST_AD_CLIENT_ID_HERE');
+define('HOST_AD_CLIENT_ID', 'INSERT_HOST_AD_CLIENT_ID_HERE' );
 // Publisher account ID to use in the examples where needed.
-define('PUBLISHER_ACCOUNT_ID', 'INSERT_PUBLISHER_ACCOUNT_ID_HERE');
+define('PUBLISHER_ACCOUNT_ID', 'INSERT_PUBLISHER_ACCOUNT_ID_HERE' );
 // Publisher ad client ID to use in the examples where needed.
-define('PUBLISHER_AD_CLIENT_ID', 'INSERT_PUBLISHER_AD_CLIENT_ID_HERE');
+define('PUBLISHER_AD_CLIENT_ID', 'INSERT_PUBLISHER_AD_CLIENT_ID_HERE' );
 // Max results per page.
 define('MAX_PAGE_SIZE', 50);
 
@@ -46,7 +46,7 @@ try {
   $actions = getSupportedActions();
   // Go through API authentication.
   $auth = new AdSenseHostAuth();
-  $auth->authenticate('sample_user');
+  $auth->authenticate('sample_user' );
   // To get rid of the code in the URL after the authentication.
   if (isset($_GET['code'])){
     header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
@@ -68,7 +68,7 @@ try {
     $auth->refreshToken();
   } else {
     // Show the list of links to supported actions.
-    printHtmlHeader('AdSense Host API PHP usage examples.');
+    printHtmlHeader('AdSense Host API PHP usage examples.' );
     printIndex($actions);
     printHtmlFooter();
   }
@@ -82,7 +82,7 @@ try {
  */
 function getSupportedActions(){
   $actions = array();
-  $dirHandler = opendir('examples');
+  $dirHandler = opendir('examples' );
   while ($actionFile = readdir($dirHandler)){
     if (preg_match('/\.php$/', $actionFile)){
       $action = preg_replace('/\.php$/', '', $actionFile);

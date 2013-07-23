@@ -39,7 +39,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('aggregatedList', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AddressAggregatedList($data);
       } else {
         return $data;
@@ -58,7 +58,7 @@
       $params = array('project' => $project, 'region' => $region, 'address' => $address);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -77,7 +77,7 @@
       $params = array('project' => $project, 'region' => $region, 'address' => $address);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Address($data);
       } else {
         return $data;
@@ -97,7 +97,7 @@
       $params = array('project' => $project, 'region' => $region, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -119,7 +119,7 @@
       $params = array('project' => $project, 'region' => $region);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AddressList($data);
       } else {
         return $data;
@@ -152,7 +152,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('aggregatedList', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DiskAggregatedList($data);
       } else {
         return $data;
@@ -172,7 +172,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'disk' => $disk, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('createSnapshot', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -191,7 +191,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'disk' => $disk);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -210,7 +210,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'disk' => $disk);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Disk($data);
       } else {
         return $data;
@@ -232,7 +232,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -254,7 +254,7 @@
       $params = array('project' => $project, 'zone' => $zone);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DiskList($data);
       } else {
         return $data;
@@ -284,7 +284,7 @@
       $params = array('project' => $project, 'firewall' => $firewall);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -302,7 +302,7 @@
       $params = array('project' => $project, 'firewall' => $firewall);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Firewall($data);
       } else {
         return $data;
@@ -321,7 +321,7 @@
       $params = array('project' => $project, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -342,7 +342,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_FirewallList($data);
       } else {
         return $data;
@@ -362,7 +362,7 @@
       $params = array('project' => $project, 'firewall' => $firewall, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -381,7 +381,7 @@
       $params = array('project' => $project, 'firewall' => $firewall, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -414,7 +414,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('aggregatedList', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_OperationAggregatedList($data);
       } else {
         return $data;
@@ -445,7 +445,7 @@
       $params = array('project' => $project, 'operation' => $operation);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -467,7 +467,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_OperationList($data);
       } else {
         return $data;
@@ -497,7 +497,7 @@
       $params = array('project' => $project, 'image' => $image);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -517,7 +517,7 @@
       $params = array('project' => $project, 'image' => $image, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('deprecate', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -535,7 +535,7 @@
       $params = array('project' => $project, 'image' => $image);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Image($data);
       } else {
         return $data;
@@ -554,7 +554,7 @@
       $params = array('project' => $project, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -575,7 +575,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ImageList($data);
       } else {
         return $data;
@@ -608,7 +608,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance, 'networkInterface' => $networkInterface, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('addAccessConfig', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -629,7 +629,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('aggregatedList', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstanceAggregatedList($data);
       } else {
         return $data;
@@ -649,7 +649,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('attachDisk', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -668,7 +668,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -689,7 +689,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance, 'accessConfig' => $accessConfig, 'networkInterface' => $networkInterface);
       $params = array_merge($params, $optParams);
       $data = $this->__call('deleteAccessConfig', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -709,7 +709,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance, 'deviceName' => $deviceName);
       $params = array_merge($params, $optParams);
       $data = $this->__call('detachDisk', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -728,7 +728,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Instance($data);
       } else {
         return $data;
@@ -747,7 +747,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance);
       $params = array_merge($params, $optParams);
       $data = $this->__call('getSerialPortOutput', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SerialPortOutput($data);
       } else {
         return $data;
@@ -767,7 +767,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -789,7 +789,7 @@
       $params = array('project' => $project, 'zone' => $zone);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InstanceList($data);
       } else {
         return $data;
@@ -808,7 +808,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance);
       $params = array_merge($params, $optParams);
       $data = $this->__call('reset', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -829,7 +829,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('setMetadata', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -849,7 +849,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'instance' => $instance, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('setTags', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -879,7 +879,7 @@
       $params = array('project' => $project, 'kernel' => $kernel);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Kernel($data);
       } else {
         return $data;
@@ -900,7 +900,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_KernelList($data);
       } else {
         return $data;
@@ -933,7 +933,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('aggregatedList', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_MachineTypeAggregatedList($data);
       } else {
         return $data;
@@ -952,7 +952,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'machineType' => $machineType);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_MachineType($data);
       } else {
         return $data;
@@ -975,7 +975,7 @@
       $params = array('project' => $project, 'zone' => $zone);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_MachineTypeList($data);
       } else {
         return $data;
@@ -1005,7 +1005,7 @@
       $params = array('project' => $project, 'network' => $network);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -1023,7 +1023,7 @@
       $params = array('project' => $project, 'network' => $network);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Network($data);
       } else {
         return $data;
@@ -1042,7 +1042,7 @@
       $params = array('project' => $project, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -1063,7 +1063,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_NetworkList($data);
       } else {
         return $data;
@@ -1092,7 +1092,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Project($data);
       } else {
         return $data;
@@ -1111,7 +1111,7 @@
       $params = array('project' => $project, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('setCommonInstanceMetadata', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -1156,7 +1156,7 @@
       $params = array('project' => $project, 'region' => $region, 'operation' => $operation);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -1179,7 +1179,7 @@
       $params = array('project' => $project, 'region' => $region);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_OperationList($data);
       } else {
         return $data;
@@ -1209,7 +1209,7 @@
       $params = array('project' => $project, 'region' => $region);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Region($data);
       } else {
         return $data;
@@ -1230,7 +1230,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_RegionList($data);
       } else {
         return $data;
@@ -1260,7 +1260,7 @@
       $params = array('project' => $project, 'route' => $route);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -1278,7 +1278,7 @@
       $params = array('project' => $project, 'route' => $route);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Route($data);
       } else {
         return $data;
@@ -1297,7 +1297,7 @@
       $params = array('project' => $project, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -1318,7 +1318,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_RouteList($data);
       } else {
         return $data;
@@ -1348,7 +1348,7 @@
       $params = array('project' => $project, 'snapshot' => $snapshot);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -1366,7 +1366,7 @@
       $params = array('project' => $project, 'snapshot' => $snapshot);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Snapshot($data);
       } else {
         return $data;
@@ -1388,7 +1388,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SnapshotList($data);
       } else {
         return $data;
@@ -1433,7 +1433,7 @@
       $params = array('project' => $project, 'zone' => $zone, 'operation' => $operation);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Operation($data);
       } else {
         return $data;
@@ -1456,7 +1456,7 @@
       $params = array('project' => $project, 'zone' => $zone);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_OperationList($data);
       } else {
         return $data;
@@ -1486,7 +1486,7 @@
       $params = array('project' => $project, 'zone' => $zone);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Zone($data);
       } else {
         return $data;
@@ -1507,7 +1507,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ZoneList($data);
       } else {
         return $data;

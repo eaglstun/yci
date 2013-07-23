@@ -29,10 +29,10 @@ $client->setScopes(array(
 // Documentation: http://code.google.com/googleapps/domain/provisioning_API_v2_developers_guide.html
 // Visit https://code.google.com/apis/console to generate your
 // oauth2_client_id, oauth2_client_secret, and to register your oauth2_redirect_uri.
-// $client->setClientId('insert_your_oauth2_client_id');
-// $client->setClientSecret('insert_your_oauth2_client_secret');
-// $client->setRedirectUri('insert_your_oauth2_redirect_uri');
-// $client->setDeveloperKey('insert_your_simple_api_key');
+// $client->setClientId('insert_your_oauth2_client_id' );
+// $client->setClientSecret('insert_your_oauth2_client_secret' );
+// $client->setRedirectUri('insert_your_oauth2_redirect_uri' );
+// $client->setDeveloperKey('insert_your_simple_api_key' );
 
 if (isset($_REQUEST['logout'])){
   unset($_SESSION['access_token']);
@@ -49,7 +49,7 @@ if (isset($_SESSION['access_token'])){
   $client->setAccessToken($_SESSION['access_token']);
 }
 
-if ($client->getAccessToken()){
+if( $client->getAccessToken()){
   // Retrieving a Single User in a Domain:
   $domain = "example.com";
   $user = rawurlencode("user@domain.com");
@@ -67,7 +67,7 @@ if ($client->getAccessToken()){
   // Deleting a User Alias from a Domain (Experimental)
   $domain = "example.com";
   $user = rawurlencode("user@domain.com");
-  $req = new Google_HttpRequest("https://apps-apis.google.com/a/feeds/alias/2.0/$domain/$user", 'DELETE');
+  $req = new Google_HttpRequest("https://apps-apis.google.com/a/feeds/alias/2.0/$domain/$user", 'DELETE' );
   $resp = $client::getIo()->authenticatedRequest($req);
   print "<h1>Deleting a User Alias from a Domain</h1>: <pre>" . $resp->getResponseBody() . "</pre>";
 

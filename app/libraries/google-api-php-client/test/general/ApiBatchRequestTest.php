@@ -33,9 +33,9 @@ class ApiBatchRequestTest extends BaseTest {
     $batch = new Google_BatchRequest();
 
     BaseTest::$client->setUseBatch(true);
-    $batch->add($this->plus->people->get('me'), 'key1');
-    $batch->add($this->plus->people->get('me'), 'key2');
-    $batch->add($this->plus->people->get('me'), 'key3');
+    $batch->add($this->plus->people->get('me'), 'key1' );
+    $batch->add($this->plus->people->get('me'), 'key2' );
+    $batch->add($this->plus->people->get('me'), 'key3' );
 
     $result = $batch->execute();
     $this->assertTrue(isset($result['response-key1']) );

@@ -56,7 +56,7 @@ abstract class BaseExample {
    */
   public function execute(){
     if (count($this->getInputParameters())){
-      if ($this->isSubmitComplete()){
+      if( $this->isSubmitComplete()){
         $this->formValues = $this->getFormValues();
         $this->run();
       } else {
@@ -96,7 +96,7 @@ abstract class BaseExample {
         $currentValue = isset($_POST[$name]) ? $_POST[$name] : '';
         printf('%s: <input name="%s" value="%s">', $display, $name,
             $currentValue);
-        if ($parameter['required']){
+        if( $parameter['required']){
           print '*';
         }
         print '</br>';
@@ -117,7 +117,7 @@ abstract class BaseExample {
       return false;
     }
     foreach ($this->getInputParameters() as $parameter){
-      if ($parameter['required'] &&
+      if( $parameter['required'] &&
           empty($_POST[$parameter['name']])){
         return false;
       }
@@ -144,9 +144,9 @@ abstract class BaseExample {
    * @param Array $result
    */
   protected function printResult($result){
-    printf('<pre>');
+    printf('<pre>' );
     print_r($result);
-    printf('</pre>');
+    printf('</pre>' );
   }
 }
 

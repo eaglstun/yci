@@ -29,7 +29,7 @@ class StartAssociationSession extends BaseExample {
   public function render(){
     // Retrieve report.
     $result = $this->adSenseHostService->associationsessions
-        ->start('AFC', 'www.example.com/blog');
+        ->start('AFC', 'www.example.com/blog' );
 
     $format = 'Association with ID "%s" and redirect URL "%s" was started.';
     $content = sprintf($format, $result['id'], $result['redirectUrl']);

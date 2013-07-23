@@ -57,7 +57,7 @@ class GetCreative extends BaseExample {
       print '<h2>Found creative</h2>';
       $this->printResult($creative);
     } catch (Google_Exception $ex){
-      if ($ex->getCode() == 404 || $ex->getCode() == 403){
+      if( $ex->getCode() == 404 || $ex->getCode() == 403){
         print '<h1>Creative not found or can\'t access creative</h1>';
       } else {
         throw $ex;

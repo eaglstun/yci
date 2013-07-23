@@ -22,9 +22,9 @@ require_once '../../src/contrib/Google_LatitudeService.php';
 $client = new Google_Client();
 // Visit https://code.google.com/apis/console to generate your
 // oauth2_client_id, oauth2_client_secret, and to register your oauth2_redirect_uri.
-// $client->setClientId('insert_your_oauth2_client_id');
-// $client->setClientSecret('insert_your_oauth2_client_secret');
-// $client->setRedirectUri('insert_your_oauth2_redirect_uri');
+// $client->setClientId('insert_your_oauth2_client_id' );
+// $client->setClientSecret('insert_your_oauth2_client_secret' );
+// $client->setRedirectUri('insert_your_oauth2_redirect_uri' );
 $client->setApplicationName("Latitude_Example_App");
 $service = new Google_LatitudeService($client);
 
@@ -45,7 +45,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']){
   $authUrl = $client->createAuthUrl();
 }
 
-if ($client->getAccessToken()){
+if( $client->getAccessToken()){
   // Start to make API requests.
   //$location = $service->location->listLocation();
   $currentLocation = $service->currentLocation->get();

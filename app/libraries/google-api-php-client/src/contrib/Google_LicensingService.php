@@ -51,7 +51,7 @@
       $params = array('productId' => $productId, 'skuId' => $skuId, 'userId' => $userId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LicenseAssignment($data);
       } else {
         return $data;
@@ -70,7 +70,7 @@
       $params = array('productId' => $productId, 'skuId' => $skuId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LicenseAssignment($data);
       } else {
         return $data;
@@ -91,7 +91,7 @@
       $params = array('productId' => $productId, 'customerId' => $customerId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('listForProduct', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LicenseAssignmentList($data);
       } else {
         return $data;
@@ -114,7 +114,7 @@
       $params = array('productId' => $productId, 'skuId' => $skuId, 'customerId' => $customerId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('listForProductAndSku', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LicenseAssignmentList($data);
       } else {
         return $data;
@@ -134,7 +134,7 @@
       $params = array('productId' => $productId, 'skuId' => $skuId, 'userId' => $userId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LicenseAssignment($data);
       } else {
         return $data;
@@ -154,7 +154,7 @@
       $params = array('productId' => $productId, 'skuId' => $skuId, 'userId' => $userId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LicenseAssignment($data);
       } else {
         return $data;

@@ -36,7 +36,7 @@
       $params = array('achievementId' => $achievementId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('reset', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AchievementResetResponse($data);
       } else {
         return $data;
@@ -53,7 +53,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('resetAll', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AchievementResetAllResponse($data);
       } else {
         return $data;
@@ -86,7 +86,7 @@
       $params = array('applicationId' => $applicationId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('listHidden', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_HiddenPlayerList($data);
       } else {
         return $data;
@@ -180,7 +180,7 @@
       $params = array('leaderboardId' => $leaderboardId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('reset', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PlayerScoreResetResponse($data);
       } else {
         return $data;

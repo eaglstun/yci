@@ -17,7 +17,7 @@
 
 // Error if PDO and PDO_SQLITE not present
 if (!extension_loaded('pdo') || !extension_loaded('pdo_sqlite')){
-  throw new Exception('The sample code needs PDO and PDO_SQLITE PHP extension');
+  throw new Exception('The sample code needs PDO and PDO_SQLITE PHP extension' );
 }
 
 /**
@@ -61,10 +61,10 @@ class AdSenseHostAuth {
    */
   public function authenticate($user){
     $this->user = $user;
-    $dbh = new PDO('sqlite:examples.sqlite');
+    $dbh = new PDO('sqlite:examples.sqlite' );
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $dbh->prepare('CREATE TABLE IF NOT EXISTS auth ' .
-        '(user VARCHAR(255), token VARCHAR(255))');
+        '(user VARCHAR(255), token VARCHAR(255))' );
     $stmt->execute();
     $token = $this->getToken($dbh);
     if (isset($token)){
@@ -94,8 +94,8 @@ class AdSenseHostAuth {
    * This function updates the token in the db.
    */
   public function refreshToken(){
-    if ($this->apiClient->getAccessToken() != null){
-      $dbh = new PDO('sqlite:examples.sqlite');
+    if( $this->apiClient->getAccessToken() != null){
+      $dbh = new PDO('sqlite:examples.sqlite' );
       $this->saveToken($dbh, true, $this->apiClient->getAccessToken() );
     }
   }
@@ -107,11 +107,11 @@ class AdSenseHostAuth {
    * @param string $token the auth token to be saved
    */
   private function saveToken($dbh, $userExists, $token){
-    if ($userExists){
-      $stmt = $dbh->prepare('UPDATE auth SET token=:token WHERE user=:user');
+    if( $userExists){
+      $stmt = $dbh->prepare('UPDATE auth SET token=:token WHERE user=:user' );
     } else {
       $stmt = $dbh
-          ->prepare('INSERT INTO auth (user, token) VALUES (:user, :token)');
+          ->prepare('INSERT INTO auth (user, token) VALUES (:user, :token)' );
     }
     $stmt->bindParam(':user', $this->user);
     $stmt->bindParam(':token', $this->apiClient->getAccessToken() );
@@ -124,7 +124,7 @@ class AdSenseHostAuth {
    * @return string a JSON object representing the token
    */
   private function getToken($dbh){
-    $stmt = $dbh->prepare('SELECT token FROM auth WHERE user= ?');
+    $stmt = $dbh->prepare('SELECT token FROM auth WHERE user= ?' );
     $stmt->execute(array($this->user) );
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     return $row['token'];

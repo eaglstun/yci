@@ -400,7 +400,7 @@ HTML;
     $conditions = $details->getEventConditions();
 
     // String condition types.
-    $stringTypes = array('CATEGORY', 'ACTION', 'LABEL');
+    $stringTypes = array('CATEGORY', 'ACTION', 'LABEL' );
 
     foreach ($conditions as &$condition){
       $html .= "Event Type = $condition->getEventType()";

@@ -27,10 +27,10 @@ class TestApiClient extends Google_Client {
 class ApiClientTest extends BaseTest {
   public function testClient(){
     $client = new Google_Client();
-    $client->setAccessType('foo');
+    $client->setAccessType('foo' );
     $this->assertEquals('foo', $client->getAuth()->accessType);
 
-    $client->setDeveloperKey('foo');
+    $client->setDeveloperKey('foo' );
     $this->assertEquals('foo', $client->getAuth()->developerKey);
 
     $client->setAccessToken(json_encode(array('access_token' => '1')) );
@@ -51,8 +51,8 @@ class ApiClientTest extends BaseTest {
     $service = $client->prepareService();
     $this->assertEquals(" scope2", $service['scope']);
 
-    $client->setClientId('test1');
-    $client->setRedirectUri('http://localhost/');
+    $client->setClientId('test1' );
+    $client->setRedirectUri('http://localhost/' );
     $client->setScopes(array("http://test.com", "scope2") );
     $service = $client->prepareService();
     $this->assertEquals("http://test.com scope2", $service['scope']);
@@ -67,29 +67,29 @@ class ApiClientTest extends BaseTest {
   public function testSettersGetters(){
     $client = new Google_Client();
     $client->setClientId("client1");
-    $client->setClientSecret('client1secret');
-    $client->setState('1');
-    $client->setApprovalPrompt('force');
-    $client->setAccessType('offline');
+    $client->setClientSecret('client1secret' );
+    $client->setState('1' );
+    $client->setApprovalPrompt('force' );
+    $client->setAccessType('offline' );
 
     global $apiConfig;
     $this->assertEquals('client1', $apiConfig['oauth2_client_id']);
     $this->assertEquals('client1secret', $apiConfig['oauth2_client_secret']);
 
-    $client->setRedirectUri('localhost');
-    $client->setApplicationName('me');
+    $client->setRedirectUri('localhost' );
+    $client->setApplicationName('me' );
     $client->setUseObjects(false);
     $this->assertEquals('object', gettype($client->getAuth()) );
     $this->assertEquals('object', gettype($client->getCache()) );
     $this->assertEquals('object', gettype($client->getIo()) );
 
 
-    $client->setAuthClass('Google_AuthNone');
-    $client->setAuthClass('Google_OAuth2');
+    $client->setAuthClass('Google_AuthNone' );
+    $client->setAuthClass('Google_OAuth2' );
 
     try {
       $client->setAccessToken(null);
-      die('Should have thrown an Google_AuthException.');
+      die('Should have thrown an Google_AuthException.' );
     } catch(Google_AuthException $e){
       $this->assertEquals('Could not json decode the token', $e->getMessage() );
     }

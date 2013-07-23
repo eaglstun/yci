@@ -65,7 +65,7 @@ class Google_HttpRequest {
    * @see http://oauth.net/core/1.0a/#anchor13
    */
   public function getBaseUrl(){
-    if ($pos = strpos($this->url, '?')){
+    if( $pos = strpos($this->url, '?')){
       return substr($this->url, 0, $pos);
     }
     return $this->url;
@@ -77,7 +77,7 @@ class Google_HttpRequest {
    * @return array Query parameters in the query string.
    */
   public function getQueryParams(){
-    if ($pos = strpos($this->url, '?')){
+    if( $pos = strpos($this->url, '?')){
       $queryStr = substr($this->url, $pos + 1);
       $params = array();
       parse_str($queryStr, $params);
@@ -120,7 +120,7 @@ class Google_HttpRequest {
    */
   public function setResponseHeaders($headers){
     $headers = Google_Utils::normalize($headers);
-    if ($this->responseHeaders){
+    if( $this->responseHeaders){
       $headers = array_merge($this->responseHeaders, $headers);
     }
 
@@ -216,7 +216,7 @@ class Google_HttpRequest {
    */
   public function setRequestHeaders($headers){
     $headers = Google_Utils::normalize($headers);
-    if ($this->requestHeaders){
+    if( $this->requestHeaders){
       $headers = array_merge($this->requestHeaders, $headers);
     }
     $this->requestHeaders = $headers;
@@ -266,8 +266,8 @@ class Google_HttpRequest {
 
   public function getParsedCacheControl(){
     $parsed = array();
-    $rawCacheControl = $this->getResponseHeader('cache-control');
-    if ($rawCacheControl){
+    $rawCacheControl = $this->getResponseHeader('cache-control' );
+    if( $rawCacheControl){
       $rawCacheControl = str_replace(', ', '&', $rawCacheControl);
       parse_str($rawCacheControl, $parsed);
     }
@@ -294,7 +294,7 @@ class Google_HttpRequest {
       $str .= $key . ': ' . $val . "\n";
     }
 
-    if ($this->getPostBody()){
+    if( $this->getPostBody()){
       $str .= "\n";
       $str .= $this->getPostBody();
     }

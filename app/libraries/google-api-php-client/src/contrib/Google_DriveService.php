@@ -38,7 +38,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_About($data);
       } else {
         return $data;
@@ -67,7 +67,7 @@
       $params = array('appId' => $appId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_App($data);
       } else {
         return $data;
@@ -83,7 +83,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AppList($data);
       } else {
         return $data;
@@ -112,7 +112,7 @@
       $params = array('changeId' => $changeId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Change($data);
       } else {
         return $data;
@@ -134,7 +134,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ChangeList($data);
       } else {
         return $data;
@@ -157,7 +157,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('watch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Channel($data);
       } else {
         return $data;
@@ -224,7 +224,7 @@
       $params = array('folderId' => $folderId, 'childId' => $childId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ChildReference($data);
       } else {
         return $data;
@@ -242,7 +242,7 @@
       $params = array('folderId' => $folderId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ChildReference($data);
       } else {
         return $data;
@@ -263,7 +263,7 @@
       $params = array('folderId' => $folderId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ChildList($data);
       } else {
         return $data;
@@ -308,7 +308,7 @@
       $params = array('fileId' => $fileId, 'commentId' => $commentId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Comment($data);
       } else {
         return $data;
@@ -326,7 +326,7 @@
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Comment($data);
       } else {
         return $data;
@@ -348,7 +348,7 @@
       $params = array('fileId' => $fileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommentList($data);
       } else {
         return $data;
@@ -367,7 +367,7 @@
       $params = array('fileId' => $fileId, 'commentId' => $commentId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Comment($data);
       } else {
         return $data;
@@ -386,7 +386,7 @@
       $params = array('fileId' => $fileId, 'commentId' => $commentId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Comment($data);
       } else {
         return $data;
@@ -424,7 +424,7 @@
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('copy', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DriveFile($data);
       } else {
         return $data;
@@ -456,7 +456,7 @@
       $params = array('fileId' => $fileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DriveFile($data);
       } else {
         return $data;
@@ -482,7 +482,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DriveFile($data);
       } else {
         return $data;
@@ -503,7 +503,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_FileList($data);
       } else {
         return $data;
@@ -532,7 +532,7 @@
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DriveFile($data);
       } else {
         return $data;
@@ -549,7 +549,7 @@
       $params = array('fileId' => $fileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('touch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DriveFile($data);
       } else {
         return $data;
@@ -566,7 +566,7 @@
       $params = array('fileId' => $fileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('trash', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DriveFile($data);
       } else {
         return $data;
@@ -583,7 +583,7 @@
       $params = array('fileId' => $fileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('untrash', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DriveFile($data);
       } else {
         return $data;
@@ -612,7 +612,7 @@
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_DriveFile($data);
       } else {
         return $data;
@@ -633,7 +633,7 @@
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('watch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Channel($data);
       } else {
         return $data;
@@ -676,7 +676,7 @@
       $params = array('fileId' => $fileId, 'parentId' => $parentId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ParentReference($data);
       } else {
         return $data;
@@ -694,7 +694,7 @@
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ParentReference($data);
       } else {
         return $data;
@@ -711,7 +711,7 @@
       $params = array('fileId' => $fileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ParentList($data);
       } else {
         return $data;
@@ -754,7 +754,7 @@
       $params = array('fileId' => $fileId, 'permissionId' => $permissionId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Permission($data);
       } else {
         return $data;
@@ -775,7 +775,7 @@
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Permission($data);
       } else {
         return $data;
@@ -792,7 +792,7 @@
       $params = array('fileId' => $fileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PermissionList($data);
       } else {
         return $data;
@@ -813,7 +813,7 @@
       $params = array('fileId' => $fileId, 'permissionId' => $permissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Permission($data);
       } else {
         return $data;
@@ -834,7 +834,7 @@
       $params = array('fileId' => $fileId, 'permissionId' => $permissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Permission($data);
       } else {
         return $data;
@@ -881,7 +881,7 @@
       $params = array('fileId' => $fileId, 'propertyKey' => $propertyKey);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Property($data);
       } else {
         return $data;
@@ -899,7 +899,7 @@
       $params = array('fileId' => $fileId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Property($data);
       } else {
         return $data;
@@ -916,7 +916,7 @@
       $params = array('fileId' => $fileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PropertyList($data);
       } else {
         return $data;
@@ -937,7 +937,7 @@
       $params = array('fileId' => $fileId, 'propertyKey' => $propertyKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Property($data);
       } else {
         return $data;
@@ -958,7 +958,7 @@
       $params = array('fileId' => $fileId, 'propertyKey' => $propertyKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Property($data);
       } else {
         return $data;
@@ -1030,7 +1030,7 @@
       $params = array('fileId' => $fileId, 'commentId' => $commentId, 'replyId' => $replyId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommentReply($data);
       } else {
         return $data;
@@ -1049,7 +1049,7 @@
       $params = array('fileId' => $fileId, 'commentId' => $commentId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommentReply($data);
       } else {
         return $data;
@@ -1071,7 +1071,7 @@
       $params = array('fileId' => $fileId, 'commentId' => $commentId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommentReplyList($data);
       } else {
         return $data;
@@ -1091,7 +1091,7 @@
       $params = array('fileId' => $fileId, 'commentId' => $commentId, 'replyId' => $replyId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommentReply($data);
       } else {
         return $data;
@@ -1111,7 +1111,7 @@
       $params = array('fileId' => $fileId, 'commentId' => $commentId, 'replyId' => $replyId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommentReply($data);
       } else {
         return $data;
@@ -1154,7 +1154,7 @@
       $params = array('fileId' => $fileId, 'revisionId' => $revisionId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Revision($data);
       } else {
         return $data;
@@ -1171,7 +1171,7 @@
       $params = array('fileId' => $fileId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_RevisionList($data);
       } else {
         return $data;
@@ -1190,7 +1190,7 @@
       $params = array('fileId' => $fileId, 'revisionId' => $revisionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Revision($data);
       } else {
         return $data;
@@ -1209,7 +1209,7 @@
       $params = array('fileId' => $fileId, 'revisionId' => $revisionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Revision($data);
       } else {
         return $data;

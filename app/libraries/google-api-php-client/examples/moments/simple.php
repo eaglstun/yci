@@ -8,10 +8,10 @@ session_start();
 // https://developers.google.com/+/history/#getting_started
 $client = new Google_Client();
 $client->setApplicationName("Google+ history example");
-$client->setClientId('insert_client_id');
-$client->setClientSecret('insert_client_secret');
-$client->setRedirectUri('insert_redirect_uri');
-$client->setDeveloperKey('insert_developer_key');
+$client->setClientId('insert_client_id' );
+$client->setClientSecret('insert_client_secret' );
+$client->setRedirectUri('insert_redirect_uri' );
+$client->setDeveloperKey('insert_developer_key' );
 
 $moments = new Google_PlusMomentsService($client);
 
@@ -42,7 +42,7 @@ if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->isAccessTokenExpired()){
+if( $client->isAccessTokenExpired()){
 
   // Generate a unique CSRF token.
   $state = sha1(uniqid(mt_rand(), true) );

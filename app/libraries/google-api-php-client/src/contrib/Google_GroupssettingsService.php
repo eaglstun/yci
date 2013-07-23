@@ -35,7 +35,7 @@
       $params = array('groupUniqueId' => $groupUniqueId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Groups($data);
       } else {
         return $data;
@@ -53,7 +53,7 @@
       $params = array('groupUniqueId' => $groupUniqueId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Groups($data);
       } else {
         return $data;
@@ -71,7 +71,7 @@
       $params = array('groupUniqueId' => $groupUniqueId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Groups($data);
       } else {
         return $data;

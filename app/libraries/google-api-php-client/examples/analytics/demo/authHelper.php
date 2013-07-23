@@ -77,7 +77,7 @@ class AuthHelper {
       $this->storage->set($accessToken);
 
       // Keep things pretty. Removes the auth code from the URL.
-      if ($_GET['code']){
+      if( $_GET['code']){
         header("Location: $this->controllerUrl");
       }
 
@@ -94,7 +94,7 @@ class AuthHelper {
    */
   public function revokeToken(){
     $accessToken = $this->storage->get();
-    if ($accessToken){
+    if( $accessToken){
       $tokenObj = json_decode($accessToken);
       try {
         $this->client->revokeToken($tokenObj->refresh_token);

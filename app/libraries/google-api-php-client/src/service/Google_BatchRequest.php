@@ -52,7 +52,7 @@ class Google_BatchRequest {
 
     global $apiConfig;
     $url = $apiConfig['basePath'] . '/batch';
-    $httpRequest = new Google_HttpRequest($url, 'POST');
+    $httpRequest = new Google_HttpRequest($url, 'POST' );
     $httpRequest->setRequestHeaders(array(
         'Content-Type' => 'multipart/mixed; boundary=' . $this->boundary) );
 
@@ -64,7 +64,7 @@ class Google_BatchRequest {
   }
 
   public function parseResponse(Google_HttpRequest $response){
-    $contentType = $response->getResponseHeader('content-type');
+    $contentType = $response->getResponseHeader('content-type' );
     $contentType = explode(';', $contentType);
     $boundary = false;
     foreach($contentType as $part){
@@ -75,7 +75,7 @@ class Google_BatchRequest {
     }
 
     $body = $response->getResponseBody();
-    if ($body){
+    if( $body){
       $body = str_replace("--$boundary--", "--$boundary", $body);
       $parts = explode("--$boundary", $body);
       $responses = array();

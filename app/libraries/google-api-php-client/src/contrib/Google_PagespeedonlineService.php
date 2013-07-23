@@ -41,7 +41,7 @@
       $params = array('url' => $url);
       $params = array_merge($params, $optParams);
       $data = $this->__call('runpagespeed', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Result($data);
       } else {
         return $data;

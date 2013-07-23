@@ -19,11 +19,11 @@ require_once '../../src/contrib/Google_CustomsearchService.php';
 session_start();
 
 $client = new Google_Client();
-$client->setApplicationName('Google CustomSearch PHP Starter Application');
+$client->setApplicationName('Google CustomSearch PHP Starter Application' );
 // Docs: http://code.google.com/apis/customsearch/v1/using_rest.html
 // Visit https://code.google.com/apis/console?api=customsearch to generate
 // your developer key (simple api key).
-// $client->setDeveloperKey('INSERT_your_developer_key');
+// $client->setDeveloperKey('INSERT_your_developer_key' );
 $search = new Google_CustomsearchService($client);
 
 

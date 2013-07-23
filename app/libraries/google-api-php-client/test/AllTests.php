@@ -33,7 +33,7 @@ require_once 'plus/PlusTest.php';
 class AllTests {
   public static function suite(){
     $suite = new PHPUnit_Framework_TestSuite();
-    $suite->setName('All Google API PHP Client tests');
+    $suite->setName('All Google API PHP Client tests' );
     // TODO(slangley): Enable all of these tests - They do not work as part of
     // the download and we need them before we can ship this in the SDK.
     //$suite->addTestSuite(AllTasksTests::suite() );

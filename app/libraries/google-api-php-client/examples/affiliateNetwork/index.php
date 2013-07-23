@@ -23,10 +23,10 @@ $client = new Google_Client();
 $client->setApplicationName("Google GAN PHP Starter Application");
 // Visit https://code.google.com/apis/console?api=gan to generate your
 // oauth2_client_id, oauth2_client_secret, and to register your oauth2_redirect_uri.
-// $client->setClientId('insert_your_oauth2_client_id');
-// $client->setClientSecret('insert_your_oauth2_client_secret');
-// $client->setRedirectUri('insert_your_oauth2_redirect_uri');
-// $client->setDeveloperKey('insert_your_simple_api_key');
+// $client->setClientId('insert_your_oauth2_client_id' );
+// $client->setClientSecret('insert_your_oauth2_client_secret' );
+// $client->setRedirectUri('insert_your_oauth2_redirect_uri' );
+// $client->setDeveloperKey('insert_your_simple_api_key' );
 $gan = new Google_GanService($client);
 
 if (isset($_REQUEST['logout'])){
@@ -44,7 +44,7 @@ if (isset($_SESSION['access_token'])){
   $client->setAccessToken($_SESSION['access_token']);
 }
 
-if ($client->getAccessToken()){
+if( $client->getAccessToken()){
   $publishers = $gan->publishers->listPublishers("advertisers", "INSERT_ROLE_ID" /* The ID of the requesting advertiser or publisher */);
   $advertisers = $gan->advertisers->listAdvertisers("publishers", "INSERT_ROLE_ID" /* The ID of the requesting advertiser or publisher */);
   print "<pre>" . print_r($publishers, true) . "</pre>";

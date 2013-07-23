@@ -47,7 +47,7 @@
       $params = array('id' => $id);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SiteVerificationWebResourceResource($data);
       } else {
         return $data;
@@ -64,7 +64,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('getToken', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SiteVerificationWebResourceGettokenResponse($data);
       } else {
         return $data;
@@ -82,7 +82,7 @@
       $params = array('verificationMethod' => $verificationMethod, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SiteVerificationWebResourceResource($data);
       } else {
         return $data;
@@ -98,7 +98,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SiteVerificationWebResourceListResponse($data);
       } else {
         return $data;
@@ -117,7 +117,7 @@
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SiteVerificationWebResourceResource($data);
       } else {
         return $data;
@@ -135,7 +135,7 @@
       $params = array('id' => $id, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SiteVerificationWebResourceResource($data);
       } else {
         return $data;

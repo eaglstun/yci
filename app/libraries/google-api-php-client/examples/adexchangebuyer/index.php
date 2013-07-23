@@ -29,17 +29,17 @@ require_once "htmlHelper.php";
 session_start();
 
 $client = new Google_Client();
-$client->setApplicationName('DoubleClick Ad Exchange Buyer API PHP Samples');
+$client->setApplicationName('DoubleClick Ad Exchange Buyer API PHP Samples' );
 // Visit https://code.google.com/apis/console?api=adexchangebuyer to generate
 // your client id, client secret, and to register your redirect uri.
 $client->setScopes(array('https://www.googleapis.com/auth/adexchange.buyer') );
 // Visit https://code.google.com/apis/console?api=adexchangebuyer to generate
 // your oauth2_client_id, oauth2_client_secret, and to register your
 // oauth2_redirect_uri.
-// $client->setClientId('insert_your_oauth2_client_id');
-// $client->setClientSecret('insert_your_oauth2_client_secret');
-// $client->setRedirectUri('insert_your_oauth2_redirect_uri');
-// $client->setDeveloperKey('insert_your_simple_api_key');
+// $client->setClientId('insert_your_oauth2_client_id' );
+// $client->setClientSecret('insert_your_oauth2_client_secret' );
+// $client->setRedirectUri('insert_your_oauth2_redirect_uri' );
+// $client->setDeveloperKey('insert_your_simple_api_key' );
 $service = new Google_AdexchangebuyerService($client);
 
 if (isset($_GET['code'])){
@@ -53,7 +53,7 @@ if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->getAccessToken()){
+if( $client->getAccessToken()){
   // Build the list of supported actions.
   $actions = getSupportedActions();
 
@@ -71,13 +71,13 @@ if ($client->getAccessToken()){
     try {
       $example->execute();
     } catch (Google_Exception $ex){
-      printf('An error as occurred while calling the example:<br/>');
+      printf('An error as occurred while calling the example:<br/>' );
       printf($ex->getMessage() );
     }
     printSampleHtmlFooter();
   } else {
     // Show the list of links to supported actions.
-    printHtmlHeader('Ad Exchange Buyer API PHP usage examples.');
+    printHtmlHeader('Ad Exchange Buyer API PHP usage examples.' );
     printExamplesIndex($actions);
     printHtmlFooter();
   }
@@ -94,5 +94,5 @@ if ($client->getAccessToken()){
  */
 function getSupportedActions(){
   return array('GetAllAccounts', 'GetCreative', 'GetDirectDeals',
-               'SubmitCreative', 'UpdateAccount');
+               'SubmitCreative', 'UpdateAccount' );
 }

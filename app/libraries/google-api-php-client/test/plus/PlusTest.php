@@ -20,8 +20,8 @@ require_once '../src/contrib/Google_PlusService.php';
 class AllPlusTests extends PHPUnit_Framework_TestSuite {
   public static function suite(){
     $suite = new PHPUnit_Framework_TestSuite();
-    $suite->setName('Google Plus API tests');
-    $suite->addTestSuite('PlusTest');
+    $suite->setName('Google Plus API tests' );
+    $suite->addTestSuite('PlusTest' );
     return $suite;
   }
 }

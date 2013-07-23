@@ -38,7 +38,7 @@
       $params = array('userId' => $userId, 'blogId' => $blogId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BlogUserInfo($data);
       } else {
         return $data;
@@ -69,7 +69,7 @@
       $params = array('blogId' => $blogId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Blog($data);
       } else {
         return $data;
@@ -86,7 +86,7 @@
       $params = array('url' => $url);
       $params = array_merge($params, $optParams);
       $data = $this->__call('getByUrl', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Blog($data);
       } else {
         return $data;
@@ -103,7 +103,7 @@
       $params = array('userId' => $userId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('listByUser', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BlogList($data);
       } else {
         return $data;
@@ -134,7 +134,7 @@
       $params = array('blogId' => $blogId, 'postId' => $postId, 'commentId' => $commentId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Comment($data);
       } else {
         return $data;
@@ -158,7 +158,7 @@
       $params = array('blogId' => $blogId, 'postId' => $postId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommentList($data);
       } else {
         return $data;
@@ -188,7 +188,7 @@
       $params = array('blogId' => $blogId, 'pageId' => $pageId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Page($data);
       } else {
         return $data;
@@ -207,7 +207,7 @@
       $params = array('blogId' => $blogId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PageList($data);
       } else {
         return $data;
@@ -252,7 +252,7 @@
       $params = array('blogId' => $blogId, 'postId' => $postId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Post($data);
       } else {
         return $data;
@@ -272,7 +272,7 @@
       $params = array('blogId' => $blogId, 'path' => $path);
       $params = array_merge($params, $optParams);
       $data = $this->__call('getByPath', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Post($data);
       } else {
         return $data;
@@ -290,7 +290,7 @@
       $params = array('blogId' => $blogId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Post($data);
       } else {
         return $data;
@@ -314,7 +314,7 @@
       $params = array('blogId' => $blogId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PostList($data);
       } else {
         return $data;
@@ -333,7 +333,7 @@
       $params = array('blogId' => $blogId, 'postId' => $postId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Post($data);
       } else {
         return $data;
@@ -351,7 +351,7 @@
       $params = array('blogId' => $blogId, 'q' => $q);
       $params = array_merge($params, $optParams);
       $data = $this->__call('search', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PostList($data);
       } else {
         return $data;
@@ -370,7 +370,7 @@
       $params = array('blogId' => $blogId, 'postId' => $postId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Post($data);
       } else {
         return $data;
@@ -399,7 +399,7 @@
       $params = array('userId' => $userId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_User($data);
       } else {
         return $data;

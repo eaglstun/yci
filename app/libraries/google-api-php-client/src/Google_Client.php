@@ -18,15 +18,15 @@
 // Check for the json extension, the Google APIs PHP Client won't function
 // without it.
 if (! function_exists('json_decode')){
-  throw new Exception('Google PHP API Client requires the JSON PHP extension');
+  throw new Exception('Google PHP API Client requires the JSON PHP extension' );
 }
 
 if (! function_exists('http_build_query')){
-  throw new Exception('Google PHP API Client requires http_build_query()');
+  throw new Exception('Google PHP API Client requires http_build_query()' );
 }
 
 if (! ini_get('date.timezone') && function_exists('date_default_timezone_set')){
-  date_default_timezone_set('UTC');
+  date_default_timezone_set('UTC' );
 }
 
 // hack around with the include paths a bit so the library 'just works'
@@ -36,7 +36,7 @@ require_once "config.php";
 // If a local configuration file is found, merge it's values with the default configuration
 if (file_exists(dirname(__FILE__)  . '/local_config.php')){
   $defaultConfig = $apiConfig;
-  require_once (dirname(__FILE__)  . '/local_config.php');
+  require_once (dirname(__FILE__)  . '/local_config.php' );
   $apiConfig = array_merge($defaultConfig, $apiConfig);
 }
 
@@ -52,7 +52,7 @@ require_once 'external/URITemplateParser.php';
 require_once 'auth/Google_Auth.php';
 require_once 'cache/Google_Cache.php';
 require_once 'io/Google_IO.php';
-require_once('service/Google_MediaFileUpload.php');
+require_once('service/Google_MediaFileUpload.php' );
 
 /**
  * The Google API Client
@@ -111,8 +111,8 @@ class Google_Client {
    */
   public function addService($service, $version = false){
     global $apiConfig;
-    if ($this->authenticated){
-      throw new Google_Exception('Cant add services after having authenticated');
+    if( $this->authenticated){
+      throw new Google_Exception('Cant add services after having authenticated' );
     }
     $this->services[$service] = array();
     if (isset($apiConfig['services'][$service])){
@@ -134,7 +134,7 @@ class Google_Client {
   public function prepareService(){
     $service = array();
     $scopes = array();
-    if ($this->scopes){
+    if( $this->scopes){
       $scopes = $this->scopes;
     } else {
       foreach ($this->services as $key => $val){
@@ -164,7 +164,7 @@ class Google_Client {
    *  "expires_in":3600, "id_token":"TOKEN", "created":1320790426}
    */
   public function setAccessToken($accessToken){
-    if ($accessToken == null || 'null' == $accessToken){
+    if( $accessToken == null || 'null' == $accessToken){
       $accessToken = null;
     }
     self::$auth->setAccessToken($accessToken);

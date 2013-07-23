@@ -37,7 +37,7 @@
       $params = array('packageName' => $packageName, 'productId' => $productId, 'token' => $token);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_InappPurchase($data);
       } else {
         return $data;
@@ -84,7 +84,7 @@
       $params = array('packageName' => $packageName, 'subscriptionId' => $subscriptionId, 'token' => $token);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SubscriptionPurchase($data);
       } else {
         return $data;

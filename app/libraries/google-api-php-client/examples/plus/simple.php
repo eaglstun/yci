@@ -8,10 +8,10 @@ $client->setApplicationName("Google+ PHP Starter Application");
 
 // Visit https://code.google.com/apis/console?api=plus to generate your
 // client id, client secret, and to register your redirect uri.
-// $client->setClientId('insert_your_oauth2_client_id');
-// $client->setClientSecret('insert_your_oauth2_client_secret');
-// $client->setRedirectUri('insert_your_oauth2_redirect_uri');
-// $client->setDeveloperKey('insert_your_developer_key');
+// $client->setClientId('insert_your_oauth2_client_id' );
+// $client->setClientSecret('insert_your_oauth2_client_secret' );
+// $client->setRedirectUri('insert_your_oauth2_redirect_uri' );
+// $client->setDeveloperKey('insert_your_developer_key' );
 $plus = new Google_PlusService($client);
 
 if (isset($_GET['logout'])){
@@ -32,8 +32,8 @@ if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->getAccessToken()){
-  $me = $plus->people->get('me');
+if( $client->getAccessToken()){
+  $me = $plus->people->get('me' );
   print "Your Profile: <pre>" . print_r($me, true) . "</pre>";
 
   $params = array('maxResults' => 100);

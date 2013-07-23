@@ -120,8 +120,8 @@ class Google_OAuth2 extends Google_Auth {
     }
 
     $authUrl = $this->createAuthUrl( $service['scope'] );
-    var_dump($service);
-    die();
+   	//var_dump($service);
+    //die();
     
     header('Location: ' . $authUrl);
     return true;
@@ -165,7 +165,7 @@ class Google_OAuth2 extends Google_Auth {
   public function setAccessToken($token){
     $token = json_decode($token, true);
     if( $token == null){
-      throw new Google_AuthException('Could not json decode the token');
+      throw new Google_AuthException('Could not json decode the token' );
     }
     if (! isset($token['access_token'])){
       throw new Google_AuthException("Invalid token format");

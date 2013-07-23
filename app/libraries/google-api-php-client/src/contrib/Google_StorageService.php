@@ -51,7 +51,7 @@
       $params = array('bucket' => $bucket, 'entity' => $entity);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BucketAccessControl($data);
       } else {
         return $data;
@@ -69,7 +69,7 @@
       $params = array('bucket' => $bucket, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BucketAccessControl($data);
       } else {
         return $data;
@@ -86,7 +86,7 @@
       $params = array('bucket' => $bucket);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BucketAccessControls($data);
       } else {
         return $data;
@@ -106,7 +106,7 @@
       $params = array('bucket' => $bucket, 'entity' => $entity, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BucketAccessControl($data);
       } else {
         return $data;
@@ -125,7 +125,7 @@
       $params = array('bucket' => $bucket, 'entity' => $entity, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_BucketAccessControl($data);
       } else {
         return $data;
@@ -173,7 +173,7 @@
       $params = array('bucket' => $bucket);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Bucket($data);
       } else {
         return $data;
@@ -193,7 +193,7 @@
       $params = array('project' => $project, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Bucket($data);
       } else {
         return $data;
@@ -214,7 +214,7 @@
       $params = array('project' => $project);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Buckets($data);
       } else {
         return $data;
@@ -236,7 +236,7 @@
       $params = array('bucket' => $bucket, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Bucket($data);
       } else {
         return $data;
@@ -258,7 +258,7 @@
       $params = array('bucket' => $bucket, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Bucket($data);
       } else {
         return $data;
@@ -327,7 +327,7 @@
       $params = array('bucket' => $bucket, 'entity' => $entity);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ObjectAccessControl($data);
       } else {
         return $data;
@@ -346,7 +346,7 @@
       $params = array('bucket' => $bucket, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ObjectAccessControl($data);
       } else {
         return $data;
@@ -363,7 +363,7 @@
       $params = array('bucket' => $bucket);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ObjectAccessControls($data);
       } else {
         return $data;
@@ -383,7 +383,7 @@
       $params = array('bucket' => $bucket, 'entity' => $entity, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ObjectAccessControl($data);
       } else {
         return $data;
@@ -402,7 +402,7 @@
       $params = array('bucket' => $bucket, 'entity' => $entity, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ObjectAccessControl($data);
       } else {
         return $data;
@@ -453,7 +453,7 @@
       $params = array('bucket' => $bucket, 'object' => $object, 'entity' => $entity);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ObjectAccessControl($data);
       } else {
         return $data;
@@ -474,7 +474,7 @@
       $params = array('bucket' => $bucket, 'object' => $object, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ObjectAccessControl($data);
       } else {
         return $data;
@@ -494,7 +494,7 @@
       $params = array('bucket' => $bucket, 'object' => $object);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ObjectAccessControls($data);
       } else {
         return $data;
@@ -517,7 +517,7 @@
       $params = array('bucket' => $bucket, 'object' => $object, 'entity' => $entity, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ObjectAccessControl($data);
       } else {
         return $data;
@@ -539,7 +539,7 @@
       $params = array('bucket' => $bucket, 'object' => $object, 'entity' => $entity, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ObjectAccessControl($data);
       } else {
         return $data;
@@ -573,7 +573,7 @@
       $params = array('destinationBucket' => $destinationBucket, 'destinationObject' => $destinationObject, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('compose', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_StorageObject($data);
       } else {
         return $data;
@@ -606,7 +606,7 @@
       $params = array('sourceBucket' => $sourceBucket, 'sourceObject' => $sourceObject, 'destinationBucket' => $destinationBucket, 'destinationObject' => $destinationObject, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('copy', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_StorageObject($data);
       } else {
         return $data;
@@ -651,7 +651,7 @@
       $params = array('bucket' => $bucket, 'object' => $object);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_StorageObject($data);
       } else {
         return $data;
@@ -676,7 +676,7 @@
       $params = array('bucket' => $bucket, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_StorageObject($data);
       } else {
         return $data;
@@ -700,7 +700,7 @@
       $params = array('bucket' => $bucket);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Objects($data);
       } else {
         return $data;
@@ -726,7 +726,7 @@
       $params = array('bucket' => $bucket, 'object' => $object, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_StorageObject($data);
       } else {
         return $data;
@@ -752,7 +752,7 @@
       $params = array('bucket' => $bucket, 'object' => $object, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_StorageObject($data);
       } else {
         return $data;
@@ -777,7 +777,7 @@
       $params = array('bucket' => $bucket, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('watchAll', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Channel($data);
       } else {
         return $data;

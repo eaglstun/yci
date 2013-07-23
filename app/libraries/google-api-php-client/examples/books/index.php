@@ -24,7 +24,7 @@ include 'interface.html';
 
 $client = new Google_Client();
 // Visit https://code.google.com/apis/console to generate your client's Developer Key.
-//$client->setDeveloperKey('insert_your_developer_key');
+//$client->setDeveloperKey('insert_your_developer_key' );
 $client->setApplicationName("Books_Example_App");
 $service = new Google_BooksService($client);
 
@@ -51,14 +51,14 @@ HTML;
 
     if (isset($volumeInfo['authors'])){
       $creators = implode(", ", $volumeInfo['authors']);
-      if ($creators) $creators = "by " . $creators;
+      if( $creators) $creators = "by " . $creators;
     }
 
     $preview = $volumeInfo['previewLink'];
     $previewLink = '';
-    if ($result['accessInfo']['embeddable'] == true){
+    if( $result['accessInfo']['embeddable'] == true){
       $previewLink = ""
-          . "<a href=\"javascript:load_viewport('${preview}','viewport');\">"
+          . "<a href=\"javascript:load_viewport('${preview}','viewport' );\">"
           . "<img class='previewbutton' src='http://code.google.com/apis/books/images/gbs_preview_button1.png' />"
           . "</a><br>";
     }
@@ -87,7 +87,7 @@ HTML;
  * The main controller logic of the Books volume browser demonstration app.
  */
 $queryType = isset($_GET['queryType']) ? $_GET['queryType'] : null;
-if ($queryType != null){
+if( $queryType != null){
   $volumes = $service->volumes;
   $optParams = array();
 
@@ -103,10 +103,10 @@ if ($queryType != null){
   }
 
   /* check for one of the restricted feeds, or list from 'all' videos */
-  if ($queryType == 'full_view'){
+  if( $queryType == 'full_view'){
     $optParams['filter'] = 'full';
   }
-  else if ($queryType == 'partial_view'){
+  else if( $queryType == 'partial_view'){
     $optParams['filter'] = 'partial';
   }
 

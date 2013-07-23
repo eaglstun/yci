@@ -46,7 +46,7 @@ class googleApcCache extends Google_Cache {
 
   private function removeLock($key){
     // suppress all warnings, if some other process removed it that's ok too
-    @apc_delete($key . '.lock');
+    @apc_delete($key . '.lock' );
   }
 
   private function waitForLock($key){
@@ -58,7 +58,7 @@ class googleApcCache extends Google_Cache {
       usleep(250);
       $cnt ++;
     } while ($cnt <= $tries && $this->isLocked($key) );
-    if ($this->isLocked($key)){
+    if( $this->isLocked($key)){
       // 5 seconds passed, assume the owning process died off and remove it
       $this->removeLock($key);
     }

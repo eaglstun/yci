@@ -37,9 +37,9 @@ class RestTest extends BaseTest {
 
 
     foreach (array(200, 201) as $code){
-      $headers = array('foo', 'bar');
+      $headers = array('foo', 'bar' );
       $response = new Google_HttpRequest($url, 'GET', $headers);
-      $response->setResponseBody('{"a": 1}');
+      $response->setResponseBody('{"a": 1}' );
 
       $response->setResponseHttpCode($code);
       $decoded = $this->rest->decodeHttpResponse($response);
@@ -64,7 +64,7 @@ class RestTest extends BaseTest {
     $url = 'http://localhost';
 
     $response = new Google_HttpRequest($url, 'GET', array() );
-    $response->setResponseBody('{}');
+    $response->setResponseBody('{}' );
 
     $response->setResponseHttpCode(200);
     $decoded = $this->rest->decodeHttpResponse($response);

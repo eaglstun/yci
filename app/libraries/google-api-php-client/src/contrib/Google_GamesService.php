@@ -38,7 +38,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AchievementDefinitionsListResponse($data);
       } else {
         return $data;
@@ -71,7 +71,7 @@
       $params = array('achievementId' => $achievementId, 'stepsToIncrement' => $stepsToIncrement);
       $params = array_merge($params, $optParams);
       $data = $this->__call('increment', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AchievementIncrementResponse($data);
       } else {
         return $data;
@@ -94,7 +94,7 @@
       $params = array('playerId' => $playerId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PlayerAchievementListResponse($data);
       } else {
         return $data;
@@ -112,7 +112,7 @@
       $params = array('achievementId' => $achievementId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('reveal', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AchievementRevealResponse($data);
       } else {
         return $data;
@@ -129,7 +129,7 @@
       $params = array('achievementId' => $achievementId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('unlock', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_AchievementUnlockResponse($data);
       } else {
         return $data;
@@ -163,7 +163,7 @@
       $params = array('applicationId' => $applicationId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Application($data);
       } else {
         return $data;
@@ -206,7 +206,7 @@
       $params = array('leaderboardId' => $leaderboardId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Leaderboard($data);
       } else {
         return $data;
@@ -226,7 +226,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LeaderboardListResponse($data);
       } else {
         return $data;
@@ -256,7 +256,7 @@
       $params = array('playerId' => $playerId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Player($data);
       } else {
         return $data;
@@ -285,7 +285,7 @@
       $params = array('clientRevision' => $clientRevision);
       $params = array_merge($params, $optParams);
       $data = $this->__call('check', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_RevisionCheckResponse($data);
       } else {
         return $data;
@@ -317,7 +317,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('create', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Room($data);
       } else {
         return $data;
@@ -335,7 +335,7 @@
       $params = array('roomId' => $roomId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('decline', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Room($data);
       } else {
         return $data;
@@ -367,7 +367,7 @@
       $params = array('roomId' => $roomId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Room($data);
       } else {
         return $data;
@@ -386,7 +386,7 @@
       $params = array('roomId' => $roomId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('join', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Room($data);
       } else {
         return $data;
@@ -405,7 +405,7 @@
       $params = array('roomId' => $roomId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('leave', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Room($data);
       } else {
         return $data;
@@ -425,7 +425,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_RoomList($data);
       } else {
         return $data;
@@ -444,7 +444,7 @@
       $params = array('roomId' => $roomId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('reportStatus', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_RoomStatus($data);
       } else {
         return $data;
@@ -482,7 +482,7 @@
       $params = array('playerId' => $playerId, 'leaderboardId' => $leaderboardId, 'timeSpan' => $timeSpan);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PlayerLeaderboardScoreListResponse($data);
       } else {
         return $data;
@@ -505,7 +505,7 @@
       $params = array('leaderboardId' => $leaderboardId, 'collection' => $collection, 'timeSpan' => $timeSpan);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LeaderboardScores($data);
       } else {
         return $data;
@@ -530,7 +530,7 @@
       $params = array('leaderboardId' => $leaderboardId, 'collection' => $collection, 'timeSpan' => $timeSpan);
       $params = array_merge($params, $optParams);
       $data = $this->__call('listWindow', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_LeaderboardScores($data);
       } else {
         return $data;
@@ -550,7 +550,7 @@
       $params = array('leaderboardId' => $leaderboardId, 'score' => $score);
       $params = array_merge($params, $optParams);
       $data = $this->__call('submit', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PlayerScoreResponse($data);
       } else {
         return $data;
@@ -569,7 +569,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('submitMultiple', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PlayerScoreListResponse($data);
       } else {
         return $data;

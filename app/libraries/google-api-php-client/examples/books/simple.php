@@ -22,9 +22,9 @@ $client = new Google_Client();
 $client->setApplicationName("My_Books_API_Example");
 $service = new Google_BooksService($client);
 
-$optParams = array('filter' => 'free-ebooks');
+$optParams = array('filter' => 'free-ebooks' );
 $results = $service->volumes->listVolumes('Henry David Thoreau', $optParams);
 
 foreach ($results['items'] as $item){
-  print($item['volumeInfo']['title'] . '<br>');
+  print($item['volumeInfo']['title'] . '<br>' );
 }

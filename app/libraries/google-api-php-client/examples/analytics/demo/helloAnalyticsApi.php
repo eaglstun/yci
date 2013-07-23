@@ -101,13 +101,13 @@ class HelloAnalyticsApi {
           return $items[0]->getId();
 
         } else {
-          throw new demoException('No profiles found for this user.');
+          throw new demoException('No profiles found for this user.' );
         }
       } else {
-        throw new demoException('No webproperties found for this user.');
+        throw new demoException('No webproperties found for this user.' );
       }
     } else {
-      throw new demoException('No accounts found for this user.');
+      throw new demoException('No accounts found for this user.' );
     }
   }
 

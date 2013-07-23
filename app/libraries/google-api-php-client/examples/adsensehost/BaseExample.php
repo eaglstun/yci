@@ -55,7 +55,7 @@ abstract class BaseExample {
    * @return string the date in the format expressed by $this->dateFormat
    */
   protected function getSixMonthsBeforeNow(){
-    $sixMonthsAgo = new DateTime('-6 months');
+    $sixMonthsAgo = new DateTime('-6 months' );
     return $sixMonthsAgo->format($this->dateFormat);
   }
 
@@ -65,7 +65,7 @@ abstract class BaseExample {
    */
   protected function getUniqueName(){
     $now = new DateTime();
-    return $now->format('YmdHisu');
+    return $now->format('YmdHisu' );
   }
 
   /**

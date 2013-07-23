@@ -37,25 +37,25 @@ class AddAdUnitToPublisher extends BaseExample {
 
     $contentAdsSettings = new Google_AdUnitContentAdsSettings();
     $backupOption = new Google_AdUnitContentAdsSettingsBackupOption();
-    $backupOption->setType('COLOR');
-    $backupOption->setColor('ffffff');
+    $backupOption->setType('COLOR' );
+    $backupOption->setColor('ffffff' );
     $contentAdsSettings->setBackupOption($backupOption);
-    $contentAdsSettings->setSize('SIZE_200_200');
-    $contentAdsSettings->setType('TEXT');
+    $contentAdsSettings->setSize('SIZE_200_200' );
+    $contentAdsSettings->setType('TEXT' );
     $adUnit->setContentAdsSettings($contentAdsSettings);
 
     $customStyle = new Google_AdStyle();
     $colors = new Google_AdStyleColors();
-    $colors->setBackground('ffffff');
-    $colors->setBorder('000000');
-    $colors->setText('000000');
-    $colors->setTitle('000000');
-    $colors->setUrl('0000ff');
+    $colors->setBackground('ffffff' );
+    $colors->setBorder('000000' );
+    $colors->setText('000000' );
+    $colors->setTitle('000000' );
+    $colors->setUrl('0000ff' );
     $customStyle->setColors($colors);
-    $customStyle->setCorners('SQUARE');
+    $customStyle->setCorners('SQUARE' );
     $font = new AdStyleFont();
-    $font->setFamily('ACCOUNT_DEFAULT_FAMILY');
-    $font->setSize('ACCOUNT_DEFAULT_SIZE');
+    $font->setFamily('ACCOUNT_DEFAULT_FAMILY' );
+    $font->setSize('ACCOUNT_DEFAULT_SIZE' );
     $customStyle->setFont($font);
     $adUnit->setCustomStyle($customStyle);
 

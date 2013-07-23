@@ -43,8 +43,8 @@ class Google_Model {
 
       $keyTypeName = "__$key" . 'Type';
       $keyDataType = "__$key" . 'DataType';
-      if ($this->useObjects() && property_exists($this, $keyTypeName)){
-        if ($this->isAssociativeArray($val)){
+      if( $this->useObjects() && property_exists($this, $keyTypeName)){
+        if( $this->isAssociativeArray($val)){
           if (isset($this->$keyDataType) && 'map' == $this->$keyDataType){
             foreach($val as $arrayKey => $arrayItem){
               $val[$arrayKey] = $this->createObjectFromName($keyTypeName, $arrayItem);
@@ -107,7 +107,7 @@ class Google_Model {
    * @param string $method Method expecting an array as an argument.
    */
   public function assertIsArray($obj, $type, $method){
-    if ($obj && !is_array($obj)){
+    if( $obj && !is_array($obj)){
       throw new Google_Exception("Incorrect parameter type passed to $method(), expected an"
           . " array containing items of type $type.");
     }

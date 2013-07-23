@@ -35,7 +35,7 @@
       $params = array('activityId' => $activityId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Activity($data);
       } else {
         return $data;
@@ -56,7 +56,7 @@
       $params = array('userId' => $userId, 'collection' => $collection);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ActivityFeed($data);
       } else {
         return $data;
@@ -78,7 +78,7 @@
       $params = array('query' => $query);
       $params = array_merge($params, $optParams);
       $data = $this->__call('search', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ActivityFeed($data);
       } else {
         return $data;
@@ -107,7 +107,7 @@
       $params = array('commentId' => $commentId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Comment($data);
       } else {
         return $data;
@@ -128,7 +128,7 @@
       $params = array('activityId' => $activityId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_CommentFeed($data);
       } else {
         return $data;
@@ -162,7 +162,7 @@
       $params = array('userId' => $userId, 'collection' => $collection, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Moment($data);
       } else {
         return $data;
@@ -185,7 +185,7 @@
       $params = array('userId' => $userId, 'collection' => $collection);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_MomentsFeed($data);
       } else {
         return $data;
@@ -227,7 +227,7 @@
       $params = array('userId' => $userId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Person($data);
       } else {
         return $data;
@@ -249,7 +249,7 @@
       $params = array('userId' => $userId, 'collection' => $collection);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PeopleFeed($data);
       } else {
         return $data;
@@ -271,7 +271,7 @@
       $params = array('activityId' => $activityId, 'collection' => $collection);
       $params = array_merge($params, $optParams);
       $data = $this->__call('listByActivity', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PeopleFeed($data);
       } else {
         return $data;
@@ -292,7 +292,7 @@
       $params = array('query' => $query);
       $params = array_merge($params, $optParams);
       $data = $this->__call('search', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_PeopleFeed($data);
       } else {
         return $data;

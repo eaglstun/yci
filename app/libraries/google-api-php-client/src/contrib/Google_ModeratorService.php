@@ -41,7 +41,7 @@
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Vote($data);
       } else {
         return $data;
@@ -64,7 +64,7 @@
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Vote($data);
       } else {
         return $data;
@@ -84,7 +84,7 @@
       $params = array('seriesId' => $seriesId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_VoteList($data);
       } else {
         return $data;
@@ -107,7 +107,7 @@
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Vote($data);
       } else {
         return $data;
@@ -129,7 +129,7 @@
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Vote($data);
       } else {
         return $data;
@@ -166,7 +166,7 @@
       $params = array('seriesId' => $seriesId, 'topicId' => $topicId, 'parentSubmissionId' => $parentSubmissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Submission($data);
       } else {
         return $data;
@@ -192,7 +192,7 @@
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SubmissionList($data);
       } else {
         return $data;
@@ -224,7 +224,7 @@
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Tag($data);
       } else {
         return $data;
@@ -242,7 +242,7 @@
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TagList($data);
       } else {
         return $data;
@@ -287,7 +287,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Series($data);
       } else {
         return $data;
@@ -305,7 +305,7 @@
       $params = array('seriesId' => $seriesId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Series($data);
       } else {
         return $data;
@@ -325,7 +325,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SeriesList($data);
       } else {
         return $data;
@@ -343,7 +343,7 @@
       $params = array('seriesId' => $seriesId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Series($data);
       } else {
         return $data;
@@ -360,7 +360,7 @@
       $params = array('seriesId' => $seriesId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Series($data);
       } else {
         return $data;
@@ -400,7 +400,7 @@
       $params = array('seriesId' => $seriesId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SubmissionList($data);
       } else {
         return $data;
@@ -436,7 +436,7 @@
       $params = array('seriesId' => $seriesId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SeriesList($data);
       } else {
         return $data;
@@ -467,7 +467,7 @@
       $params = array('seriesId' => $seriesId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Topic($data);
       } else {
         return $data;
@@ -489,7 +489,7 @@
       $params = array('seriesId' => $seriesId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_TopicList($data);
       } else {
         return $data;
@@ -508,7 +508,7 @@
       $params = array('seriesId' => $seriesId, 'topicId' => $topicId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Topic($data);
       } else {
         return $data;
@@ -526,7 +526,7 @@
       $params = array('seriesId' => $seriesId, 'topicId' => $topicId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Topic($data);
       } else {
         return $data;
@@ -566,7 +566,7 @@
       $params = array('seriesId' => $seriesId, 'topicId' => $topicId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SubmissionList($data);
       } else {
         return $data;
@@ -612,7 +612,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SeriesList($data);
       } else {
         return $data;
@@ -643,7 +643,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Profile($data);
       } else {
         return $data;
@@ -660,7 +660,7 @@
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Profile($data);
       } else {
         return $data;
@@ -676,7 +676,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Profile($data);
       } else {
         return $data;
@@ -718,7 +718,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SeriesList($data);
       } else {
         return $data;
@@ -760,7 +760,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SeriesList($data);
       } else {
         return $data;
@@ -802,7 +802,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_SeriesList($data);
       } else {
         return $data;
@@ -837,7 +837,7 @@
       $params = array('seriesId' => $seriesId, 'topicId' => $topicId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Submission($data);
       } else {
         return $data;
@@ -858,7 +858,7 @@
       $params = array('seriesId' => $seriesId, 'submissionId' => $submissionId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_Submission($data);
       } else {
         return $data;

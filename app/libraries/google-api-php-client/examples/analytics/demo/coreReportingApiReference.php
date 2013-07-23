@@ -100,7 +100,7 @@ class CoreReportingApiReference {
         'dimensions' => 'ga:source,ga:keyword',
         'sort' => '-ga:visits,ga:keyword',
         'filters' => 'ga:medium==organic',
-        'max-results' => '25');
+        'max-results' => '25' );
 
     return $this->analytics->data_ga->get(
         urldecode($tableId),

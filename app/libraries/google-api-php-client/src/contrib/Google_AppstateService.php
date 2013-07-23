@@ -39,7 +39,7 @@
       $params = array('stateKey' => $stateKey);
       $params = array_merge($params, $optParams);
       $data = $this->__call('clear', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_WriteResult($data);
       } else {
         return $data;
@@ -71,7 +71,7 @@
       $params = array('stateKey' => $stateKey);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_GetResponse($data);
       } else {
         return $data;
@@ -89,7 +89,7 @@
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_ListResponse($data);
       } else {
         return $data;
@@ -111,7 +111,7 @@
       $params = array('stateKey' => $stateKey, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params) );
-      if ($this->useObjects()){
+      if( $this->useObjects()){
         return new Google_WriteResult($data);
       } else {
         return $data;

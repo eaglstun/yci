@@ -23,7 +23,7 @@ $youtube = new Google_YoutubeService($client);
 
 if (isset($_GET['code'])){
   if (strval($_SESSION['state']) !== strval($_GET['state'])){
-    die('The session state did not match.');
+    die('The session state did not match.' );
   }
 
   $client->authenticate();
@@ -35,7 +35,7 @@ if (isset($_SESSION['token'])){
   $client->setAccessToken($_SESSION['token']);
 }
 
-if ($client->getAccessToken()){
+if( $client->getAccessToken()){
   try {
     $channelsResponse = $youtube->channels->listChannels('contentDetails', array(
       'mine' => 'true',
