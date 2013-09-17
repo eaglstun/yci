@@ -1,3 +1,5 @@
 ## YouTube Credibility Index
 
-PHP App built with Laravel 4
+Laravel 4
+
+Skeleton 1.2
